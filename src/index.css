@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1;
+  }
+
+  body {
+    background-color: #08080a;
+    background-image: 
+      radial-gradient(at 50% 0%, rgba(255, 170, 0, 0.04) 0px, transparent 60%),
+      radial-gradient(at 100% 100%, rgba(0, 0, 0, 0.8) 0px, transparent 50%);
+    color: #ffffff;
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Dark Presentation Deck Slide (Matching Reference Image) */
+.dark-deck-slide {
+  background: radial-gradient(circle at 50% 35%, #181a22 0%, #0e0f13 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.dark-deck-slide:hover {
+  border-color: rgba(255, 170, 0, 0.35);
+}
+
+/* Crisp Big Headings */
+.title-impact {
+  font-family: 'Bebas Neue', 'Anton', sans-serif;
+  letter-spacing: 0.03em;
+  line-height: 0.92;
+  text-transform: uppercase;
+  color: #ffffff;
+  -webkit-text-stroke: 0.2px rgba(255, 255, 255, 0.3);
+}
+
+/* Handwritten Cursive Overlay Typography (Crisp & High Contrast) */
+.handwriting-overlay {
+  font-family: 'Caveat', 'Kaushan Script', cursive;
+  color: #ffaa00;
+  text-shadow: 0 2px 12px rgba(255, 170, 0, 0.4), 0 0 1px rgba(0, 0, 0, 0.8);
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Crumpled Paper Card Effect */
+.crumpled-paper-card {
+  background: #ebeef2;
+  background-image: 
+    linear-gradient(120deg, rgba(255, 255, 255, 0.85) 0%, rgba(210, 215, 225, 0.45) 40%, rgba(255, 255, 255, 0.95) 70%, rgba(200, 205, 215, 0.6) 100%),
+    radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.6) 0%, transparent 60%);
+  color: #11141a;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #08080a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #232530;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffaa00;
+}
