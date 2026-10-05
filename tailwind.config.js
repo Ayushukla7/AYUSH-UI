@@ -7,11 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        darkBg: "#0c0d10",
-        darkCard: "#131419",
+        darkBg: "#030307",
+        darkCard: "#090912",
         darkBorder: "rgba(255, 255, 255, 0.08)",
+        purpleGlow: "#a855f7",
+        purpleDark: "#7c3aed",
+        purpleLight: "#c084fc",
         goldAccent: "#ffaa00",
-        orangeAccent: "#ff7b00",
         adobe: {
           ps: "#31a8ff",
           ai: "#ff9a00",
@@ -21,14 +23,24 @@ export default {
         }
       },
       fontFamily: {
-        impact: ['"Bebas Neue"', 'Anton', 'sans-serif'],
-        handwriting: ['"Caveat"', '"Kaushan Script"', 'cursive'],
-        sans: ['"Space Grotesk"', 'Inter', 'sans-serif'],
+        unbounded: ['"Unbounded"', 'sans-serif'],
+        montserrat: ['"Montserrat"', 'sans-serif'],
+        sans: ['"Montserrat"', '"Space Grotesk"', 'Inter', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace']
       },
       boxShadow: {
-        'deck': '0 20px 40px -8px rgba(0, 0, 0, 0.8), 0 6px 16px -4px rgba(0, 0, 0, 0.6)',
-        'paper': '0 10px 30px -5px rgba(0, 0, 0, 0.9), inset 0 0 40px rgba(0, 0, 0, 0.5)',
+        'purple-glow': '0 0 50px -10px rgba(168, 85, 247, 0.5)',
+        'purple-card': '0 20px 40px -15px rgba(0, 0, 0, 0.9), 0 0 30px -10px rgba(168, 85, 247, 0.25)',
+      },
+      animation: {
+        'blob': 'animateBlob 7s linear infinite',
+      },
+      keyframes: {
+        animateBlob: {
+          '0%': { transform: 'rotate(0deg) scale(1)' },
+          '50%': { transform: 'rotate(180deg) scale(1.1)' },
+          '100%': { transform: 'rotate(360deg) scale(1)' },
+        }
       }
     },
   },

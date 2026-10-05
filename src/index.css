@@ -2,115 +2,140 @@
 @tailwind components;
 @tailwind utilities;
 
+/*=============== GOOGLE FONTS & BASE ===============*/
 @layer base {
   html {
+    scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    font-feature-settings: "kern" 1;
   }
 
   body {
-    background-color: #08080a;
-    background-image: 
-      radial-gradient(at 50% 0%, rgba(255, 170, 0, 0.04) 0px, transparent 60%),
-      radial-gradient(at 100% 100%, rgba(0, 0, 0, 0.8) 0px, transparent 50%);
-    color: #ffffff;
-    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #030307;
+    color: #e2e8f0;
+    font-family: 'Montserrat', 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
     overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Unbounded', sans-serif;
+    letter-spacing: -0.02em;
   }
 }
 
-/* Dark Presentation Deck Slide (Matching Reference Image) */
-.dark-deck-slide {
-  background: radial-gradient(circle at 50% 35%, #181a22 0%, #0e0f13 100%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.12);
-  position: relative;
-  overflow: hidden;
-  transition: border-color 0.25s ease, transform 0.25s ease;
+/*=============== NEON PURPLE BLOBS & GLOW EFFECTS ===============*/
+.blob-animate {
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.75) 0%, rgba(124, 58, 237, 0.4) 50%, rgba(192, 132, 252, 0) 70%);
+  border-radius: 50%;
+  position: absolute;
+  filter: blur(60px);
+  z-index: 0;
+  pointer-events: none;
+  animation: animateBlob 8s ease-in-out infinite alternate;
 }
 
-.dark-deck-slide:hover {
-  border-color: rgba(255, 170, 0, 0.35);
+@keyframes animateBlob {
+  0% {
+    transform: rotate(0deg) scale(0.9) translate(-10px, -10px);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.15) translate(15px, 15px);
+  }
+  100% {
+    transform: rotate(360deg) scale(0.95) translate(-10px, 10px);
+  }
 }
 
-/* Crisp Big Headings */
-.title-impact {
-  font-family: 'Bebas Neue', 'Anton', sans-serif;
-  letter-spacing: 0.03em;
-  line-height: 0.92;
-  text-transform: uppercase;
-  color: #ffffff;
-  -webkit-text-stroke: 0.2px rgba(255, 255, 255, 0.3);
+.blob-aura {
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.6) 0%, rgba(147, 51, 234, 0.35) 45%, transparent 70%);
+  border-radius: 50%;
+  position: absolute;
+  filter: blur(50px);
+  z-index: 0;
+  pointer-events: none;
 }
 
-/* Handwritten Cursive Overlay Typography (Crisp & High Contrast) */
-.handwriting-overlay {
-  font-family: 'Caveat', 'Kaushan Script', cursive;
-  color: #ffaa00;
-  text-shadow: 0 2px 12px rgba(255, 170, 0, 0.4), 0 0 1px rgba(0, 0, 0, 0.8);
-  font-weight: 700;
-  line-height: 1;
+/*=============== INTERACTIVE CUSTOM CURSOR ===============*/
+.custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #c084fc;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.15s ease-in-out;
 }
 
-/* Crumpled Paper Card Effect */
-.crumpled-paper-card {
-  background: #ebeef2;
-  background-image: 
-    linear-gradient(120deg, rgba(255, 255, 255, 0.85) 0%, rgba(210, 215, 225, 0.45) 40%, rgba(255, 255, 255, 0.95) 70%, rgba(200, 205, 215, 0.6) 100%),
-    radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.6) 0%, transparent 60%);
-  color: #11141a;
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+.custom-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 38px;
+  height: 38px;
+  border: 2px solid rgba(168, 85, 247, 0.75);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+  transition: width 0.2s, height 0.2s, border-color 0.2s, transform 0.08s ease-out;
+}
+
+/* Hover effect on clickable items */
+.cursor-hovered .custom-cursor-ring {
+  width: 60px;
+  height: 60px;
+  border-color: #a855f7;
+  background: rgba(168, 85, 247, 0.12);
+}
+
+/* Glass Card with Glowing Border */
+.purple-glass-card {
+  background: rgba(10, 10, 18, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.purple-glass-card:hover {
+  border-color: rgba(168, 85, 247, 0.45);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9), 0 0 30px -8px rgba(168, 85, 247, 0.3);
+  transform: translateY(-2px);
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #08080a;
+  background: #030307;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #232530;
-  border-radius: 3px;
+  background: #231f36;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ffaa00;
+  background: #a855f7;
 }
 
-/* Print Optimization for Resume */
+/* Print Optimization */
 @media print {
   body {
     background: #ffffff !important;
     color: #000000 !important;
-  }
-
-  header, footer, nav, section:not(#resume), .dark-deck-slide > div:not(:has(#printable-resume)) {
-    display: none !important;
-  }
-
-  #resume {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  .dark-deck-slide {
-    background: #ffffff !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-  }
-
-  #printable-resume {
-    box-shadow: none !important;
-    border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    max-width: 100% !important;
   }
 }
