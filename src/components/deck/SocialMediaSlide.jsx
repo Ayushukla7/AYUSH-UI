@@ -170,7 +170,7 @@ export default function SocialMediaSlide({ aiDarkSide, biryaniData, borcelleCoff
       {/* Footer */}
       <div className="flex items-center justify-between text-[11px] sm:text-xs font-mono text-slate-400 pt-3 border-t border-white/10">
         <span>Multi-Slide Social Posts & Ad Creatives</span>
-        <span className="text-[#ffaa00] font-bold">03 / 07</span>
+        <span className="text-[#ffaa00] font-bold">03 / 08</span>
       </div>
     </div>
   );

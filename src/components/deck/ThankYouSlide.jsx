@@ -85,7 +85,7 @@ export default function ThankYouSlide() {
       {/* Footer Line */}
       <div className="flex items-center justify-between text-[11px] sm:text-xs font-mono text-slate-400 pt-3 sm:pt-4 border-t border-white/10 relative z-10">
         <span>Ayush Shukla • UI/UX & Graphic Designer</span>
-        <span className="text-[#ffaa00] font-bold">07 / 07</span>
+        <span className="text-[#ffaa00] font-bold">08 / 08</span>
       </div>
     </div>
   );

@@ -1,11 +1,14 @@
 export const personalInfo = {
   name: "Ayush Shukla",
   role: "UI/UX & Graphic Designer",
+  phone: "+91 9369657005",
   email: "ayush.apply41@gmail.com",
   linkedin: "https://www.linkedin.com/in/ayushshukla41/",
+  portfolio: "https://ayush-ui.vercel.app",
   github: "https://github.com/Ayushukla7",
   instagram: "https://www.instagram.com/ayushs_4141/",
-  bio: "UI/UX and Graphic Designer focused on creating clean SaaS interfaces, web platforms, merchandise apparel, and engaging social visual carousels.",
+  location: "Noida / Delhi NCR, India",
+  bio: "UI/UX and Graphic Designer with experience across 3+ design-focused roles and 10+ high-fidelity interface projects. Created 40+ visual assets reaching 1,500+ attendees. Strong in UI design, visual systems, branding, and responsive web experiences.",
   skills: [
     "UI/UX Design & Architecture",
     "SaaS & Dashboard UI",
@@ -16,45 +19,202 @@ export const personalInfo = {
     "Figma",
     "Adobe Photoshop",
     "Adobe Illustrator",
-    "Adobe Premiere Pro"
+    "Adobe After Effects",
+    "React.js & Tailwind CSS"
   ],
   experience: [
     {
-      role: "Design Lead / Core Team",
-      organization: "Technovation Networking Club",
-      description: "Headed visual identity, official club platform UI/UX, and official club merchandise apparel."
+      role: "Graphic Designer",
+      organization: "Technovation – The Networking Club, ABESEC",
+      location: "Noida, India",
+      period: "Jun 2025 – Present",
+      isCurrent: true,
+      description: "Design event creatives, promotional graphics, social media assets, and visual communication materials for technical events. Develop consistent visual identities across campaigns using typography, composition, color, and layout principles."
     },
     {
-      role: "UI/UX Design Intern",
-      organization: "Design Internship",
-      description: "Worked on real-world product interfaces, user experience workflows, wireframes, and design system components."
+      role: "Lead Graphic Designer",
+      organization: "Ignite Room IIIT DELHI",
+      location: "Delhi, India",
+      period: "Jul 2025 – Jun 2026",
+      isCurrent: false,
+      description: "Led graphic design initiatives and created visual assets for events, campaigns, and organizational communication. Translated ideas into engaging designs while maintaining consistency across typography, composition, branding, and visual language."
     },
     {
-      role: "Letter of Recommendation (LOR)",
-      organization: "Verified Design Recommendation",
-      description: "Awarded official Letter of Recommendation for outstanding design execution, leadership, and creative problem-solving."
+      role: "Core Team Designer",
+      organization: "Open Source Connect",
+      location: "Remote",
+      period: "Jan 2026 – Feb 2026",
+      isCurrent: false,
+      description: "Contributed to UI/UX and visual design for community initiatives using Figma and Canva. Created interface and visual assets with a focus on usability, consistency, and clear visual communication."
+    },
+    {
+      role: "Graphic Design Specialist",
+      organization: "Know Your Careers",
+      location: "Noida, India",
+      period: "Aug 2025 – Nov 2025",
+      isCurrent: false,
+      description: "Created visual designs and graphic assets for digital campaigns, social media, and organizational communication. Worked on design concepts while maintaining consistency in layout, typography, branding, and visual communication."
     }
   ],
   achievements: [
     {
-      metric: "Hackathon Innovation",
-      title: "Smart India Hackathon (SIH) — StudentERP",
-      desc: "Created and designed StudentERP.io for Smart India Hackathon (SIH) — a complete academic lifecycle dashboard with attendance analytics."
+      metric: "National 2nd Runner-Up",
+      title: "National Hackathon Podium & Healthcare Track #1",
+      desc: "Ranked 3rd among 120+ competing national teams and secured 1st position in the Healthcare Innovation Track."
+    },
+    {
+      metric: "Multi-Hackathon Finalist",
+      title: "NeuroHACK, JJK, Hack4Health & Nirmaan",
+      desc: "Finalist across 4 premier hackathons: NeuroHACK, JJK Hackathon, Hack4Health, and Nirmaan Buildathon."
     },
     {
       metric: "Design Leadership",
-      title: "Technovation Core Design Lead",
+      title: "Technovation Core Lead & Ignite Room IIITD",
       desc: "Directed end-to-end visual branding, web platform UI, and official merchandise apparel for 500+ tech community members."
     },
     {
-      metric: "Creative Innovation",
-      title: "Ignite Room Design Initiative",
-      desc: "Led visual design, UX strategy, and creative execution for Ignite Room, driving impactful digital assets and user experiences."
+      metric: "Verified Recommendation",
+      title: "Letter of Recommendation (LOR)",
+      desc: "Earned formal recommendation credentials for exemplary product UI/UX, interface architecture, and graphic design."
+    }
+  ]
+};
+
+export const resumeData = {
+  profile: {
+    name: "Ayush Shukla",
+    title: "UI/UX & Graphic Designer",
+    phone: "+91 9369657005",
+    email: "ayush.apply41@gmail.com",
+    linkedin: "https://www.linkedin.com/in/ayushshukla41",
+    linkedinText: "linkedin.com/in/ayushshukla41",
+    portfolio: "https://ayush-ui.vercel.app",
+    portfolioText: "ayush-ui.vercel.app",
+    summary: "UI/UX and Graphic Designer with experience across 3 design-focused roles and 10+ high-fidelity interface projects. Created 40+ visual assets for technical events and campaigns reaching 1,500+ attendees, with hands-on experience in Figma, Canva, and Adobe tools. Strong in UI design, visual systems, branding, and responsive web experiences, with the ability to take designs from concept to implementation."
+  },
+  skills: {
+    uiUx: [
+      "Wireframing",
+      "Prototyping",
+      "User Flows",
+      "Interaction Design",
+      "Information Architecture",
+      "Visual Design",
+      "Responsive Design",
+      "Design Systems"
+    ],
+    tools: [
+      "Figma",
+      "Canva",
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Adobe After Effects",
+      "Components",
+      "Typography",
+      "Grids",
+      "Layout",
+      "Color Theory",
+      "Visual Hierarchy"
+    ],
+    frontend: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "React.js",
+      "Vite",
+      "Tailwind CSS",
+      "Framer Motion"
+    ],
+    creative: [
+      "Branding",
+      "Social Media Design",
+      "Marketing Creatives",
+      "Event Design",
+      "Presentation Design",
+      "Visual Storytelling"
+    ]
+  },
+  experiences: [
+    {
+      role: "Graphic Designer",
+      company: "Technovation – The Networking Club, ABESEC",
+      location: "Noida, India",
+      period: "Jun 2025 – Present",
+      isCurrent: true,
+      highlights: [
+        "Design event creatives, promotional graphics, social media assets, and visual communication materials for technical events.",
+        "Develop consistent visual identities across campaigns using typography, composition, color, and layout principles."
+      ]
     },
     {
-      metric: "Industry Recommendation",
-      title: "Letter of Recommendation (LOR)",
-      desc: "Earned formal recommendation letter and verified design credentials for exemplary product UI/UX and graphic design."
+      role: "Lead Graphic Designer",
+      company: "Ignite Room IIIT DELHI",
+      location: "Delhi, India",
+      period: "Jul 2025 – Jun 2026",
+      isCurrent: false,
+      highlights: [
+        "Led graphic design initiatives and created visual assets for events, campaigns, and organizational communication.",
+        "Translated ideas into engaging designs while maintaining consistency across typography, composition, branding, and visual language."
+      ]
+    },
+    {
+      role: "Core Team Designer",
+      company: "Open Source Connect",
+      location: "Remote",
+      period: "Jan 2026 – Feb 2026",
+      isCurrent: false,
+      highlights: [
+        "Contributed to UI/UX and visual design for community initiatives using Figma and Canva.",
+        "Created interface and visual assets with a focus on usability, consistency, and clear visual communication."
+      ]
+    },
+    {
+      role: "Graphic Design Specialist",
+      company: "Know Your Careers",
+      location: "Noida, India",
+      period: "Aug 2025 – Nov 2025",
+      isCurrent: false,
+      highlights: [
+        "Created visual designs and graphic assets for digital campaigns, social media, and organizational communication.",
+        "Worked on design concepts while maintaining consistency in layout, typography, branding, and visual communication."
+      ]
+    }
+  ],
+  projects: [
+    {
+      name: "AYUSH-UI",
+      role: "UI/UX Design Portfolio",
+      status: "Live",
+      link: "https://ayush-ui.vercel.app",
+      highlights: [
+        "Designed and developed a personal portfolio showcasing UI/UX, visual design, and frontend work through responsive and interactive interfaces.",
+        "Applied visual hierarchy, modern typography, reusable components, responsive layouts, and interaction-focused design."
+      ]
+    },
+    {
+      name: "WorkRadar",
+      role: "Predictive Task and Workforce Platform",
+      status: "Live",
+      highlights: [
+        "Designed a productivity platform helping managers identify potential task delays using workload, progress, dependencies, and risk signals.",
+        "Structured dashboard experiences around information hierarchy, actionable insights, data visualization, and intuitive user workflows."
+      ]
+    }
+  ],
+  education: {
+    institution: "ABES Engineering College",
+    degree: "Bachelor of Technology in Computer Science and Engineering",
+    period: "2024 – 2028",
+    location: "Ghaziabad / Noida, India"
+  },
+  achievements: [
+    {
+      title: "National Hackathon 2nd Runner-Up",
+      detail: "Ranked 3rd among 120+ teams and secured 1st position in the Healthcare Innovation Track."
+    },
+    {
+      title: "Hackathon Finalist",
+      detail: "NeuroHACK, JJK Hackathon, Hack4Health, and Nirmaan Buildathon."
     }
   ]
 };

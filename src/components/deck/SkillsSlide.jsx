@@ -101,7 +101,7 @@ export default function SkillsSlide() {
       {/* Footer */}
       <div className="flex items-center justify-between text-[11px] sm:text-xs font-mono text-slate-400 pt-3 border-t border-white/10">
         <span>Designing Skills & Industry Softwares</span>
-        <span className="text-[#ffaa00] font-bold">06 / 07</span>
+        <span className="text-[#ffaa00] font-bold">06 / 08</span>
       </div>
     </div>
   );

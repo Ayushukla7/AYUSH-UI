@@ -7,6 +7,7 @@ import SocialMediaSlide from './components/deck/SocialMediaSlide';
 import WebUiSlide from './components/deck/WebUiSlide';
 import BrandingApparelSlide from './components/deck/BrandingApparelSlide';
 import SkillsSlide from './components/deck/SkillsSlide';
+import ResumeSlide from './components/deck/ResumeSlide';
 import ThankYouSlide from './components/deck/ThankYouSlide';
 import SimpleLightbox from './components/ui/SimpleLightbox';
 
@@ -99,7 +100,14 @@ export default function App() {
           </Card3DTilt>
         </section>
 
-        {/* SECTION 7: THANK YOU & DIRECT CONTACT */}
+        {/* SECTION 7: RESUME & CV (EXPERIENCE, EDUCATION, SKILL MATRIX) */}
+        <section id="resume" className="scroll-mt-20">
+          <Card3DTilt maxRotation={3} glareColor="rgba(255, 170, 0, 0.12)">
+            <ResumeSlide />
+          </Card3DTilt>
+        </section>
+
+        {/* SECTION 8: THANK YOU & DIRECT CONTACT */}
         <section id="contact" className="scroll-mt-20">
           <Card3DTilt maxRotation={4} glareColor="rgba(255, 170, 0, 0.12)">
             <ThankYouSlide />

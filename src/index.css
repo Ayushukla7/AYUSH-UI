@@ -82,3 +82,35 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #ffaa00;
 }
+
+/* Print Optimization for Resume */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  header, footer, nav, section:not(#resume), .dark-deck-slide > div:not(:has(#printable-resume)) {
+    display: none !important;
+  }
+
+  #resume {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .dark-deck-slide {
+    background: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  #printable-resume {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+}

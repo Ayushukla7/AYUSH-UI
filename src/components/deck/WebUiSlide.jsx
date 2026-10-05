@@ -94,7 +94,7 @@ export default function WebUiSlide({ studentErp, technovationWeb, onOpenImage })
       {/* Footer */}
       <div className="flex items-center justify-between text-[11px] sm:text-xs font-mono text-slate-400 pt-3 border-t border-white/10">
         <span>SaaS Dashboards & Dark Web Interfaces</span>
-        <span className="text-[#ffaa00] font-bold">04 / 07</span>
+        <span className="text-[#ffaa00] font-bold">04 / 08</span>
       </div>
     </div>
   );

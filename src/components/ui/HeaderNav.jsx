@@ -9,6 +9,7 @@ export default function HeaderNav() {
     { label: "UI/UX & Web", href: "#web-ui" },
     { label: "Branding", href: "#branding" },
     { label: "Skills", href: "#skills" },
+    { label: "Resume", href: "#resume" },
     { label: "Contact", href: "#contact" }
   ];
 
