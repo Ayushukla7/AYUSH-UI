@@ -49,15 +49,17 @@ export default function HeaderNav({ onOpenResume }) {
 
         {/* Right: Real Clickable Profiles & Email Action & Resume Button */}
         <div className="flex items-center gap-1.5 sm:gap-2 text-xs font-mono">
-          {/* Prominent Resume Button */}
-          <button
-            onClick={onOpenResume || (() => window.open('/resume.html', '_blank'))}
-            className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-gradient-to-r from-[#ffaa00] to-[#ff9000] text-black font-bold hover:brightness-110 transition-all shadow-md text-xs hover:scale-105"
-            title="Open Resume Paper"
+          {/* Prominent Resume Paper Link Button */}
+          <a
+            href="/resume.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-[#ffaa00] to-[#ff9000] text-black font-bold hover:brightness-110 transition-all shadow-md text-xs hover:scale-105"
+            title="Open Full Resume Paper"
           >
             <span>📄</span>
             <span>Resume</span>
-          </button>
+          </a>
 
           <a
             href={`mailto:${personalInfo.email}`}

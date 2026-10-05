@@ -56,13 +56,15 @@ export default function IntroSlide({ onOpenResume }) {
           {/* Direct Clickable Contact & Action CTAs */}
           <div className="pt-3 flex flex-wrap items-center justify-center md:justify-start gap-2.5">
             {/* Resume Button */}
-            <button
-              onClick={onOpenResume || (() => window.open('/resume.html', '_blank'))}
+            <a
+              href="/resume.html"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#ffaa00] to-[#ff9000] text-black font-mono font-bold text-xs hover:brightness-110 transition-all shadow-lg hover:scale-105 flex items-center gap-1.5"
             >
               <span>📄</span>
               <span>View Resume Paper</span>
-            </button>
+            </a>
 
             <a
               href={`mailto:${personalInfo.email}`}

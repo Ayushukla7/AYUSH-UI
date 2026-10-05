@@ -38,13 +38,15 @@ export default function ThankYouSlide({ onOpenResume }) {
 
           <div className="grid grid-cols-1 sm:grid-cols-4 gap-2.5 sm:gap-3 text-xs font-mono">
             {/* Resume Button */}
-            <button
-              onClick={onOpenResume || (() => window.open('/resume.html', '_blank'))}
+            <a
+              href="/resume.html"
+              target="_blank"
+              rel="noopener noreferrer"
               className="p-3 rounded-xl bg-gradient-to-r from-[#ffaa00] to-[#ff9000] text-black font-bold hover:brightness-110 transition-all flex flex-col items-center justify-center text-center gap-1 shadow-md hover:scale-105"
             >
               <span className="text-[10px] text-black/70 uppercase font-mono font-bold">RESUME</span>
               <span className="font-bold text-xs truncate max-w-full">View Paper 📄</span>
-            </button>
+            </a>
 
             {/* Direct Email */}
             <a
