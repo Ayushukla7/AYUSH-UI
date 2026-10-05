@@ -2,7 +2,7 @@ import React from 'react';
 import { personalInfo } from '../../data/projectsData';
 import { SquiggleDoodle, PenToolBadge, SoftwareBadges } from '../ui/DesignDoodles';
 
-export default function IntroSlide() {
+export default function IntroSlide({ onOpenResume }) {
   return (
     <div className="dark-deck-slide rounded-2xl p-6 sm:p-10 md:p-12 min-h-[480px] sm:min-h-[540px] flex flex-col justify-between relative overflow-hidden select-none">
       {/* Top Meta Bar */}
@@ -55,9 +55,18 @@ export default function IntroSlide() {
 
           {/* Direct Clickable Contact & Action CTAs */}
           <div className="pt-3 flex flex-wrap items-center justify-center md:justify-start gap-2.5">
+            {/* Resume Button */}
+            <button
+              onClick={onOpenResume || (() => window.open('/resume.html', '_blank'))}
+              className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#ffaa00] to-[#ff9000] text-black font-mono font-bold text-xs hover:brightness-110 transition-all shadow-lg hover:scale-105 flex items-center gap-1.5"
+            >
+              <span>📄</span>
+              <span>View Resume Paper</span>
+            </button>
+
             <a
               href={`mailto:${personalInfo.email}`}
-              className="px-4 py-2 rounded-xl bg-[#ffaa00] text-black font-mono font-bold text-xs hover:bg-[#ffb733] transition-all shadow-lg hover:scale-105"
+              className="px-3.5 py-2 rounded-xl bg-white/10 text-white font-mono text-xs hover:bg-white/20 border border-white/10 transition-all hover:scale-105"
             >
               ✉ {personalInfo.email}
             </a>

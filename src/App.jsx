@@ -7,14 +7,15 @@ import SocialMediaSlide from './components/deck/SocialMediaSlide';
 import WebUiSlide from './components/deck/WebUiSlide';
 import BrandingApparelSlide from './components/deck/BrandingApparelSlide';
 import SkillsSlide from './components/deck/SkillsSlide';
-import ResumeSlide from './components/deck/ResumeSlide';
 import ThankYouSlide from './components/deck/ThankYouSlide';
 import SimpleLightbox from './components/ui/SimpleLightbox';
+import ResumeModal from './components/ui/ResumeModal';
 
 import { portfolioSections, personalInfo } from './data/projectsData';
 
 export default function App() {
   const [lightboxData, setLightboxData] = useState({ isOpen: false, src: '', title: '' });
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   const handleOpenImage = (src, title) => {
     setLightboxData({ isOpen: true, src, title });
@@ -38,7 +39,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#08080a] text-white flex flex-col justify-between relative selection:bg-[#ffaa00] selection:text-black">
       {/* Top Sticky Header Navigation with Direct Jump Controls */}
-      <HeaderNav />
+      <HeaderNav onOpenResume={() => setIsResumeOpen(true)} />
 
       {/* Main Slide Deck Canvas with 3D Spatial Tilt */}
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 space-y-12 relative z-10">
@@ -46,7 +47,7 @@ export default function App() {
         {/* SECTION 1: HERO / INTRO (STARTS DIRECTLY WITH AYUSH'S INTRO & PHOTO) */}
         <section id="about" className="scroll-mt-20">
           <Card3DTilt maxRotation={4} glareColor="rgba(255, 170, 0, 0.12)">
-            <IntroSlide />
+            <IntroSlide onOpenResume={() => setIsResumeOpen(true)} />
           </Card3DTilt>
         </section>
 
@@ -100,17 +101,10 @@ export default function App() {
           </Card3DTilt>
         </section>
 
-        {/* SECTION 7: RESUME & CV (EXPERIENCE, EDUCATION, SKILL MATRIX) */}
-        <section id="resume" className="scroll-mt-20">
-          <Card3DTilt maxRotation={3} glareColor="rgba(255, 170, 0, 0.12)">
-            <ResumeSlide />
-          </Card3DTilt>
-        </section>
-
-        {/* SECTION 8: THANK YOU & DIRECT CONTACT */}
+        {/* SECTION 7: THANK YOU & DIRECT CONTACT */}
         <section id="contact" className="scroll-mt-20">
           <Card3DTilt maxRotation={4} glareColor="rgba(255, 170, 0, 0.12)">
-            <ThankYouSlide />
+            <ThankYouSlide onOpenResume={() => setIsResumeOpen(true)} />
           </Card3DTilt>
         </section>
       </main>
@@ -120,6 +114,13 @@ export default function App() {
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
           <span>{personalInfo.name} — {personalInfo.role}</span>
           <div className="flex items-center gap-4 text-slate-400">
+            <button 
+              onClick={() => setIsResumeOpen(true)}
+              className="hover:text-[#ffaa00] transition-colors text-white font-bold"
+            >
+              Resume 📄
+            </button>
+            <span>•</span>
             <a href={`mailto:${personalInfo.email}`} className="hover:text-[#ffaa00] transition-colors">{personalInfo.email}</a>
             <span>•</span>
             <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-[#ffaa00] transition-colors">LinkedIn</a>
@@ -139,6 +140,12 @@ export default function App() {
           onClose={handleCloseLightbox}
         />
       )}
+
+      {/* Dedicated Authentic Resume Paper Modal */}
+      <ResumeModal
+        isOpen={isResumeOpen}
+        onClose={() => setIsResumeOpen(false)}
+      />
     </div>
   );
 }

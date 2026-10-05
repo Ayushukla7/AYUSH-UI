@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayush Shukla — Resume</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #0d0f12;
+      color: #1a1a1a;
+      font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+      line-height: 1.35;
+      font-size: 15px;
+      padding: 24px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Floating Action Bar (hidden on print) */
+    .action-bar {
+      width: 100%;
+      max-width: 850px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #181b22;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 12px 20px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .action-bar .brand {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .action-bar .brand span.badge {
+      background: #ffaa00;
+      color: #000;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn-primary {
+      background: #ffaa00;
+      color: #000;
+      border: 1px solid #ffaa00;
+    }
+
+    .btn-primary:hover {
+      background: #ffb733;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.16);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    /* Authentic Resume Paper Sheet */
+    .resume-paper {
+      background: #ffffff;
+      width: 100%;
+      max-width: 850px;
+      min-height: 1100px;
+      padding: 48px 56px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+      border-radius: 4px;
+      color: #111827;
+      position: relative;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .header h1 {
+      font-size: 34px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: #000000;
+      margin-bottom: 6px;
+    }
+
+    .contact-line {
+      font-size: 14px;
+      color: #1e3a8a;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .contact-line a {
+      color: #1d4ed8;
+      text-decoration: none;
+    }
+
+    .contact-line a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-line span.phone {
+      color: #000000;
+    }
+
+    /* Section Heading */
+    .section-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1e40af;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      text-transform: none;
+      letter-spacing: 0.2px;
+    }
+
+    .profile-text {
+      font-size: 14px;
+      text-align: justify;
+      color: #1f2937;
+      line-height: 1.4;
+    }
+
+    /* Skills Table / List */
+    .skills-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      font-size: 14px;
+      color: #1f2937;
+    }
+
+    .skills-row {
+      display: flex;
+      align-items: baseline;
+    }
+
+    .skills-label {
+      font-weight: 700;
+      color: #111827;
+      min-width: 110px;
+      flex-shrink: 0;
+    }
+
+    .skills-content {
+      color: #1f2937;
+    }
+
+    /* Experience Items */
+    .exp-item {
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 14.5px;
+    }
+
+    .exp-role {
+      font-weight: 700;
+      color: #000000;
+    }
+
+    .exp-date {
+      font-style: italic;
+      color: #374151;
+      font-size: 13.5px;
+    }
+
+    .exp-sub {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 14px;
+      color: #374151;
+      font-style: italic;
+      margin-bottom: 2px;
+    }
+
+    .bullet-list {
+      list-style-type: disc;
+      padding-left: 18px;
+      margin-top: 2px;
+    }
+
+    .bullet-list li {
+      font-size: 13.5px;
+      color: #1f2937;
+      margin-bottom: 2px;
+      line-height: 1.35;
+      text-align: justify;
+    }
+
+    /* Projects */
+    .proj-item {
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    .proj-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 14.5px;
+    }
+
+    .proj-title {
+      font-weight: 700;
+      color: #000000;
+    }
+
+    .proj-live {
+      color: #1d4ed8;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .proj-live:hover {
+      text-decoration: underline;
+    }
+
+    /* Education */
+    .edu-item {
+      margin-top: 6px;
+    }
+
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #000000;
+    }
+
+    .edu-degree {
+      font-size: 14px;
+      color: #374151;
+      font-style: normal;
+    }
+
+    /* Achievements */
+    .achieve-list {
+      list-style-type: disc;
+      padding-left: 18px;
+      margin-top: 4px;
+    }
+
+    .achieve-list li {
+      font-size: 13.5px;
+      color: #1f2937;
+      margin-bottom: 3px;
+      line-height: 1.35;
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: #ffffff !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .action-bar {
+        display: none !important;
+      }
+
+      .resume-paper {
+        box-shadow: none !important;
+        padding: 24px 32px !important;
+        max-width: 100% !important;
+        min-height: auto !important;
+        border-radius: 0 !important;
+      }
+
+      @page {
+        margin: 12mm 15mm;
+        size: A4 portrait;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .resume-paper {
+        padding: 24px 18px;
+      }
+      .header h1 {
+        font-size: 26px;
+      }
+      .contact-line {
+        font-size: 12px;
+        gap: 6px;
+      }
+      .skills-row {
+        flex-direction: column;
+      }
+      .skills-label {
+        min-width: auto;
+        margin-bottom: 1px;
+      }
+      .exp-header, .exp-sub, .proj-header, .edu-header {
+        flex-direction: column;
+      }
+      .action-bar {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Action Bar -->
+  <div class="action-bar">
+    <div class="brand">
+      <span>Ayush Shukla</span>
+      <span class="badge">Official Resume Paper</span>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-primary" onclick="window.print()">
+        <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        Print / Save PDF
+      </button>
+      <a href="/" class="btn btn-secondary">
+        ← Back to Portfolio
+      </a>
+    </div>
+  </div>
+
+  <!-- Authentic Resume Paper -->
+  <main class="resume-paper" id="resume-document">
+    
+    <!-- Header -->
+    <header class="header">
+      <h1>Ayush Shukla</h1>
+      <div class="contact-line">
+        <span class="phone">+91 9369657005</span>
+        <a href="mailto:ayush.apply41@gmail.com">ayush.apply41@gmail.com</a>
+        <a href="https://linkedin.com/in/ayushshukla41" target="_blank" rel="noopener noreferrer">linkedin.com/in/ayushshukla41</a>
+        <a href="https://ayush-ui.vercel.app" target="_blank" rel="noopener noreferrer">ayush-ui.vercel.app</a>
+      </div>
+    </header>
+
+    <!-- Profile -->
+    <section>
+      <h2 class="section-title">Profile</h2>
+      <p class="profile-text">
+        UI/UX and Graphic Designer with experience across 3 design-focused roles and 10+ high-fidelity interface projects. Created 40+ visual assets for technical events and campaigns reaching 1,500+ attendees, with hands-on experience in Figma, Canva, and Adobe tools. Strong in UI design, visual systems, branding, and responsive web experiences, with the ability to take designs from concept to implementation.
+      </p>
+    </section>
+
+    <!-- Core Skills -->
+    <section>
+      <h2 class="section-title">Core Skills</h2>
+      <div class="skills-grid">
+        <div class="skills-row">
+          <span class="skills-label">UI/UX</span>
+          <span class="skills-content">Wireframing, Prototyping, User Flows, Interaction Design, Information Architecture, Visual Design, Responsive Design, Design Systems</span>
+        </div>
+        <div class="skills-row">
+          <span class="skills-label">Tools</span>
+          <span class="skills-content">Figma, Canva, Adobe Photoshop, Adobe Illustrator, Adobe After Effects, Components, Typography, Grids, Layout, Color Theory, Visual Hierarchy</span>
+        </div>
+        <div class="skills-row">
+          <span class="skills-label">Frontend</span>
+          <span class="skills-content">HTML5, CSS3, JavaScript, React.js, Vite, Tailwind CSS, Framer Motion</span>
+        </div>
+        <div class="skills-row">
+          <span class="skills-label">Creative</span>
+          <span class="skills-content">Branding, Social Media Design, Marketing Creatives, Event Design, Presentation Design, Visual Storytelling</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design Experience -->
+    <section>
+      <h2 class="section-title">Design Experience</h2>
+      
+      <!-- Role 1 -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-role">Graphic Designer</span>
+          <span class="exp-date">Jun 2025 – Present</span>
+        </div>
+        <div class="exp-sub">
+          <span>Technovation – The Networking Club, ABESEC</span>
+          <span>Noida, India</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Design event creatives, promotional graphics, social media assets, and visual communication materials for technical events.</li>
+          <li>Develop consistent visual identities across campaigns using typography, composition, color, and layout principles.</li>
+        </ul>
+      </div>
+
+      <!-- Role 2 -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-role">Lead Graphic Designer</span>
+          <span class="exp-date">Jul 2025 – Jun 2026</span>
+        </div>
+        <div class="exp-sub">
+          <span>Ignite Room IIIT DELHI</span>
+          <span>Delhi, India</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Led graphic design initiatives and created visual assets for events, campaigns, and organizational communication.</li>
+          <li>Translated ideas into engaging designs while maintaining consistency across typography, composition, branding, and visual language.</li>
+        </ul>
+      </div>
+
+      <!-- Role 3 -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-role">Core Team Designer</span>
+          <span class="exp-date">Jan 2026 – Feb 2026</span>
+        </div>
+        <div class="exp-sub">
+          <span>Open Source Connect</span>
+          <span>Remote</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Contributed to UI/UX and visual design for community initiatives using Figma and Canva.</li>
+          <li>Created interface and visual assets with a focus on usability, consistency, and clear visual communication.</li>
+        </ul>
+      </div>
+
+      <!-- Role 4 -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-role">Graphic Design Specialist</span>
+          <span class="exp-date">Aug 2025 – Nov 2025</span>
+        </div>
+        <div class="exp-sub">
+          <span>Know Your Careers</span>
+          <span>Noida, India</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Created visual designs and graphic assets for digital campaigns, social media, and organizational communication.</li>
+          <li>Worked on design concepts while maintaining consistency in layout, typography, branding, and visual communication.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Selected Projects -->
+    <section>
+      <h2 class="section-title">Selected Projects</h2>
+      
+      <!-- Project 1 -->
+      <div class="proj-item">
+        <div class="proj-header">
+          <span class="proj-title">AYUSH-UI | UI/UX Design Portfolio</span>
+          <a href="https://ayush-ui.vercel.app" target="_blank" rel="noopener noreferrer" class="proj-live">Live</a>
+        </div>
+        <ul class="bullet-list">
+          <li>Designed and developed a personal portfolio showcasing UI/UX, visual design, and frontend work through responsive and interactive interfaces.</li>
+          <li>Applied visual hierarchy, modern typography, reusable components, responsive layouts, and interaction-focused design.</li>
+        </ul>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="proj-item">
+        <div class="proj-header">
+          <span class="proj-title">WorkRadar | Predictive Task and Workforce Platform</span>
+          <a href="https://ayush-ui.vercel.app" target="_blank" rel="noopener noreferrer" class="proj-live">Live</a>
+        </div>
+        <ul class="bullet-list">
+          <li>Designed a productivity platform helping managers identify potential task delays using workload, progress, dependencies, and risk signals.</li>
+          <li>Structured dashboard experiences around information hierarchy, actionable insights, data visualization, and intuitive user workflows.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <h2 class="section-title">Education</h2>
+      <div class="edu-item">
+        <div class="edu-header">
+          <span>ABES Engineering College</span>
+          <span style="font-style: italic; font-weight: normal;">2024 – 2028</span>
+        </div>
+        <div class="edu-degree">Bachelor of Technology in Computer Science and Engineering</div>
+      </div>
+    </section>
+
+    <!-- Achievements -->
+    <section>
+      <h2 class="section-title">Achievements</h2>
+      <ul class="achieve-list">
+        <li><strong>National Hackathon 2nd Runner-Up:</strong> Ranked 3rd among 120+ teams and secured 1st position in the Healthcare Innovation Track.</li>
+        <li><strong>Hackathon Finalist:</strong> NeuroHACK, JJK Hackathon, Hack4Health, and Nirmaan Buildathon.</li>
+      </ul>
+    </section>
+
+  </main>
+
+</body>
+</html>

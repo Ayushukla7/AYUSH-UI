@@ -1,7 +1,7 @@
 import React from 'react';
 import { personalInfo } from '../../data/projectsData';
 
-export default function HeaderNav() {
+export default function HeaderNav({ onOpenResume }) {
   const navSections = [
     { label: "About", href: "#about" },
     { label: "Achievements", href: "#achievements" },
@@ -9,7 +9,6 @@ export default function HeaderNav() {
     { label: "UI/UX & Web", href: "#web-ui" },
     { label: "Branding", href: "#branding" },
     { label: "Skills", href: "#skills" },
-    { label: "Resume", href: "#resume" },
     { label: "Contact", href: "#contact" }
   ];
 
@@ -48,11 +47,21 @@ export default function HeaderNav() {
           ))}
         </nav>
 
-        {/* Right: Real Clickable Profiles & Email Action */}
+        {/* Right: Real Clickable Profiles & Email Action & Resume Button */}
         <div className="flex items-center gap-1.5 sm:gap-2 text-xs font-mono">
+          {/* Prominent Resume Button */}
+          <button
+            onClick={onOpenResume || (() => window.open('/resume.html', '_blank'))}
+            className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-gradient-to-r from-[#ffaa00] to-[#ff9000] text-black font-bold hover:brightness-110 transition-all shadow-md text-xs hover:scale-105"
+            title="Open Resume Paper"
+          >
+            <span>📄</span>
+            <span>Resume</span>
+          </button>
+
           <a
             href={`mailto:${personalInfo.email}`}
-            className="px-3 py-1.5 rounded-lg bg-[#ffaa00] text-black font-bold hover:bg-[#ffb733] transition-colors shadow-sm text-xs"
+            className="px-2.5 py-1.5 rounded-lg bg-white/10 text-white font-bold hover:bg-white/20 transition-colors border border-white/10 text-xs"
           >
             Email
           </a>

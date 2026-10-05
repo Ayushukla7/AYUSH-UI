@@ -95,7 +95,7 @@ export default function BrandingApparelSlide({ teamTechnoMerch, speakerSession, 
       {/* Footer */}
       <div className="flex items-center justify-between text-[11px] sm:text-xs font-mono text-slate-400 pt-3 border-t border-white/10">
         <span>Apparel Graphics & Event Key Visuals</span>
-        <span className="text-[#ffaa00] font-bold">05 / 08</span>
+        <span className="text-[#ffaa00] font-bold">05 / 07</span>
       </div>
     </div>
   );

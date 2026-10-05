@@ -2,7 +2,7 @@ import React from 'react';
 import { personalInfo } from '../../data/projectsData';
 import { SquiggleDoodle } from '../ui/DesignDoodles';
 
-export default function ThankYouSlide() {
+export default function ThankYouSlide({ onOpenResume }) {
   return (
     <div className="dark-deck-slide rounded-2xl p-6 sm:p-10 md:p-12 min-h-[400px] sm:min-h-[440px] flex flex-col justify-between relative overflow-hidden select-none">
       {/* Top Header */}
@@ -36,7 +36,16 @@ export default function ThankYouSlide() {
             CONTACT & SOCIAL PROFILES
           </span>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 text-xs font-mono">
+          <div className="grid grid-cols-1 sm:grid-cols-4 gap-2.5 sm:gap-3 text-xs font-mono">
+            {/* Resume Button */}
+            <button
+              onClick={onOpenResume || (() => window.open('/resume.html', '_blank'))}
+              className="p-3 rounded-xl bg-gradient-to-r from-[#ffaa00] to-[#ff9000] text-black font-bold hover:brightness-110 transition-all flex flex-col items-center justify-center text-center gap-1 shadow-md hover:scale-105"
+            >
+              <span className="text-[10px] text-black/70 uppercase font-mono font-bold">RESUME</span>
+              <span className="font-bold text-xs truncate max-w-full">View Paper 📄</span>
+            </button>
+
             {/* Direct Email */}
             <a
               href={`mailto:${personalInfo.email}`}
@@ -85,7 +94,7 @@ export default function ThankYouSlide() {
       {/* Footer Line */}
       <div className="flex items-center justify-between text-[11px] sm:text-xs font-mono text-slate-400 pt-3 sm:pt-4 border-t border-white/10 relative z-10">
         <span>Ayush Shukla • UI/UX & Graphic Designer</span>
-        <span className="text-[#ffaa00] font-bold">08 / 08</span>
+        <span className="text-[#ffaa00] font-bold">07 / 07</span>
       </div>
     </div>
   );
