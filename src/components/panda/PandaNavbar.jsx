@@ -65,16 +65,24 @@ export default function PandaNavbar() {
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-xs font-bold font-unbounded hover:from-purple-500 hover:to-indigo-500 transition-all shadow-lg shadow-purple-900/50 hover:shadow-purple-700/60 hover:scale-105"
           >
-            <span>📄</span>
+            <svg className="w-3.5 h-3.5 text-purple-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+            </svg>
             <span>Resume</span>
           </a>
 
           {/* Quick Email */}
           <a
             href={`mailto:${personalInfo.email}`}
-            className="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-medium text-slate-200 hover:text-white transition-all hover:scale-105"
+            className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-medium text-slate-200 hover:text-white transition-all hover:scale-105"
           >
-            Email ✉️
+            <svg className="w-3.5 h-3.5 text-[#EA4335]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            <span>Email</span>
           </a>
         </div>
 
@@ -119,14 +127,22 @@ export default function PandaNavbar() {
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-unbounded font-bold text-xs shadow-lg text-center"
             >
-              <span>📄</span>
+              <svg className="w-3.5 h-3.5 text-purple-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+              </svg>
               <span>View Official Resume</span>
             </a>
             <a
               href={`mailto:${personalInfo.email}`}
-              className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-center text-xs font-mono text-slate-300"
+              className="flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-center text-xs font-mono text-slate-300"
             >
-              ✉️ {personalInfo.email}
+              <svg className="w-3.5 h-3.5 text-[#EA4335]" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+              <span>{personalInfo.email}</span>
             </a>
           </div>
         </div>

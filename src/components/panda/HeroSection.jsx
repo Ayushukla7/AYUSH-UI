@@ -86,14 +86,14 @@ export default function HeroSection() {
         {/* Bottom Bar: Social Icons & Direct Resume Button */}
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
           
-          {/* Social Profiles with Neon Purple Rings */}
+          {/* Social Profiles with Official Brand Color Patterns */}
           <div className="flex items-center gap-3">
             {/* LinkedIn */}
             <a
               href={personalInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-11 h-11 rounded-full bg-[#0d0d18] border border-purple-500/30 hover:border-purple-400 text-slate-300 hover:text-white hover:bg-purple-600/20 flex items-center justify-center transition-all shadow-lg hover:scale-110"
+              className="w-11 h-11 rounded-full bg-[#0d0d18] border border-white/10 hover:border-[#0A66C2] text-slate-300 hover:text-[#0A66C2] hover:bg-[#001D3D]/60 flex items-center justify-center transition-all shadow-lg hover:scale-110 hover:shadow-[#0A66C2]/30"
               title="LinkedIn"
             >
               <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -106,7 +106,7 @@ export default function HeroSection() {
               href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-11 h-11 rounded-full bg-[#0d0d18] border border-purple-500/30 hover:border-purple-400 text-slate-300 hover:text-white hover:bg-purple-600/20 flex items-center justify-center transition-all shadow-lg hover:scale-110"
+              className="w-11 h-11 rounded-full bg-[#0d0d18] border border-white/10 hover:border-purple-400 text-slate-300 hover:text-white hover:bg-purple-600/20 flex items-center justify-center transition-all shadow-lg hover:scale-110 hover:shadow-purple-950/50"
               title="GitHub"
             >
               <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -119,7 +119,7 @@ export default function HeroSection() {
               href={personalInfo.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-11 h-11 rounded-full bg-[#0d0d18] border border-purple-500/30 hover:border-purple-400 text-slate-300 hover:text-white hover:bg-purple-600/20 flex items-center justify-center transition-all shadow-lg hover:scale-110"
+              className="w-11 h-11 rounded-full bg-[#0d0d18] border border-white/10 hover:border-[#E1306C] text-slate-300 hover:text-[#E1306C] hover:bg-[#2E0818]/60 flex items-center justify-center transition-all shadow-lg hover:scale-110 hover:shadow-[#E1306C]/30"
               title="Instagram"
             >
               <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -130,11 +130,11 @@ export default function HeroSection() {
             {/* Email */}
             <a
               href={`mailto:${personalInfo.email}`}
-              className="w-11 h-11 rounded-full bg-[#0d0d18] border border-purple-500/30 hover:border-purple-400 text-slate-300 hover:text-white hover:bg-purple-600/20 flex items-center justify-center transition-all shadow-lg hover:scale-110"
+              className="w-11 h-11 rounded-full bg-[#0d0d18] border border-white/10 hover:border-purple-400 text-slate-300 hover:text-white hover:bg-purple-600/20 flex items-center justify-center transition-all shadow-lg hover:scale-110 hover:shadow-purple-950/50"
               title="Send Email"
             >
-              <svg className="w-5 h-5 fill-none stroke-current" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
               </svg>
             </a>
           </div>
