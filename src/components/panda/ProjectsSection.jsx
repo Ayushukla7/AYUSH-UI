@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { portfolioSections } from '../../data/projectsData';
 
 export default function ProjectsSection({ onOpenImage }) {
-  const [activeFilter, setActiveFilter] = useState('all'); // 'all' | 'carousels' | 'web' | 'branding'
+  const [activeFilter, setActiveFilter] = useState('all');
 
   const categories = [
     { id: 'all', label: 'All Projects' },
@@ -11,7 +11,6 @@ export default function ProjectsSection({ onOpenImage }) {
     { id: 'branding', label: 'Branding & Apparel' }
   ];
 
-  // Map filters
   const filteredProjects = portfolioSections.filter(project => {
     if (activeFilter === 'all') return true;
     if (activeFilter === 'carousels') return project.slides && project.slides.length > 0;
@@ -32,11 +31,11 @@ export default function ProjectsSection({ onOpenImage }) {
           <span className="text-purple-400 font-mono text-xs uppercase tracking-widest block font-bold">
             03. PORTFOLIO SHOWCASE
           </span>
-          <h2 className="font-unbounded font-black text-3xl sm:text-5xl text-white tracking-tight leading-tight">
+          <h2 className="font-display font-black text-3xl sm:text-5xl text-white tracking-tight leading-tight">
             Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-300 to-indigo-300">Works</span> & Designs
           </h2>
-          <p className="text-xs sm:text-sm text-slate-400 max-w-lg mx-auto pt-1">
-            Real projects covering multi-slide storytelling, SaaS interfaces, SIH platforms, and event key visuals.
+          <p className="text-xs sm:text-sm text-slate-300 max-w-lg mx-auto pt-1 font-sans">
+            Real production projects covering multi-slide storytelling, SaaS interfaces, SIH platforms, and event key visuals.
           </p>
         </div>
 
@@ -46,7 +45,7 @@ export default function ProjectsSection({ onOpenImage }) {
             <button
               key={cat.id}
               onClick={() => setActiveFilter(cat.id)}
-              className={`px-5 py-2 rounded-full text-xs font-unbounded transition-all ${
+              className={`px-5 py-2 rounded-full text-xs font-display font-semibold transition-all ${
                 activeFilter === cat.id
                   ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold shadow-lg shadow-purple-900/50 scale-105'
                   : 'bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-white/10'
@@ -62,7 +61,7 @@ export default function ProjectsSection({ onOpenImage }) {
           {filteredProjects.map((project, idx) => (
             <div
               key={project.id || idx}
-              className="purple-glass-card rounded-3xl p-5 sm:p-6 flex flex-col justify-between group overflow-hidden"
+              className="purple-glass-card rounded-3xl p-5 sm:p-6 flex flex-col justify-between group overflow-hidden border border-white/10"
             >
               <div>
                 {/* Meta Top Tag */}
@@ -78,12 +77,12 @@ export default function ProjectsSection({ onOpenImage }) {
                 </div>
 
                 {/* Project Title */}
-                <h3 className="font-unbounded font-bold text-base sm:text-lg text-white group-hover:text-purple-300 transition-colors mb-2">
+                <h3 className="font-display font-bold text-base sm:text-lg text-white group-hover:text-purple-300 transition-colors mb-2">
                   {project.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-xs text-slate-300 leading-relaxed mb-4 line-clamp-3">
+                <p className="text-xs text-slate-300 leading-relaxed mb-4 line-clamp-3 font-sans">
                   {project.description}
                 </p>
 
@@ -98,59 +97,24 @@ export default function ProjectsSection({ onOpenImage }) {
                     className="w-full h-full object-contain group-hover/img:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-purple-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="px-3.5 py-1.5 rounded-full bg-purple-600 text-white font-unbounded text-xs font-bold shadow-lg">
-                      View Full Asset ↗
+                  <div className="absolute inset-0 bg-purple-900/20 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                    <span className="px-3.5 py-1.5 rounded-full bg-white/90 text-[#030307] font-display font-bold text-xs shadow-lg">
+                      View Full Preview ↗
                     </span>
                   </div>
                 </div>
-
-                {/* Carousel Multi-Slide Mini Preview (if available) */}
-                {project.slides && (
-                  <div className="mt-4 pt-3 border-t border-white/5 space-y-2">
-                    <div className="flex items-center justify-between text-[11px] font-mono text-slate-400">
-                      <span>Carousel Slides:</span>
-                      <button
-                        onClick={() => onOpenImage(project.fullImage, `${project.title} (Full Strip)`)}
-                        className="text-purple-400 hover:underline font-bold"
-                      >
-                        Full Strip ↗
-                      </button>
-                    </div>
-
-                    <div className="grid grid-cols-5 gap-1.5">
-                      {project.slides.map((slide, sIdx) => (
-                        <div
-                          key={sIdx}
-                          onClick={() => onOpenImage(slide.img, `${project.title} — Slide #${slide.num}`)}
-                          className="aspect-square rounded-lg overflow-hidden bg-black/60 border border-white/10 hover:border-purple-400 cursor-pointer transition-all relative group/slide"
-                          title={`Slide #${slide.num}: ${slide.title}`}
-                        >
-                          <img
-                            src={slide.img}
-                            alt={slide.title}
-                            className="w-full h-full object-cover group-hover/slide:scale-110 transition-transform"
-                          />
-                          <span className="absolute bottom-0.5 right-0.5 text-[8px] font-mono bg-black/80 px-1 rounded text-white">
-                            #{slide.num}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </div>
 
-              {/* Bottom Action */}
-              <div className="mt-5 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-mono">
+              {/* Action Button */}
+              <div className="pt-4 border-t border-white/10 mt-4 flex items-center justify-between text-xs font-mono">
                 <button
                   onClick={() => onOpenImage(project.fullImage, project.title)}
-                  className="text-purple-400 hover:text-purple-300 transition-colors font-medium flex items-center gap-1"
+                  className="text-purple-400 hover:text-purple-300 font-bold transition-colors flex items-center gap-1 font-display"
                 >
-                  <span>Expand Visual</span>
-                  <span>↗</span>
+                  <span>Inspect Details</span>
+                  <span>→</span>
                 </button>
-                <span className="text-slate-500 font-mono text-[11px]">Ayush Shukla</span>
+                <span className="text-[10px] text-slate-400">Ayush Shukla</span>
               </div>
             </div>
           ))}

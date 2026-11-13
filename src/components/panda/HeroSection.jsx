@@ -3,43 +3,57 @@ import { personalInfo } from '../../data/projectsData';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen pt-28 pb-16 flex flex-col justify-center overflow-hidden">
+    <section className="relative min-h-screen pt-24 pb-16 flex flex-col justify-center overflow-hidden">
       
-      {/* Background Animated Blobs for Atmosphere */}
-      <div className="blob-animate top-20 left-1/4 -translate-x-1/2 opacity-75" />
-      <div className="blob-animate bottom-10 right-1/4 translate-x-1/2 opacity-60" style={{ animationDelay: '3s' }} />
+      {/* 1. Iconic Background Editorial Display Word "PORTFOLIO" matching Reference Image */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0 overflow-hidden">
+        <span className="font-editorial font-black text-[17vw] sm:text-[19vw] tracking-wider uppercase text-transparent bg-clip-text bg-gradient-to-b from-purple-300 via-purple-500/50 to-purple-900/10 opacity-70 leading-none filter drop-shadow-[0_10px_40px_rgba(168,85,247,0.3)]">
+          PORTFOLIO
+        </span>
+      </div>
+
+      {/* 2. Ambient Purple Aura Glow behind Portrait */}
+      <div className="blob-animate top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] sm:w-[500px] sm:h-[500px] opacity-60 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         
-        {/* Main 3-Column Hero Grid Matching Reference Design */}
+        {/* Main 3-Column Hero Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-center min-h-[580px]">
           
-          {/* Left Column: Greeting & Huge Name */}
-          <div className="lg:col-span-4 space-y-2 text-center lg:text-left order-1">
-            <h3 className="text-slate-400 font-medium text-lg sm:text-xl tracking-wide">
+          {/* Left Column: Greeting, Massive Name & Description */}
+          <div className="lg:col-span-4 space-y-3 text-center lg:text-left order-1">
+            <span className="text-purple-400 font-mono text-xs uppercase tracking-widest font-semibold block">
               Hello, I'm
-            </h3>
-            <h1 className="font-unbounded font-black text-5xl sm:text-7xl md:text-8xl text-white tracking-tighter leading-[0.92] drop-shadow-2xl">
+            </span>
+
+            <h1 className="font-display font-black text-5xl sm:text-6xl md:text-7xl text-white tracking-tight leading-[0.95]">
               Ayush <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-purple-300">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-300 to-indigo-200">
                 Shukla
               </span>
             </h1>
 
-            <p className="text-xs sm:text-sm text-slate-400 max-w-sm mx-auto lg:mx-0 pt-3 leading-relaxed">
-              Crafting high-converting UI/UX systems, SaaS dashboards, brand identities, and social storytelling.
+            <p className="text-sm text-slate-300 max-w-sm mx-auto lg:mx-0 pt-2 leading-relaxed">
+              UI/UX & Graphic Designer dedicated to crafting high-converting digital platforms, SaaS dashboards, apparel branding, and social storytelling.
             </p>
+
+            <div className="pt-2 flex flex-wrap justify-center lg:justify-start gap-2">
+              <span className="px-3 py-1 rounded-full bg-purple-950/50 border border-purple-500/20 text-xs font-mono text-purple-300">
+                📍 Noida / Delhi NCR
+              </span>
+              <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-mono text-emerald-400 flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span>Available for Roles</span>
+              </span>
+            </div>
           </div>
 
-          {/* Center Column: Cutout Portrait with Animated Purple Aura Blob */}
+          {/* Center Column: Cutout Portrait with Ambient Purple Backlight Aura */}
           <div className="lg:col-span-4 flex items-center justify-center relative order-2 py-6 lg:py-0">
-            {/* Pulsing Rotating Blob directly behind portrait */}
-            <div className="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gradient-to-tr from-purple-700 via-purple-500 to-indigo-600 blur-[60px] opacity-80 animate-blob pointer-events-none" />
-            
-            {/* Inner secondary glow ring */}
-            <div className="absolute w-60 h-60 rounded-full bg-purple-400/40 blur-2xl pointer-events-none" />
+            {/* Glowing Backlight Disc */}
+            <div className="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gradient-to-tr from-purple-700 via-purple-600/60 to-indigo-600/40 blur-[55px] opacity-75 pointer-events-none" />
 
-            {/* Ayush's Cutout Profile Image */}
+            {/* Ayush's Profile Image */}
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 z-10 group">
               <div className="w-full h-full rounded-full p-2 bg-gradient-to-b from-purple-400/40 via-purple-600/20 to-transparent backdrop-blur-sm shadow-2xl shadow-purple-950/80">
                 <img
@@ -49,44 +63,45 @@ export default function HeroSection() {
                 />
               </div>
 
-              {/* Floating Status Pill */}
-              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-[#0a0a14]/90 border border-purple-500/40 backdrop-blur-md shadow-xl flex items-center gap-2 text-xs font-unbounded text-white whitespace-nowrap">
+              {/* Status Pill Badge */}
+              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-[#0a0a14]/90 border border-purple-500/40 backdrop-blur-md shadow-xl flex items-center gap-2 text-xs font-display font-semibold text-white whitespace-nowrap">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Available for Roles</span>
+                <span>UI/UX & Graphic Designer</span>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Creative & Roles */}
-          <div className="lg:col-span-4 space-y-1.5 text-center lg:text-left order-3 lg:pl-6">
-            <span className="text-purple-400 font-semibold tracking-widest uppercase text-xs sm:text-sm font-unbounded block">
-              Creative
+          {/* Right Column: Roles & Specializations */}
+          <div className="lg:col-span-4 space-y-2 text-center lg:text-left order-3 lg:pl-6">
+            <span className="text-purple-400 font-semibold tracking-widest uppercase text-xs sm:text-sm font-mono block">
+              Discipline
             </span>
-            <h2 className="font-unbounded font-black text-3xl sm:text-4xl md:text-5xl text-white tracking-tight leading-tight">
-              UI/UX &
+            <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-white tracking-tight leading-tight">
+              Design Systems
             </h2>
-            <h2 className="font-unbounded font-black text-3xl sm:text-4xl md:text-5xl text-purple-400 tracking-tight leading-tight">
-              Designer
+            <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-purple-400 tracking-tight leading-tight">
+              & Visual Media
             </h2>
 
             {/* Quick Specialization Tags */}
             <div className="pt-4 flex flex-wrap justify-center lg:justify-start gap-2">
-              {["SaaS UI", "Figma", "Design Systems", "Apparel & Posters"].map((tag, idx) => (
+              {["SaaS UI", "Figma Systems", "Brand Identity", "Apparel & Posters"].map((tag, idx) => (
                 <span
                   key={idx}
-                  className="px-3 py-1 rounded-full bg-purple-950/40 border border-purple-800/40 text-[11px] font-mono text-purple-200"
+                  className="px-3.5 py-1.5 rounded-full bg-purple-950/40 border border-purple-800/40 text-xs font-mono text-purple-200"
                 >
                   {tag}
                 </span>
               ))}
             </div>
           </div>
+
         </div>
 
         {/* Bottom Bar: Social Icons & Direct Resume Button */}
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
           
-          {/* Social Profiles with Official Brand Color Patterns */}
+          {/* Social Profiles with Official Brand Vector Marks */}
           <div className="flex items-center gap-3">
             {/* LinkedIn */}
             <a
@@ -130,8 +145,8 @@ export default function HeroSection() {
             {/* Email */}
             <a
               href={`mailto:${personalInfo.email}`}
-              className="w-11 h-11 rounded-full bg-[#0d0d18] border border-white/10 hover:border-purple-400 text-slate-300 hover:text-white hover:bg-purple-600/20 flex items-center justify-center transition-all shadow-lg hover:scale-110 hover:shadow-purple-950/50"
-              title="Send Email"
+              className="w-11 h-11 rounded-full bg-[#0d0d18] border border-white/10 hover:border-[#EA4335] text-slate-300 hover:text-[#EA4335] hover:bg-[#EA4335]/10 flex items-center justify-center transition-all shadow-lg hover:scale-110 hover:shadow-[#EA4335]/30"
+              title="Send Direct Email"
             >
               <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
                 <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
@@ -139,18 +154,24 @@ export default function HeroSection() {
             </a>
           </div>
 
-          {/* Direct Resume CTA Button matching reference layout */}
-          <a
-            href="/resume.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 via-purple-500 to-indigo-600 text-white font-unbounded font-bold text-xs sm:text-sm shadow-xl shadow-purple-900/50 hover:shadow-purple-600/70 hover:scale-105 transition-all"
-          >
-            <span>Resume</span>
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-          </a>
+          {/* Right Direct Resume Link Button */}
+          <div className="flex items-center gap-3">
+            <a
+              href="/resume.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 via-purple-500 to-indigo-600 text-white font-display font-bold text-xs sm:text-sm shadow-xl shadow-purple-900/50 hover:shadow-purple-600/70 hover:scale-105 active:scale-95 transition-all flex items-center gap-2 group"
+            >
+              <svg className="w-4 h-4 text-purple-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+              </svg>
+              <span>View Official Resume</span>
+              <span className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+            </a>
+          </div>
         </div>
 
       </div>

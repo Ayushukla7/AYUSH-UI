@@ -6,7 +6,7 @@ export default function FooterSection() {
     <footer className="border-t border-white/5 bg-[#020205] py-8 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
         <div className="flex items-center gap-2">
-          <span className="font-unbounded text-white font-bold">{personalInfo.name}</span>
+          <span className="font-display text-white font-bold">{personalInfo.name}</span>
           <span>•</span>
           <span>UI/UX & Graphic Designer</span>
         </div>
@@ -16,7 +16,7 @@ export default function FooterSection() {
             href="/resume.html"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 hover:text-purple-400 transition-colors font-bold text-slate-300"
+            className="flex items-center gap-1.5 hover:text-purple-400 transition-colors font-bold text-slate-300 font-display"
           >
             <svg className="w-3.5 h-3.5 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />

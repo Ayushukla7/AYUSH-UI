@@ -11,7 +11,7 @@ export default function AchievementsSection() {
           <span className="text-purple-400 font-mono text-xs uppercase tracking-widest block font-bold">
             HONORS & PODIUMS
           </span>
-          <h2 className="font-unbounded font-black text-3xl sm:text-5xl text-white tracking-tight leading-tight">
+          <h2 className="font-display font-black text-3xl sm:text-5xl text-white tracking-tight leading-tight">
             Key <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-300">Milestones</span> & Wins
           </h2>
         </div>
@@ -30,10 +30,10 @@ export default function AchievementsSection() {
                   </span>
                   <span className="text-xs font-mono text-slate-500">0{idx + 1}</span>
                 </div>
-                <h3 className="font-unbounded font-bold text-sm sm:text-base text-white group-hover:text-purple-300 transition-colors leading-snug">
+                <h3 className="font-display font-bold text-base text-white group-hover:text-purple-300 transition-colors leading-snug">
                   {item.title}
                 </h3>
-                <p className="text-xs text-slate-300 mt-2 leading-relaxed">
+                <p className="text-xs text-slate-300 mt-2 leading-relaxed font-sans">
                   {item.desc}
                 </p>
               </div>

@@ -14,7 +14,7 @@ export default function ExperienceSection() {
           <span className="text-purple-400 font-mono text-xs uppercase tracking-widest block font-bold">
             02. WORK EXPERIENCE
           </span>
-          <h2 className="font-unbounded font-black text-3xl sm:text-5xl text-white tracking-tight leading-tight">
+          <h2 className="font-display font-black text-3xl sm:text-5xl text-white tracking-tight leading-tight">
             Design <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-300">Journey</span> & Roles
           </h2>
         </div>
@@ -31,7 +31,7 @@ export default function ExperienceSection() {
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <div className="flex items-center gap-2">
-                      <h3 className="font-unbounded font-bold text-base sm:text-lg text-white group-hover:text-purple-300 transition-colors">
+                      <h3 className="font-display font-bold text-base sm:text-lg text-white group-hover:text-purple-300 transition-colors">
                         {exp.role}
                       </h3>
                       {exp.isCurrent && (
@@ -55,7 +55,7 @@ export default function ExperienceSection() {
                 </div>
 
                 {/* Highlights List */}
-                <ul className="space-y-2 pt-1">
+                <ul className="space-y-2 pt-1 font-sans">
                   {exp.highlights.map((point, pIdx) => (
                     <li key={pIdx} className="text-xs sm:text-[13px] text-slate-300 leading-relaxed flex items-start gap-2.5">
                       <span className="text-purple-400 font-bold mt-0.5">›</span>

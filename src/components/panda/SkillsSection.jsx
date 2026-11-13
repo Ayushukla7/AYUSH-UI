@@ -14,10 +14,10 @@ export default function SkillsSection() {
           <span className="text-purple-400 font-mono text-xs uppercase tracking-widest block font-bold">
             04. CORE COMPETENCIES
           </span>
-          <h2 className="font-unbounded font-black text-3xl sm:text-5xl text-white tracking-tight leading-tight">
+          <h2 className="font-display font-black text-3xl sm:text-5xl text-white tracking-tight leading-tight">
             Design <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-300">Skills</span> & Tools
           </h2>
-          <p className="text-xs sm:text-sm text-slate-400 max-w-lg mx-auto pt-1">
+          <p className="text-xs sm:text-sm text-slate-300 max-w-lg mx-auto pt-1 font-sans">
             Industry design software, interaction frameworks, and frontend development tooling.
           </p>
         </div>
@@ -29,18 +29,18 @@ export default function SkillsSection() {
           <div className="purple-glass-card p-6 rounded-3xl space-y-4 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
-                <span className="font-unbounded font-bold text-sm text-white">UI/UX DESIGN</span>
+                <span className="font-display font-bold text-sm text-white">UI/UX DESIGN</span>
                 <div className="w-8 h-8 rounded-xl bg-purple-950/60 border border-purple-500/30 text-purple-400 flex items-center justify-center">
                   <svg className="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
                   </svg>
                 </div>
               </div>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 font-mono">
                 {resumeData.skills.uiUx.map((skill, idx) => (
                   <span
                     key={idx}
-                    className="px-3 py-1 rounded-full bg-purple-950/40 border border-purple-800/30 text-xs font-mono text-slate-200 hover:border-purple-400 transition-colors"
+                    className="px-3 py-1 rounded-full bg-purple-950/40 border border-purple-800/30 text-xs text-slate-200 hover:border-purple-400 transition-colors"
                   >
                     {skill}
                   </span>
@@ -56,14 +56,14 @@ export default function SkillsSection() {
           <div className="purple-glass-card p-6 rounded-3xl space-y-4 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
-                <span className="font-unbounded font-bold text-sm text-white">DESIGN TOOLS</span>
+                <span className="font-display font-bold text-sm text-white">DESIGN TOOLS</span>
                 <div className="w-8 h-8 rounded-xl bg-purple-950/60 border border-purple-500/30 text-purple-400 flex items-center justify-center">
                   <svg className="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                   </svg>
                 </div>
               </div>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 font-mono">
                 {resumeData.skills.tools.map((tool, idx) => {
                   let badgeClass = "bg-purple-950/40 border-purple-800/30 text-slate-200";
                   let dotColor = null;
@@ -98,7 +98,7 @@ export default function SkillsSection() {
                   return (
                     <span
                       key={idx}
-                      className={`px-3 py-1 rounded-full border text-xs font-mono transition-all flex items-center ${badgeClass}`}
+                      className={`px-3 py-1 rounded-full border text-xs transition-colors flex items-center ${badgeClass}`}
                     >
                       {dotColor}
                       <span>{tool}</span>
@@ -108,43 +108,49 @@ export default function SkillsSection() {
               </div>
             </div>
             <div className="pt-3 border-t border-white/5 text-[10px] font-mono text-purple-400">
-              Figma • Adobe PS • AI • AE • Canva
+              Vector & Raster Tools
             </div>
           </div>
 
-          {/* 3. Frontend */}
+          {/* 3. Frontend & Motion */}
           <div className="purple-glass-card p-6 rounded-3xl space-y-4 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
-                <span className="font-unbounded font-bold text-sm text-white">FRONTEND STACK</span>
+                <span className="font-display font-bold text-sm text-white">FRONTEND</span>
                 <div className="w-8 h-8 rounded-xl bg-purple-950/60 border border-purple-500/30 text-purple-400 flex items-center justify-center">
                   <svg className="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                   </svg>
                 </div>
               </div>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 font-mono">
                 {resumeData.skills.frontend.map((item, idx) => {
-                  let badgeStyle = "bg-purple-950/40 border-purple-800/30 text-slate-200";
-                  let dot = null;
+                  let badgeClass = "bg-purple-950/40 border-purple-800/30 text-slate-200";
+                  let dotColor = null;
 
                   if (item === 'React.js') {
-                    badgeStyle = "bg-[#00212b]/80 border-[#61DAFB]/40 text-[#61DAFB] hover:border-[#61DAFB]";
-                    dot = <span className="w-2 h-2 rounded-full bg-[#61DAFB] inline-block mr-1 animate-pulse" />;
+                    badgeClass = "bg-[#00212B]/80 border-[#61DAFB]/40 text-[#61DAFB] hover:border-[#61DAFB]";
+                    dotColor = (
+                      <span className="w-2 h-2 rounded-full bg-[#61DAFB] inline-block mr-1" />
+                    );
                   } else if (item === 'Tailwind CSS') {
-                    badgeStyle = "bg-[#001c24]/80 border-[#38BDF8]/40 text-[#38BDF8] hover:border-[#38BDF8]";
-                    dot = <span className="w-2 h-2 rounded-full bg-[#38BDF8] inline-block mr-1" />;
+                    badgeClass = "bg-[#001C24]/80 border-[#38BDF8]/40 text-[#38BDF8] hover:border-[#38BDF8]";
+                    dotColor = (
+                      <span className="w-2 h-2 rounded-full bg-[#38BDF8] inline-block mr-1" />
+                    );
                   } else if (item === 'Framer Motion') {
-                    badgeStyle = "bg-[#2b001a]/80 border-[#FF0055]/40 text-[#FF0055] hover:border-[#FF0055]";
-                    dot = <span className="w-2 h-2 rounded-full bg-[#FF0055] inline-block mr-1" />;
+                    badgeClass = "bg-[#2B001A]/80 border-[#FF0055]/40 text-[#FF0055] hover:border-[#FF0055]";
+                    dotColor = (
+                      <span className="w-2 h-2 rounded-full bg-[#FF0055] inline-block mr-1" />
+                    );
                   }
 
                   return (
                     <span
                       key={idx}
-                      className={`px-3 py-1 rounded-full border text-xs font-mono transition-all flex items-center ${badgeStyle}`}
+                      className={`px-3 py-1 rounded-full border text-xs transition-colors flex items-center ${badgeClass}`}
                     >
-                      {dot}
+                      {dotColor}
                       <span>{item}</span>
                     </span>
                   );
@@ -152,7 +158,7 @@ export default function SkillsSection() {
               </div>
             </div>
             <div className="pt-3 border-t border-white/5 text-[10px] font-mono text-purple-400">
-              React.js • Tailwind • Vite • Motion
+              React, Tailwind & Animations
             </div>
           </div>
 
@@ -160,18 +166,18 @@ export default function SkillsSection() {
           <div className="purple-glass-card p-6 rounded-3xl space-y-4 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
-                <span className="font-unbounded font-bold text-sm text-white">CREATIVE & BRAND</span>
+                <span className="font-display font-bold text-sm text-white">CREATIVE & BRAND</span>
                 <div className="w-8 h-8 rounded-xl bg-purple-950/60 border border-purple-500/30 text-purple-400 flex items-center justify-center">
                   <svg className="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
                   </svg>
                 </div>
               </div>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 font-mono">
                 {resumeData.skills.creative.map((item, idx) => (
                   <span
                     key={idx}
-                    className="px-3 py-1 rounded-full bg-purple-950/40 border border-purple-800/30 text-xs font-mono text-slate-200 hover:border-purple-400 transition-colors"
+                    className="px-3 py-1 rounded-full bg-purple-950/40 border border-purple-800/30 text-xs text-slate-200"
                   >
                     {item}
                   </span>
@@ -179,7 +185,7 @@ export default function SkillsSection() {
               </div>
             </div>
             <div className="pt-3 border-t border-white/5 text-[10px] font-mono text-purple-400">
-              Brand Identity • Carousels • Merch
+              Visual Systems & Identity
             </div>
           </div>
 

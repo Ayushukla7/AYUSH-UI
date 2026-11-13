@@ -5,7 +5,7 @@ export default function PandaNavbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: "About Me", href: "#about" },
+    { label: "About", href: "#about" },
     { label: "Experience", href: "#experience" },
     { label: "Projects", href: "#projects" },
     { label: "Skills", href: "#skills" },
@@ -13,13 +13,10 @@ export default function PandaNavbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#030307]/80 backdrop-blur-xl border-b border-white/5 transition-all">
-      {/* Ambient Top Left Glow Blob */}
-      <div className="absolute -top-16 -left-16 w-56 h-56 bg-purple-600/30 rounded-full blur-3xl pointer-events-none" />
-
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#030307]/85 backdrop-blur-xl border-b border-white/5 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between relative z-10">
         
-        {/* Left: Brand Logo in Unbounded */}
+        {/* Left: Brand Logo in Plus Jakarta Sans */}
         <a href="#" className="flex items-center gap-3 group">
           <div className="relative">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-700 via-purple-500 to-indigo-500 p-0.5 shadow-lg shadow-purple-900/40 group-hover:scale-105 transition-transform">
@@ -33,7 +30,7 @@ export default function PandaNavbar() {
           </div>
 
           <div>
-            <span className="font-unbounded font-bold text-lg text-white group-hover:text-purple-300 transition-colors tracking-tight flex items-center gap-1.5">
+            <span className="font-display font-bold text-lg text-white group-hover:text-purple-300 transition-colors tracking-tight flex items-center gap-1.5">
               <span>Ayush Shukla</span>
               <span className="text-purple-400 text-xs">✦</span>
             </span>
@@ -49,21 +46,20 @@ export default function PandaNavbar() {
             <a
               key={idx}
               href={item.href}
-              className="px-3.5 py-1.5 rounded-full text-xs font-medium text-slate-300 hover:text-white hover:bg-purple-600/20 hover:border hover:border-purple-500/30 transition-all font-unbounded text-[11px]"
+              className="px-4 py-1.5 rounded-full text-xs font-semibold text-slate-300 hover:text-white hover:bg-purple-600/20 transition-all font-display"
             >
               {item.label}
             </a>
           ))}
         </nav>
 
-        {/* Right: Actions & Direct Resume Button */}
+        {/* Right: Direct Resume Button & Quick Email */}
         <div className="hidden sm:flex items-center gap-2.5">
-          {/* Direct Resume Button */}
           <a
             href="/resume.html"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-xs font-bold font-unbounded hover:from-purple-500 hover:to-indigo-500 transition-all shadow-lg shadow-purple-900/50 hover:shadow-purple-700/60 hover:scale-105"
+            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-xs font-bold font-display hover:from-purple-500 hover:to-indigo-500 transition-all shadow-lg shadow-purple-900/50 hover:shadow-purple-700/60 hover:scale-105"
           >
             <svg className="w-3.5 h-3.5 text-purple-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -74,7 +70,6 @@ export default function PandaNavbar() {
             <span>Resume</span>
           </a>
 
-          {/* Quick Email */}
           <a
             href={`mailto:${personalInfo.email}`}
             className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-medium text-slate-200 hover:text-white transition-all hover:scale-105"
@@ -113,7 +108,7 @@ export default function PandaNavbar() {
                 key={idx}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-3 py-2 rounded-lg text-sm font-unbounded text-slate-200 hover:text-purple-300 hover:bg-purple-950/40 transition-colors"
+                className="px-3 py-2 rounded-lg text-sm font-display text-slate-200 hover:text-purple-300 hover:bg-purple-950/40 transition-colors"
               >
                 {item.label}
               </a>
@@ -125,7 +120,7 @@ export default function PandaNavbar() {
               href="/resume.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-unbounded font-bold text-xs shadow-lg text-center"
+              className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-display font-bold text-xs shadow-lg text-center"
             >
               <svg className="w-3.5 h-3.5 text-purple-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />

@@ -13,7 +13,7 @@ export default function ContactSection() {
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
       {/* Background Animated Blob */}
-      <div className="blob-animate bottom-10 right-1/4 opacity-40" />
+      <div className="blob-animate bottom-10 right-1/4 opacity-35" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         
@@ -22,11 +22,11 @@ export default function ContactSection() {
           <span className="text-purple-400 font-mono text-xs uppercase tracking-widest block font-bold">
             05. GET IN TOUCH
           </span>
-          <h2 className="font-unbounded font-black text-3xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight">
+          <h2 className="font-display font-black text-3xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight">
             Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-300 to-indigo-300">Connect</span> & Create
           </h2>
-          <p className="text-xs sm:text-sm text-slate-400 max-w-md mx-auto">
-            Have a project, role, or design collaboration in mind? Feel free to reach out anytime.
+          <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto font-sans">
+            Have a project, full-time role, or design collaboration in mind? Feel free to reach out anytime.
           </p>
         </div>
 
@@ -46,7 +46,7 @@ export default function ContactSection() {
                 <span className="text-[10px] font-mono text-slate-400 block uppercase font-bold">EMAIL</span>
                 <a
                   href={`mailto:${personalInfo.email}`}
-                  className="text-xs font-bold text-white group-hover:text-purple-300 transition-colors truncate block max-w-[180px]"
+                  className="text-xs font-bold text-white group-hover:text-purple-300 transition-colors truncate block max-w-[180px] font-sans"
                 >
                   {personalInfo.email}
                 </a>
@@ -73,7 +73,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <span className="text-[10px] font-mono text-slate-400 block uppercase font-bold">LINKEDIN</span>
-                <span className="text-xs font-bold text-white group-hover:text-[#0A66C2] transition-colors">
+                <span className="text-xs font-bold text-white group-hover:text-[#0A66C2] transition-colors font-sans">
                   /in/ayushshukla41
                 </span>
               </div>
@@ -94,44 +94,39 @@ export default function ContactSection() {
               </div>
               <div>
                 <span className="text-[10px] font-mono text-slate-400 block uppercase font-bold">GITHUB</span>
-                <span className="text-xs font-bold text-white group-hover:text-purple-300 transition-colors">
+                <span className="text-xs font-bold text-white group-hover:text-purple-300 transition-colors font-sans">
                   @Ayushukla7
                 </span>
               </div>
-              <span className="mt-3 text-[10px] font-mono font-bold text-purple-400">Repositories ↗</span>
+              <span className="mt-3 text-[10px] font-mono font-bold text-purple-400">Profile ↗</span>
             </a>
 
-            {/* Resume Direct (Official Paper PDF Vector Pattern) */}
+            {/* Direct Resume Link */}
             <a
               href="/resume.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gradient-to-tr from-purple-950/60 to-purple-900/30 p-5 rounded-2xl border border-purple-500/40 hover:border-purple-400 transition-all flex flex-col items-center justify-between group shadow-lg hover:scale-105"
+              className="bg-[#0c0c16] p-5 rounded-2xl border border-white/5 hover:border-purple-400/60 transition-all flex flex-col items-center justify-between group hover:shadow-lg hover:shadow-purple-950/40"
             >
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-purple-600 to-indigo-600 border border-purple-400 text-white flex items-center justify-center mb-2 group-hover:scale-110 transition-all shadow-md">
-                <svg className="w-5 h-5 fill-none stroke-current" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              <div className="w-11 h-11 rounded-xl bg-purple-950/60 border border-purple-500/40 text-purple-300 flex items-center justify-center mb-2 group-hover:scale-110 group-hover:border-purple-400 transition-all shadow-md">
+                <svg className="w-5 h-5 fill-none stroke-current" viewBox="0 0 24 24" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </div>
               <div>
-                <span className="text-[10px] font-mono text-purple-300 block uppercase font-bold">RESUME</span>
-                <span className="text-xs font-bold text-white group-hover:text-purple-300 transition-colors">
-                  Official Paper
+                <span className="text-[10px] font-mono text-slate-400 block uppercase font-bold">OFFICIAL RESUME</span>
+                <span className="text-xs font-bold text-white group-hover:text-purple-300 transition-colors font-sans">
+                  PDF Document
                 </span>
               </div>
-              <span className="mt-3 text-[10px] font-mono text-purple-300 font-bold">Open Paper ↗</span>
+              <span className="mt-3 text-[10px] font-mono font-bold text-purple-400">Open ↗</span>
             </a>
 
           </div>
 
-          <div className="pt-4 border-t border-white/10 flex flex-wrap items-center justify-center gap-4 text-xs font-mono text-slate-400">
-            <span>📞 +91 9369657005</span>
-            <span>•</span>
-            <span>📍 Noida / Delhi NCR, India</span>
-            <span>•</span>
-            <a href={personalInfo.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors">
-              Instagram @ayushs_4141 ↗
-            </a>
+          <div className="pt-4 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-slate-400 gap-2">
+            <span>Direct Phone: <strong className="text-white">+91 9369657005</strong></span>
+            <span className="text-purple-400">Noida / Delhi NCR, India</span>
           </div>
 
         </div>
