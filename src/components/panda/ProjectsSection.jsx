@@ -26,16 +26,17 @@ export default function ProjectsSection({ onOpenImage }) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Heading */}
-        <div className="text-center mb-12 space-y-2">
-          <span className="text-purple-400 font-mono text-xs uppercase tracking-widest block font-bold">
-            03. PORTFOLIO SHOWCASE
-          </span>
-          <h2 className="font-display font-black text-3xl sm:text-5xl text-white tracking-tight leading-tight">
-            Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-300 to-indigo-300">Works</span> & Designs
+        {/* Section Heading with Editorial Technical Label */}
+        <div className="text-center mb-12 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/20 text-xs font-mono text-purple-300">
+            <span>[ 03 // PORTFOLIO SHOWCASE ]</span>
+          </div>
+
+          <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-[-0.035em] leading-tight">
+            Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-300 to-indigo-200">Works</span> & Case Studies
           </h2>
-          <p className="text-xs sm:text-sm text-slate-300 max-w-lg mx-auto pt-1 font-sans">
-            Real production projects covering multi-slide storytelling, SaaS interfaces, SIH platforms, and event key visuals.
+          <p className="text-xs sm:text-sm text-slate-400 max-w-lg mx-auto font-sans">
+            Production-grade design deliverables across Smart India Hackathon SaaS platforms, high-engagement social carousels, and streetwear merchandise.
           </p>
         </div>
 
@@ -45,7 +46,7 @@ export default function ProjectsSection({ onOpenImage }) {
             <button
               key={cat.id}
               onClick={() => setActiveFilter(cat.id)}
-              className={`px-5 py-2 rounded-full text-xs font-display font-semibold transition-all ${
+              className={`px-5 py-2.5 rounded-full text-xs font-display font-semibold transition-all ${
                 activeFilter === cat.id
                   ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold shadow-lg shadow-purple-900/50 scale-105'
                   : 'bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-white/10'

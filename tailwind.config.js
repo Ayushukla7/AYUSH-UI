@@ -26,8 +26,9 @@ export default {
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
         display: ['"Plus Jakarta Sans"', 'sans-serif'],
+        syne: ['"Syne"', 'sans-serif'],
         editorial: ['"Bodoni Moda"', 'serif'],
-        unbounded: ['"Plus Jakarta Sans"', 'sans-serif'], // Upgrades all existing unbounded classes to Plus Jakarta Sans
+        unbounded: ['"Plus Jakarta Sans"', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace']
       },
       boxShadow: {

@@ -17,16 +17,20 @@ export default function ContactSection() {
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         
-        {/* Section Heading */}
+        {/* Section Heading with Editorial Technical Label */}
         <div className="mb-14 space-y-3">
-          <span className="text-purple-400 font-mono text-xs uppercase tracking-widest block font-bold">
-            05. GET IN TOUCH
-          </span>
-          <h2 className="font-display font-black text-3xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight">
-            Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-300 to-indigo-300">Connect</span> & Create
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/20 text-xs font-mono text-purple-300">
+            <span>[ 05 // INITIATE COLLABORATION ]</span>
+          </div>
+
+          <h2 className="font-display font-extrabold text-3xl sm:text-5xl md:text-6xl text-white tracking-[-0.035em] leading-tight">
+            Let's Build Something <br className="hidden sm:inline" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-300 to-indigo-200">
+              Exceptional Together
+            </span>
           </h2>
-          <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto font-sans">
-            Have a project, full-time role, or design collaboration in mind? Feel free to reach out anytime.
+          <p className="text-xs sm:text-sm text-slate-400 max-w-md mx-auto font-sans">
+            Open for full-time UI/UX design roles, design internships, and high-impact digital projects. Feel free to reach out directly.
           </p>
         </div>
 

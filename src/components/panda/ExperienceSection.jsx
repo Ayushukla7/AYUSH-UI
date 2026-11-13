@@ -9,14 +9,18 @@ export default function ExperienceSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Heading */}
-        <div className="text-center mb-16 space-y-2">
-          <span className="text-purple-400 font-mono text-xs uppercase tracking-widest block font-bold">
-            02. WORK EXPERIENCE
-          </span>
-          <h2 className="font-display font-black text-3xl sm:text-5xl text-white tracking-tight leading-tight">
-            Design <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-300">Journey</span> & Roles
+        {/* Section Heading with Editorial Technical Label */}
+        <div className="text-center mb-16 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/20 text-xs font-mono text-purple-300">
+            <span>[ 02 // CAREER JOURNEY ]</span>
+          </div>
+
+          <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-[-0.035em] leading-tight">
+            Work <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-300 to-indigo-200">Experience</span> & Leadership
           </h2>
+          <p className="text-xs sm:text-sm text-slate-400 max-w-lg mx-auto font-sans">
+            Leading visual identities, community design initiatives, and production interfaces across 4 organizations.
+          </p>
         </div>
 
         {/* Experience Timeline Grid */}
@@ -40,11 +44,11 @@ export default function ExperienceSection() {
                         </span>
                       )}
                     </div>
-                    <span className="text-xs font-mono text-purple-400 block mt-1">
+                    <span className="text-xs font-mono text-purple-400 block mt-1 font-semibold">
                       {exp.company}
                     </span>
                   </div>
-                  <span className="text-[11px] font-mono text-slate-400 bg-white/5 px-2.5 py-1 rounded-full border border-white/10 whitespace-nowrap">
+                  <span className="text-[11px] font-mono text-slate-300 bg-white/5 px-2.5 py-1 rounded-full border border-white/10 whitespace-nowrap">
                     {exp.period}
                   </span>
                 </div>
@@ -55,7 +59,7 @@ export default function ExperienceSection() {
                 </div>
 
                 {/* Highlights List */}
-                <ul className="space-y-2 pt-1 font-sans">
+                <ul className="space-y-2.5 pt-1 font-sans">
                   {exp.highlights.map((point, pIdx) => (
                     <li key={pIdx} className="text-xs sm:text-[13px] text-slate-300 leading-relaxed flex items-start gap-2.5">
                       <span className="text-purple-400 font-bold mt-0.5">›</span>
@@ -66,8 +70,8 @@ export default function ExperienceSection() {
               </div>
 
               <div className="pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-slate-400">
-                <span>Verified Credential</span>
-                <span className="text-slate-300">0{idx + 1}</span>
+                <span>Verified Experience</span>
+                <span className="text-purple-400 font-bold">0{idx + 1}</span>
               </div>
             </div>
           ))}

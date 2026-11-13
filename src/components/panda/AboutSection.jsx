@@ -9,31 +9,32 @@ export default function AboutSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Heading */}
-        <div className="text-center mb-16 space-y-2">
-          <span className="text-purple-400 font-mono text-xs uppercase tracking-widest block font-bold">
-            01. ABOUT ME
-          </span>
-          <h2 className="font-display font-black text-3xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight">
+        {/* Section Heading with Editorial Technical Label */}
+        <div className="text-center mb-16 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/20 text-xs font-mono text-purple-300">
+            <span>[ 01 // ABOUT AYUSH ]</span>
+          </div>
+
+          <h2 className="font-display font-extrabold text-3xl sm:text-5xl md:text-6xl text-white tracking-[-0.035em] leading-[1.08]">
+            Designing Interfaces That Turn <br className="hidden sm:inline" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-300 to-indigo-200">
-              Creativity
-            </span> <br />
-            Is My Discipline
+              Complexity Into Clarity
+            </span>
           </h2>
         </div>
 
         {/* 2-Column Grid: Left Text & Metrics + Right Visual */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           {/* Left Column: Bio & Fast Metrics */}
           <div className="lg:col-span-7 space-y-6">
             <div className="purple-glass-card p-6 sm:p-8 rounded-3xl space-y-4">
               <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-sans">
-                I'm <strong className="text-white font-bold">{personalInfo.name}</strong>, a <strong className="text-purple-300">UI/UX & Graphic Designer</strong> dedicated to transforming complex workflows into visually engaging, responsive digital platforms, SaaS dashboards, apparel branding, and social stories.
+                I'm <strong className="text-white font-bold">{personalInfo.name}</strong>, a <strong className="text-purple-300">UI/UX & Graphic Designer</strong> bridging human-centered design and technical execution. Currently studying Computer Science & Engineering at ABESEC, I combine user empathy and design systems in Figma with real-world implementation in React & Tailwind CSS.
               </p>
               
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
-                With experience across <strong className="text-white">3+ design-focused roles</strong> and <strong className="text-white">10+ high-fidelity interface projects</strong>, I combine design thinking in Figma with frontend execution in React & Tailwind CSS.
+                Across <strong className="text-white">3+ design-focused leadership roles</strong> and <strong className="text-white">10+ high-fidelity digital projects</strong>, I've delivered end-to-end interface architectures from low-fi wireframes to developer handoff, reaching over <strong className="text-white">1,500+ users and attendees</strong>.
               </p>
 
               <div className="pt-2 flex flex-wrap gap-2.5">
@@ -41,7 +42,7 @@ export default function AboutSection() {
                   📍 Noida / Delhi NCR, India
                 </span>
                 <span className="px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-mono text-emerald-400">
-                  🎓 ABES Engineering College (CSE)
+                  🎓 ABES Engineering College (B.Tech CSE)
                 </span>
               </div>
             </div>
@@ -49,20 +50,20 @@ export default function AboutSection() {
             {/* 4 Metric Stats Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5">
               <div className="purple-glass-card p-4 rounded-2xl text-center space-y-1">
-                <span className="font-display font-black text-2xl sm:text-3xl text-white block">3+</span>
-                <span className="text-[11px] font-mono text-purple-300/80 uppercase">Design Roles</span>
+                <span className="font-display font-extrabold text-2xl sm:text-3xl text-white block">3+</span>
+                <span className="text-[11px] font-mono text-purple-300/90 uppercase font-semibold">Design Roles</span>
               </div>
               <div className="purple-glass-card p-4 rounded-2xl text-center space-y-1">
-                <span className="font-display font-black text-2xl sm:text-3xl text-purple-400 block">10+</span>
-                <span className="text-[11px] font-mono text-purple-300/80 uppercase">UI/UX Projects</span>
+                <span className="font-display font-extrabold text-2xl sm:text-3xl text-purple-400 block">10+</span>
+                <span className="text-[11px] font-mono text-purple-300/90 uppercase font-semibold">UI/UX Projects</span>
               </div>
               <div className="purple-glass-card p-4 rounded-2xl text-center space-y-1">
-                <span className="font-display font-black text-2xl sm:text-3xl text-white block">40+</span>
-                <span className="text-[11px] font-mono text-purple-300/80 uppercase">Visual Assets</span>
+                <span className="font-display font-extrabold text-2xl sm:text-3xl text-white block">40+</span>
+                <span className="text-[11px] font-mono text-purple-300/90 uppercase font-semibold">Visual Assets</span>
               </div>
               <div className="purple-glass-card p-4 rounded-2xl text-center space-y-1">
-                <span className="font-display font-black text-2xl sm:text-3xl text-emerald-400 block">1.5K+</span>
-                <span className="text-[11px] font-mono text-purple-300/80 uppercase">Audience Reach</span>
+                <span className="font-display font-extrabold text-2xl sm:text-3xl text-emerald-400 block">1.5K+</span>
+                <span className="text-[11px] font-mono text-purple-300/90 uppercase font-semibold">Audience Reach</span>
               </div>
             </div>
 
@@ -115,24 +116,24 @@ export default function AboutSection() {
                     </div>
                     <div>
                       <h4 className="font-display font-bold text-white text-base">Design Philosophy</h4>
-                      <span className="text-xs text-purple-300 font-mono">Form Meets Function</span>
+                      <span className="text-xs text-purple-300 font-mono">Purpose Over Decoration</span>
                     </div>
                   </div>
                   <span className="w-2.5 h-2.5 rounded-full bg-purple-400 animate-ping" />
                 </div>
 
-                <div className="space-y-3 text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                <div className="space-y-3.5 text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
                   <div className="flex items-start gap-3">
                     <span className="text-purple-400 font-bold mt-0.5">✦</span>
-                    <p><strong className="text-white">User-Centric Architecture:</strong> Wireframes, design systems, and flows built with Figma components.</p>
+                    <p><strong className="text-white">User-Centric Architecture:</strong> Clean wireframes, design systems, and flows built with scalable Figma components.</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="text-purple-400 font-bold mt-0.5">✦</span>
-                    <p><strong className="text-white">Visual Impact:</strong> Creative social carousels, event key visuals, and apparel merchandise.</p>
+                    <p><strong className="text-white">Visual Engagement:</strong> High-impact social carousels, event key visuals, and streetwear merchandise.</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="text-purple-400 font-bold mt-0.5">✦</span>
-                    <p><strong className="text-white">Production Ready:</strong> Clean code delivery in React, Vite, Tailwind CSS, and Framer Motion.</p>
+                    <p><strong className="text-white">Engineering Viability:</strong> Solid command of React, Vite, Tailwind CSS, and Framer Motion ensures zero design-to-code gap.</p>
                   </div>
                 </div>
 

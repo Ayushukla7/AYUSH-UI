@@ -3,45 +3,46 @@ import { personalInfo } from '../../data/projectsData';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen pt-24 pb-16 flex flex-col justify-center overflow-hidden">
+    <section className="relative min-h-screen pt-28 pb-16 flex flex-col justify-center overflow-hidden">
       
       {/* 1. Iconic Background Editorial Display Word "PORTFOLIO" matching Reference Image */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0 overflow-hidden">
-        <span className="font-editorial font-black text-[17vw] sm:text-[19vw] tracking-wider uppercase text-transparent bg-clip-text bg-gradient-to-b from-purple-300 via-purple-500/50 to-purple-900/10 opacity-70 leading-none filter drop-shadow-[0_10px_40px_rgba(168,85,247,0.3)]">
+        <span className="font-editorial font-black text-[18vw] sm:text-[20vw] tracking-wider uppercase text-transparent bg-clip-text bg-gradient-to-b from-purple-300 via-purple-500/40 to-purple-900/5 opacity-60 leading-none filter drop-shadow-[0_10px_40px_rgba(168,85,247,0.25)]">
           PORTFOLIO
         </span>
       </div>
 
       {/* 2. Ambient Purple Aura Glow behind Portrait */}
-      <div className="blob-animate top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] sm:w-[500px] sm:h-[500px] opacity-60 pointer-events-none" />
+      <div className="blob-animate top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] h-[360px] sm:w-[500px] sm:h-[500px] opacity-50 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         
         {/* Main 3-Column Hero Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-center min-h-[580px]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center min-h-[580px]">
           
-          {/* Left Column: Greeting, Massive Name & Description */}
-          <div className="lg:col-span-4 space-y-3 text-center lg:text-left order-1">
-            <span className="text-purple-400 font-mono text-xs uppercase tracking-widest font-semibold block">
-              Hello, I'm
-            </span>
+          {/* Left Column: Greeting, Massive Name & Core Value Proposition */}
+          <div className="lg:col-span-4 space-y-4 text-center lg:text-left order-1">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-950/60 border border-purple-500/20 text-xs font-mono text-purple-300">
+              <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" />
+              <span>UI/UX & PRODUCT DESIGNER</span>
+            </div>
 
-            <h1 className="font-display font-black text-5xl sm:text-6xl md:text-7xl text-white tracking-tight leading-[0.95]">
+            <h1 className="font-display font-extrabold text-5xl sm:text-7xl md:text-8xl text-white tracking-[-0.04em] leading-[0.92]">
               Ayush <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-300 to-indigo-200">
                 Shukla
               </span>
             </h1>
 
-            <p className="text-sm text-slate-300 max-w-sm mx-auto lg:mx-0 pt-2 leading-relaxed">
-              UI/UX & Graphic Designer dedicated to crafting high-converting digital platforms, SaaS dashboards, apparel branding, and social storytelling.
+            <p className="text-sm sm:text-[15px] text-slate-300 max-w-sm mx-auto lg:mx-0 leading-relaxed font-sans">
+              Crafting high-converting digital platforms, scalable SaaS design systems, and visual brand storytelling that connects with users.
             </p>
 
-            <div className="pt-2 flex flex-wrap justify-center lg:justify-start gap-2">
-              <span className="px-3 py-1 rounded-full bg-purple-950/50 border border-purple-500/20 text-xs font-mono text-purple-300">
-                📍 Noida / Delhi NCR
+            <div className="pt-1 flex flex-wrap justify-center lg:justify-start gap-2 text-xs font-mono">
+              <span className="px-3 py-1 rounded-full bg-purple-950/40 border border-purple-800/30 text-purple-300">
+                ✦ 10+ Shipped Interfaces
               </span>
-              <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-mono text-emerald-400 flex items-center gap-1.5">
+              <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 <span>Available for Roles</span>
               </span>
@@ -51,7 +52,7 @@ export default function HeroSection() {
           {/* Center Column: Cutout Portrait with Ambient Purple Backlight Aura */}
           <div className="lg:col-span-4 flex items-center justify-center relative order-2 py-6 lg:py-0">
             {/* Glowing Backlight Disc */}
-            <div className="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gradient-to-tr from-purple-700 via-purple-600/60 to-indigo-600/40 blur-[55px] opacity-75 pointer-events-none" />
+            <div className="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gradient-to-tr from-purple-700 via-purple-600/50 to-indigo-600/30 blur-[55px] opacity-75 pointer-events-none" />
 
             {/* Ayush's Profile Image */}
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 z-10 group">
@@ -71,24 +72,28 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right Column: Roles & Specializations */}
-          <div className="lg:col-span-4 space-y-2 text-center lg:text-left order-3 lg:pl-6">
-            <span className="text-purple-400 font-semibold tracking-widest uppercase text-xs sm:text-sm font-mono block">
-              Discipline
+          {/* Right Column: Roles, Focus Areas & Engineering Background */}
+          <div className="lg:col-span-4 space-y-3 text-center lg:text-left order-3 lg:pl-6">
+            <span className="text-purple-400 font-mono text-xs uppercase tracking-widest font-semibold block">
+              DISCIPLINE & CRAFT
             </span>
-            <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-white tracking-tight leading-tight">
-              Design Systems
+            <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-white tracking-[-0.03em] leading-tight">
+              Interface Systems
             </h2>
-            <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-purple-400 tracking-tight leading-tight">
+            <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-purple-400 tracking-[-0.03em] leading-tight">
               & Visual Media
             </h2>
 
+            <p className="text-xs sm:text-sm text-slate-400 max-w-sm mx-auto lg:mx-0 leading-relaxed font-sans pt-1">
+              Combining user empathy and atomic design tokens in Figma with clean implementation in React, Tailwind CSS, and Framer Motion.
+            </p>
+
             {/* Quick Specialization Tags */}
-            <div className="pt-4 flex flex-wrap justify-center lg:justify-start gap-2">
-              {["SaaS UI", "Figma Systems", "Brand Identity", "Apparel & Posters"].map((tag, idx) => (
+            <div className="pt-3 flex flex-wrap justify-center lg:justify-start gap-2">
+              {["SaaS Dashboards", "Figma Design Tokens", "Apparel & Brand Identity", "Social Storytelling"].map((tag, idx) => (
                 <span
                   key={idx}
-                  className="px-3.5 py-1.5 rounded-full bg-purple-950/40 border border-purple-800/40 text-xs font-mono text-purple-200"
+                  className="px-3 py-1.5 rounded-full bg-purple-950/40 border border-purple-800/40 text-xs font-mono text-purple-200"
                 >
                   {tag}
                 </span>

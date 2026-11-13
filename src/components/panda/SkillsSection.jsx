@@ -9,16 +9,17 @@ export default function SkillsSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Heading */}
-        <div className="text-center mb-16 space-y-2">
-          <span className="text-purple-400 font-mono text-xs uppercase tracking-widest block font-bold">
-            04. CORE COMPETENCIES
-          </span>
-          <h2 className="font-display font-black text-3xl sm:text-5xl text-white tracking-tight leading-tight">
-            Design <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-300">Skills</span> & Tools
+        {/* Section Heading with Editorial Technical Label */}
+        <div className="text-center mb-16 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/20 text-xs font-mono text-purple-300">
+            <span>[ 04 // TECHNICAL TOOLBOX ]</span>
+          </div>
+
+          <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-[-0.035em] leading-tight">
+            Skills, Software <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-300 to-indigo-200">& Engineering</span>
           </h2>
-          <p className="text-xs sm:text-sm text-slate-300 max-w-lg mx-auto pt-1 font-sans">
-            Industry design software, interaction frameworks, and frontend development tooling.
+          <p className="text-xs sm:text-sm text-slate-400 max-w-lg mx-auto font-sans">
+            Design systems in Figma, photo manipulation in Adobe Suite, and frontend implementation in React & Tailwind CSS.
           </p>
         </div>
 
@@ -29,7 +30,7 @@ export default function SkillsSection() {
           <div className="purple-glass-card p-6 rounded-3xl space-y-4 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
-                <span className="font-display font-bold text-sm text-white">UI/UX DESIGN</span>
+                <span className="font-display font-bold text-sm text-white">UI/UX ARCHITECTURE</span>
                 <div className="w-8 h-8 rounded-xl bg-purple-950/60 border border-purple-500/30 text-purple-400 flex items-center justify-center">
                   <svg className="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
@@ -48,7 +49,7 @@ export default function SkillsSection() {
               </div>
             </div>
             <div className="pt-3 border-t border-white/5 text-[10px] font-mono text-purple-400">
-              User Flows & Wireframes
+              Wireframes, User Flows & Systems
             </div>
           </div>
 
@@ -56,7 +57,7 @@ export default function SkillsSection() {
           <div className="purple-glass-card p-6 rounded-3xl space-y-4 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
-                <span className="font-display font-bold text-sm text-white">DESIGN TOOLS</span>
+                <span className="font-display font-bold text-sm text-white">DESIGN SOFTWARE</span>
                 <div className="w-8 h-8 rounded-xl bg-purple-950/60 border border-purple-500/30 text-purple-400 flex items-center justify-center">
                   <svg className="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
@@ -108,7 +109,7 @@ export default function SkillsSection() {
               </div>
             </div>
             <div className="pt-3 border-t border-white/5 text-[10px] font-mono text-purple-400">
-              Vector & Raster Tools
+              Industry Standard Vector & Raster
             </div>
           </div>
 
@@ -116,7 +117,7 @@ export default function SkillsSection() {
           <div className="purple-glass-card p-6 rounded-3xl space-y-4 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
-                <span className="font-display font-bold text-sm text-white">FRONTEND</span>
+                <span className="font-display font-bold text-sm text-white">CODE & EXECUTION</span>
                 <div className="w-8 h-8 rounded-xl bg-purple-950/60 border border-purple-500/30 text-purple-400 flex items-center justify-center">
                   <svg className="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -158,7 +159,7 @@ export default function SkillsSection() {
               </div>
             </div>
             <div className="pt-3 border-t border-white/5 text-[10px] font-mono text-purple-400">
-              React, Tailwind & Animations
+              Modern React & Micro-interactions
             </div>
           </div>
 
@@ -185,7 +186,7 @@ export default function SkillsSection() {
               </div>
             </div>
             <div className="pt-3 border-t border-white/5 text-[10px] font-mono text-purple-400">
-              Visual Systems & Identity
+              Visual Storytelling & Merch
             </div>
           </div>
 
