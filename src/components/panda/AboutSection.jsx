@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { personalInfo, resumeData } from '../../data/projectsData';
 
 export default function AboutSection() {
+  const [activeVisual, setActiveVisual] = useState('fashion'); // 'fashion' or 'coffee'
+
   return (
     <section id="about" className="relative py-20 sm:py-28 overflow-hidden graph-paper-bg">
       
@@ -9,9 +11,35 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 mb-16 sm:mb-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           
-          {/* Left: Photoshop Bounding Box Visual (Exact Behance Screen 2 Left) */}
-          <div className="lg:col-span-4 flex justify-center">
-            <div className="ps-bounding-box p-1.5 bg-white max-w-[280px] w-full shadow-brutal relative group">
+          {/* Left: Photoshop Bounding Box Visual (Replaced T-shirt with Editorial Fashion / Ad) */}
+          <div className="lg:col-span-4 flex flex-col items-center">
+            
+            {/* Visual Switcher Tabs */}
+            <div className="flex items-center gap-1.5 mb-3 self-center sm:self-start">
+              <button
+                onClick={() => setActiveVisual('fashion')}
+                className={`px-2.5 py-1 font-mono text-[10px] font-bold border border-[#111111] transition-all ${
+                  activeVisual === 'fashion'
+                    ? 'bg-[#111111] text-white'
+                    : 'bg-white text-[#111111] hover:bg-[#FF1E27] hover:text-white hover:border-[#FF1E27]'
+                }`}
+              >
+                ✦ EDITORIAL CAMPAIGN
+              </button>
+              <button
+                onClick={() => setActiveVisual('coffee')}
+                className={`px-2.5 py-1 font-mono text-[10px] font-bold border border-[#111111] transition-all ${
+                  activeVisual === 'coffee'
+                    ? 'bg-[#111111] text-white'
+                    : 'bg-white text-[#111111] hover:bg-[#FF1E27] hover:text-white hover:border-[#FF1E27]'
+                }`}
+              >
+                ☕ COMMERCIAL AD
+              </button>
+            </div>
+
+            {/* Photoshop Canvas Bounding Box */}
+            <div className="ps-bounding-box p-1.5 bg-white max-w-[290px] w-full shadow-brutal relative group">
               {/* 8 Transform Handles */}
               <div className="ps-handle -top-1.5 -left-1.5" />
               <div className="ps-handle -top-1.5 left-1/2 -translate-x-1/2" />
@@ -25,20 +53,24 @@ export default function AboutSection() {
               {/* Visual inside box */}
               <div className="aspect-[3/4] bg-[#141416] overflow-hidden">
                 <img
-                  src="/assets/team_techno_merchandise.png"
-                  alt="Streetwear Apparel Graphic"
+                  src={
+                    activeVisual === 'fashion'
+                      ? '/assets/outfit_of_the_day_fashion.jpg'
+                      : '/assets/borcelle_coffee_promo.png'
+                  }
+                  alt="Editorial Design Showcase"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
               <div className="mt-2.5 flex items-center justify-between font-mono text-[10px] text-[#111111] px-1 font-bold">
-                <span>SELECTION_V1</span>
-                <span className="text-[#FF1E27]">TRANSFORM // 100%</span>
+                <span>{activeVisual === 'fashion' ? 'EDITORIAL_MOODBOARD.PSD' : 'COMMERCIAL_AD.PSD'}</span>
+                <span className="text-[#FF1E27]">1080×1350 // 300DPI</span>
               </div>
             </div>
           </div>
 
-          {/* Center: Bio Narrative & Education (Exact Behance Screen 2 Center) */}
+          {/* Center: Bio Narrative & Education */}
           <div className="lg:col-span-4 space-y-7">
             <div>
               <span className="font-mono text-[10px] font-bold text-[#FF1E27] tracking-widest uppercase block mb-1">
@@ -82,7 +114,7 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* Right: Experience Timeline (Exact Behance Screen 2 Right) */}
+          {/* Right: Experience Timeline */}
           <div className="lg:col-span-4 space-y-5">
             <h3 className="font-extended font-black text-lg sm:text-xl text-[#111111] tracking-wide uppercase">
               EXPERIENCE
@@ -146,37 +178,78 @@ export default function AboutSection() {
         </div>
       </div>
 
-      {/* 2. THE SIGNATURE TORN PAPER COLLAGE (EXACT BEHANCE CENTERPIECE) */}
+      {/* 2. THE RE-ENGINEERED SIGNATURE CENTERPIECE: STACKED NAME + HERO PORTRAIT */}
       <div className="relative w-full my-12 sm:my-20">
         
         {/* Dark Crumpled Paper Container with Jagged Torn Top & Bottom */}
-        <div className="dark-crumpled-bg torn-top torn-bottom py-24 sm:py-36 relative overflow-hidden text-center flex flex-col items-center justify-center min-h-[420px] sm:min-h-[500px]">
+        <div className="dark-crumpled-bg torn-top torn-bottom py-20 sm:py-32 relative overflow-hidden flex flex-col items-center justify-center min-h-[540px] sm:min-h-[640px]">
           
           {/* Subtle Grid overlay inside dark section */}
           <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
 
-          {/* Giant Arching Background Typography: "AYUSH SHUKLA" */}
-          <div className="absolute inset-0 flex items-center justify-center select-none pointer-events-none overflow-hidden opacity-40">
-            <span className="font-extended font-black text-[15vw] sm:text-[14vw] md:text-[12vw] text-white tracking-widest whitespace-nowrap leading-none">
-              AYUSH SHUKLA
-            </span>
+          {/* Micro Top Ticker Bar */}
+          <div className="absolute top-8 left-0 right-0 overflow-hidden py-1 border-y border-white/10 opacity-70">
+            <div className="animate-marquee flex items-center gap-8 whitespace-nowrap text-white font-mono text-[10px] tracking-widest uppercase">
+              <span>✦ CREATIVE DIRECTION</span>
+              <span className="text-[#FF1E27]">●</span>
+              <span>UI/UX & PRODUCT DESIGN</span>
+              <span className="text-[#FF1E27]">●</span>
+              <span>ONI CARES</span>
+              <span className="text-[#FF1E27]">●</span>
+              <span>TECHNOVATION</span>
+              <span className="text-[#FF1E27]">●</span>
+              <span>✦ CREATIVE DIRECTION</span>
+              <span className="text-[#FF1E27]">●</span>
+              <span>UI/UX & PRODUCT DESIGN</span>
+              <span className="text-[#FF1E27]">●</span>
+              <span>ONI CARES</span>
+              <span className="text-[#FF1E27]">●</span>
+              <span>TECHNOVATION</span>
+            </div>
           </div>
 
-          {/* Cutout Portrait Photo with Bold Red Outline Sticker Effect */}
-          <div className="relative z-20 group">
-            <div className="relative w-52 h-52 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full overflow-hidden portrait-red-outline transition-transform duration-500 group-hover:scale-105">
-              <img
-                src="/assets/ayush_profile.png"
-                alt="Ayush Shukla Cutout Portrait"
-                className="w-full h-full object-cover"
-              />
+          {/* Stacked 2-Line Monumental Typography (100% Responsive, Zero Slicing!) */}
+          <div className="w-full max-w-5xl mx-auto px-4 text-center select-none z-10 flex flex-col items-center justify-center">
+            
+            {/* Line 1: AYUSH */}
+            <h2 className="font-extended font-black text-6xl sm:text-8xl md:text-9xl lg:text-[10.5rem] text-white tracking-tight leading-[0.88] uppercase drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+              AYUSH
+            </h2>
+
+            {/* Overlapping Hero Cutout Portrait in Center */}
+            <div className="relative z-20 my-[-25px] sm:my-[-40px] md:my-[-55px] group">
+              <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full overflow-hidden portrait-red-outline border-4 border-[#111111] bg-[#111111] transition-transform duration-500 group-hover:scale-105">
+                <img
+                  src="/assets/ayush_profile.png"
+                  alt="Ayush Shukla Cutout Portrait"
+                  className="w-full h-full object-cover filter contrast-110"
+                />
+              </div>
+
+              {/* Floating Pill Below Portrait */}
+              <div className="absolute -bottom-3.5 left-1/2 -translate-x-1/2 px-4 sm:px-5 py-1.5 rounded-full bg-[#111111] border-2 border-[#FF1E27] text-white font-mono text-[10px] sm:text-xs font-bold tracking-wider whitespace-nowrap shadow-brutal flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#FF1E27] animate-pulse" />
+                <span>CREATIVE DIRECTION & UI/UX</span>
+              </div>
             </div>
 
-            {/* Sticker Pill Below Portrait */}
-            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 px-5 py-2 rounded-full bg-[#111111] border-2 border-[#FF1E27] text-white font-mono text-[11px] sm:text-xs font-bold tracking-wider whitespace-nowrap shadow-brutal flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#FF1E27] animate-pulse" />
-              <span>CREATIVE DIRECTION & UI/UX</span>
-            </div>
+            {/* Line 2: SHUKLA (Outlined in crisp white) */}
+            <h2 className="font-extended font-black text-6xl sm:text-8xl md:text-9xl lg:text-[10.5rem] tracking-tight leading-[0.88] uppercase text-transparent [-webkit-text-stroke:2px_#ffffff] sm:[-webkit-text-stroke:3px_#ffffff] hover:text-white transition-colors duration-300">
+              SHUKLA
+            </h2>
+          </div>
+
+          {/* Bottom Disciplines Strip */}
+          <div className="mt-8 z-10 flex flex-wrap items-center justify-center gap-3 text-zinc-400 font-mono text-[11px] font-bold">
+            <span className="px-3 py-1 bg-white/5 rounded border border-white/10 text-white">
+              01 // INTERFACE SYSTEMS
+            </span>
+            <span className="px-3 py-1 bg-white/5 rounded border border-white/10 text-white">
+              02 // VISUAL STORYTELLING
+            </span>
+            <span className="px-3 py-1 bg-white/5 rounded border border-white/10 text-white">
+              03 // PRODUCT DESIGN
+            </span>
           </div>
 
         </div>
