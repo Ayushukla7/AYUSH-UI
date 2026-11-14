@@ -11,11 +11,11 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden graph-paper-bg">
+    <section id="contact" className="py-28 sm:py-36 relative overflow-hidden graph-paper-bg">
       <div className="max-w-5xl mx-auto px-4 sm:px-8 text-center flex flex-col items-center">
         
         {/* Section Pill */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border-2 border-[#111111] shadow-[2px_2px_0px_#111111] mb-6">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white border-2 border-[#111111] shadow-[2px_2px_0px_#111111] mb-6">
           <span className="w-2 h-2 bg-[#FF1E27] animate-pulse" />
           <span className="font-mono text-xs font-bold text-[#111111] uppercase tracking-wider">
             INITIATE COLLABORATION // 2026
@@ -27,14 +27,14 @@ export default function ContactSection() {
           LET'S TALK
         </h2>
 
-        <p className="font-sans text-sm sm:text-base text-[#555555] max-w-lg mx-auto mt-4 mb-10 leading-relaxed">
+        <p className="font-sans text-sm sm:text-base text-[#555555] max-w-lg mx-auto mt-5 mb-12 leading-relaxed">
           Open for full-time UI/UX design roles, design systems architecture, and high-impact digital platform projects.
         </p>
 
         {/* Central Neo-Brutalist Box */}
-        <div className="w-full max-w-xl bg-white border-2 border-[#111111] p-8 shadow-brutal-lg mb-10 relative">
+        <div className="w-full max-w-xl bg-white border-2 border-[#111111] p-8 sm:p-12 shadow-brutal-lg mb-12 relative">
           
-          <div className="flex items-center justify-between pb-4 border-b border-[#111111]/10 mb-6">
+          <div className="flex items-center justify-between pb-4 border-b border-[#111111]/10 mb-8">
             <span className="font-mono text-xs font-bold uppercase text-[#666666]">
               DIRECT INBOX
             </span>
@@ -44,8 +44,8 @@ export default function ContactSection() {
           </div>
 
           {/* Email Box */}
-          <div className="bg-[#ECECEC] border-2 border-[#111111] p-4 shadow-[3px_3px_0px_#111111] mb-6">
-            <span className="font-mono text-[10px] text-[#666666] font-bold uppercase block mb-1">
+          <div className="bg-[#ECECEC] border-2 border-[#111111] p-5 shadow-[3px_3px_0px_#111111] mb-8">
+            <span className="font-mono text-[10px] text-[#666666] font-bold uppercase block mb-1.5">
               PRIMARY EMAIL
             </span>
             <a
@@ -57,29 +57,29 @@ export default function ContactSection() {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3">
+          <div className="flex flex-col sm:flex-row gap-3.5">
             <button
               onClick={handleCopyEmail}
-              className="flex-1 py-3 rounded bg-white border-2 border-[#111111] font-mono text-xs font-bold shadow-brutal hover:bg-[#111111] hover:text-white transition-all"
+              className="flex-1 py-3.5 rounded bg-white border-2 border-[#111111] font-mono text-xs font-bold shadow-brutal hover:bg-[#111111] hover:text-white transition-all"
             >
               {copiedEmail ? 'COPIED TO CLIPBOARD! ✓' : 'COPY EMAIL 📋'}
             </button>
             <a
               href={`mailto:${personalInfo.email}`}
-              className="flex-1 text-center py-3 rounded bg-[#FF1E27] text-white border-2 border-[#111111] font-mono text-xs font-bold shadow-brutal hover:bg-[#111111] transition-all"
+              className="flex-1 text-center py-3.5 rounded bg-[#FF1E27] text-white border-2 border-[#111111] font-mono text-xs font-bold shadow-brutal hover:bg-[#111111] transition-all"
             >
               SEND DIRECT EMAIL ✉️
             </a>
           </div>
 
-          <div className="mt-6 pt-4 border-t border-[#111111]/10 flex items-center justify-between text-xs font-mono text-[#666666]">
+          <div className="mt-8 pt-4 border-t border-[#111111]/10 flex items-center justify-between text-xs font-mono text-[#666666]">
             <span>📍 Noida / Delhi NCR, India</span>
             <span>📞 {personalInfo.phone}</span>
           </div>
         </div>
 
         {/* Outlined Brutalist Social Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-3">
+        <div className="flex flex-wrap items-center justify-center gap-3.5">
           {/* LinkedIn (Ayush's new link) */}
           <a
             href={personalInfo.linkedin}
@@ -135,7 +135,7 @@ export default function ContactSection() {
         </div>
 
         {/* 3 Brutalist Glyphs at Bottom */}
-        <div className="mt-14 flex items-center justify-center gap-4 text-[#111111]">
+        <div className="mt-16 flex items-center justify-center gap-4 text-[#111111]">
           <span>✦</span>
           <span>✦</span>
           <span>♣</span>
