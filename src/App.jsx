@@ -3,7 +3,6 @@ import CustomCursor from './components/panda/CustomCursor';
 import PandaNavbar from './components/panda/PandaNavbar';
 import HeroSection from './components/panda/HeroSection';
 import AboutSection from './components/panda/AboutSection';
-import TheStudioSection from './components/panda/TheStudioSection';
 import ExperienceSection from './components/panda/ExperienceSection';
 import AchievementsSection from './components/panda/AchievementsSection';
 import ProjectsSection from './components/panda/ProjectsSection';
@@ -38,9 +37,6 @@ export default function App() {
 
         {/* ABOUT ME & TORN PAPER COLLAGE */}
         <AboutSection />
-
-        {/* THE STU // STUDIO POLAROIDS & MARQUEE */}
-        <TheStudioSection />
 
         {/* PORTFOLIO PROJECTS */}
         <ProjectsSection onOpenImage={handleOpenImage} />

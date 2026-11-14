@@ -7,7 +7,6 @@ export default function PandaNavbar() {
   const navLinks = [
     { label: "ABOUT", href: "#about" },
     { label: "WORKS", href: "#projects" },
-    { label: "THE STU", href: "#the-stu" },
     { label: "TOOLBOX", href: "#skills" },
     { label: "EXPERIENCE", href: "#experience" },
     { label: "CONTACT", href: "#contact" }
@@ -21,9 +20,9 @@ export default function PandaNavbar() {
         <a href="#hero" className="flex items-center gap-2.5 group">
           <div className="w-7 h-7 rounded-full overflow-hidden border border-[#111111] bg-white shadow-[1px_1px_0px_#111111] flex-shrink-0">
             <img
-              src="/assets/ayush_profile.png"
+              src="/assets/ayush_profile_new.jpg"
               alt="Ayush Shukla"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-[center_18%]"
             />
           </div>
           <div className="flex items-baseline gap-1.5">

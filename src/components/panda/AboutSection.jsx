@@ -220,9 +220,9 @@ export default function AboutSection() {
             <div className="relative z-20 my-[-25px] sm:my-[-40px] md:my-[-55px] group">
               <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full overflow-hidden portrait-red-outline border-4 border-[#111111] bg-[#111111] transition-transform duration-500 group-hover:scale-105">
                 <img
-                  src="/assets/ayush_profile.png"
+                  src="/assets/ayush_profile_new.jpg"
                   alt="Ayush Shukla Cutout Portrait"
-                  className="w-full h-full object-cover filter contrast-110"
+                  className="w-full h-full object-cover object-[center_20%] filter contrast-110"
                 />
               </div>
 
