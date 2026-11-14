@@ -1,183 +1,165 @@
 import React from 'react';
-import { personalInfo } from '../../data/projectsData';
+import { personalInfo, resumeData } from '../../data/projectsData';
 
 export default function AboutSection() {
-  const highlights = [
-    { title: "Interaction Design", color: "bg-[#FEF08A] text-[#141416]" },
-    { title: "Figma Prototyping", color: "bg-[#BBF7D0] text-[#141416]" },
-    { title: "User Research", color: "bg-[#FBCFE8] text-[#141416]" },
-    { title: "Motion Design", color: "bg-[#BAE6FD] text-[#141416]" },
-    { title: "Design Systems", color: "bg-[#DDD6FE] text-[#141416]" },
-  ];
-
-  const stats = [
-    { number: "4+", label: "Design Roles", sub: "ONI Cares, Technovation, IIITD", color: "bg-[#FEF08A]", rotate: "-rotate-2" },
-    { number: "10+", label: "Shipped UIs", sub: "Dashboards, Web & Apps", color: "bg-[#BBF7D0]", rotate: "rotate-1" },
-    { number: "40+", label: "Visual Assets", sub: "Event Creatives & Merch", color: "bg-[#FED7AA]", rotate: "-rotate-1" },
-    { number: "1.5K+", label: "Reach", sub: "Attendees & Users", color: "bg-[#BAE6FD]", rotate: "rotate-2" },
-  ];
-
   return (
-    <section id="about" className="py-20 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-        
-        {/* GIANT PIXEL SECTION TITLE (MATCHING SCREEN 4) */}
-        <div className="text-center mb-10">
-          <span className="font-handwriting text-2xl sm:text-3xl text-[#52525B] -rotate-1 inline-block">
-            about the designer
-          </span>
-          <h2 className="font-pixel text-7xl sm:text-9xl text-[#141416] tracking-tight -mt-1 leading-none select-none">
-            ABOUT
-          </h2>
-        </div>
-
-        {/* MAIN RULED PAPER SCRAPBOOK CARD (MATCHING SCREEN 3 & 4) */}
-        <div className="bg-[#FFFFFF] border-2 border-[#141416] rounded-3xl p-6 sm:p-10 shadow-brutal-lg relative">
+    <section id="about" className="relative py-16 overflow-hidden">
+      
+      {/* 1. TOP PART: BIO, EDUCATION, EXPERIENCE & PHOTOSHOP BOUNDING BOX */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* Top Paper Header Strip */}
-          <div className="flex items-center justify-between pb-6 border-b-2 border-[#141416]/10 mb-8">
-            <div className="flex items-center gap-2">
-              <span className="w-3 h-3 rounded-full bg-[#EF4444] border border-[#141416]" />
-              <span className="w-3 h-3 rounded-full bg-[#F59E0B] border border-[#141416]" />
-              <span className="w-3 h-3 rounded-full bg-[#10B981] border border-[#141416]" />
-              <span className="ml-2 font-mono text-xs font-bold text-[#141416] tracking-wider uppercase">
-                DOSSIER // AYUSH_SHUKLA.TXT
-              </span>
-            </div>
+          {/* Left: Photoshop Bounding Box Visual (Exact Behance Screen 2 Left) */}
+          <div className="lg:col-span-4 flex justify-center">
+            <div className="ps-bounding-box p-1 bg-white max-w-[260px] shadow-brutal relative group">
+              {/* 8 Transform Handles */}
+              <div className="ps-handle -top-1.5 -left-1.5" />
+              <div className="ps-handle -top-1.5 left-1/2 -translate-x-1/2" />
+              <div className="ps-handle -top-1.5 -right-1.5" />
+              <div className="ps-handle top-1/2 -translate-y-1/2 -left-1.5" />
+              <div className="ps-handle top-1/2 -translate-y-1/2 -right-1.5" />
+              <div className="ps-handle -bottom-1.5 -left-1.5" />
+              <div className="ps-handle -bottom-1.5 left-1/2 -translate-x-1/2" />
+              <div className="ps-handle -bottom-1.5 -right-1.5" />
 
-            <div className="bg-[#FEF08A] border-2 border-[#141416] px-3 py-1 rounded font-mono text-[11px] font-bold shadow-[2px_2px_0px_#141416]">
-              NOIDA / DELHI NCR, INDIA 📍
+              {/* Visual inside box */}
+              <div className="aspect-[3/4] bg-[#141416] overflow-hidden">
+                <img
+                  src="/assets/team_techno_merchandise.png"
+                  alt="Streetwear Apparel Graphic"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              <div className="mt-2 flex items-center justify-between font-mono text-[10px] text-[#111111] px-1 font-bold">
+                <span>SELECTION_V1</span>
+                <span className="text-[#FF1E27]">100%</span>
+              </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            
-            {/* Left: Polaroid Photo with Frosted Scotch Tape */}
-            <div className="lg:col-span-5 flex flex-col items-center">
-              <div className="polaroid-card relative rotate-[-2.5deg] hover:rotate-0 transition-transform duration-300 w-full max-w-[300px]">
-                {/* Corner Washi Tape (Blue) */}
-                <div className="absolute -top-3 -left-3 w-16 h-5 bg-[#BAE6FD]/85 border-l border-r border-dashed border-[#141416]/30 -rotate-12 z-20 shadow-sm" />
-                <div className="absolute -top-3 -right-3 w-16 h-5 bg-[#BAE6FD]/85 border-l border-r border-dashed border-[#141416]/30 rotate-12 z-20 shadow-sm" />
+          {/* Center: Bio Narrative & Education (Exact Behance Screen 2 Center) */}
+          <div className="lg:col-span-4 space-y-6">
+            <p className="font-sans text-xs sm:text-sm text-[#111111] leading-relaxed">
+              Right now I'm studying Computer Science & Engineering in India while working with platforms and brands that trust me to bring their digital experiences and interfaces to life.
+            </p>
 
-                {/* Photo of Ayush */}
-                <div className="w-full aspect-square bg-[#141416] rounded overflow-hidden border border-[#E2DED5]">
-                  <img
-                    src="/assets/ayush_profile.png"
-                    alt="Ayush Shukla"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                {/* Polaroid Caption */}
-                <div className="mt-3 text-center">
-                  <span className="font-handwriting text-xl text-[#141416] block">
-                    Ayush Shukla • 2026
-                  </span>
-                  <span className="font-mono text-[10px] text-[#52525B] uppercase font-bold tracking-wider">
-                    UI/UX & GRAPHIC DESIGNER
-                  </span>
-                </div>
-              </div>
-
-              {/* Taped Sticky Tag Below Photo */}
-              <div className="mt-5 bg-[#BBF7D0] border-2 border-[#141416] px-4 py-1.5 rounded-lg shadow-[2px_2px_0px_#141416] rotate-1 text-center">
-                <span className="font-mono text-xs font-bold text-[#141416]">
-                  ✦ ABESEC B.Tech CSE (2024–2028)
+            {/* Education Block */}
+            <div className="pt-2">
+              <h3 className="font-extended font-black text-lg sm:text-xl text-[#111111] tracking-wide mb-2 uppercase">
+                EDUCATION
+              </h3>
+              <div className="border-l-2 border-[#111111] pl-3 py-1 space-y-1">
+                <span className="font-sans text-xs sm:text-sm font-bold text-[#111111] block">
+                  Bachelor of Technology in CSE
+                </span>
+                <span className="font-mono text-[11px] sm:text-xs text-[#666666] block">
+                  ABES Engineering College | 2024 – 2028
                 </span>
               </div>
             </div>
 
-            {/* Right: Bio & Highlighter Tape Pills (Matching Screen 3) */}
-            <div className="lg:col-span-7 space-y-6">
-              
-              {/* Handwriting "what's up" */}
-              <div className="inline-block bg-[#FEF08A] border-2 border-[#141416] px-3.5 py-1 rounded shadow-[2px_2px_0px_#141416] -rotate-1">
-                <span className="font-handwriting text-xl text-[#141416] font-bold">
-                  what's up! 👋
-                </span>
-              </div>
-
-              {/* Designer Manifesto Paragraph */}
-              <p className="font-sans text-base sm:text-lg text-[#141416] leading-relaxed">
-                I'm a <strong className="font-bold underline decoration-[#FEF08A] decoration-4">UI/UX & Graphic Designer</strong> who gets a little too excited about making complicated things feel simple. I care about the small details, the edge cases everyone forgets, and shipping work that genuinely makes someone's day easier. ☕
-              </p>
-
-              {/* Engineering + Design Narrative */}
-              <p className="font-sans text-sm sm:text-[15px] text-[#52525B] leading-relaxed">
-                Currently pursuing my B.Tech in Computer Science and Engineering at ABESEC, I combine engineering structure with design empathy. From architecting SaaS dashboard workflows to crafting high-converting social carousels and hackathon-winning healthcare platforms, I believe great software shouldn't call attention to itself — it should just work beautifully.
-              </p>
-
-              {/* Highlighter Tape Skills (Exact Screen 3 Reproduction) */}
-              <div className="pt-2">
-                <span className="font-mono text-xs text-[#52525B] uppercase font-bold tracking-wider block mb-3">
-                  CORE DISCIPLINES & FOCUS:
-                </span>
-                <div className="flex flex-wrap items-center gap-2.5">
-                  {highlights.map((h, idx) => (
-                    <span
-                      key={idx}
-                      className={`px-3.5 py-1.5 rounded-md border-2 border-[#141416] shadow-[2px_2px_0px_#141416] font-mono text-xs font-bold tracking-tight hover:translate-x-[-1px] hover:translate-y-[-1px] transition-transform ${h.color}`}
-                    >
-                      {h.title}
-                    </span>
-                  ))}
-                  <span className="px-3 py-1.5 rounded-md bg-[#141416] text-white font-mono text-xs font-bold border-2 border-[#141416]">
-                    &gt;&gt;
-                  </span>
-                </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="pt-3 flex flex-wrap items-center gap-3">
-                <a
-                  href="/resume.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-5 py-2.5 rounded-xl bg-[#141416] text-[#F8F6F0] font-mono text-xs font-bold border-2 border-[#141416] shadow-brutal hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-brutal-lg transition-all"
-                >
-                  FULL RESUME 📄
-                </a>
-                <a
-                  href="#contact"
-                  className="px-5 py-2.5 rounded-xl bg-white text-[#141416] font-mono text-xs font-bold border-2 border-[#141416] shadow-brutal hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-brutal-lg transition-all"
-                >
-                  SAY HELLO ✉️
-                </a>
-              </div>
-
-            </div>
-
-          </div>
-
-          {/* 4 Pastel Sticky Note Metrics Grid Below (Matching Screen 7 Sticky Style) */}
-          <div className="mt-12 pt-8 border-t-2 border-[#141416]/10">
-            <span className="font-handwriting text-xl text-[#52525B] -rotate-1 inline-block mb-4">
-              the key numbers at a glance ✦
-            </span>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {stats.map((s, idx) => (
-                <div
+            {/* Core Focus Pills */}
+            <div className="pt-1 flex flex-wrap gap-1.5">
+              {["UI/UX Design", "Design Systems", "Product Strategy", "Figma Auto-Layout"].map((tag, idx) => (
+                <span
                   key={idx}
-                  className={`p-4 rounded-xl border-2 border-[#141416] shadow-brutal ${s.color} ${s.rotate} hover:rotate-0 transition-transform`}
+                  className="px-2.5 py-1 rounded bg-white border border-[#111111] font-mono text-[10px] font-bold text-[#111111]"
                 >
-                  <span className="font-pixel text-4xl sm:text-5xl text-[#141416] block leading-none">
-                    {s.number}
-                  </span>
-                  <span className="font-mono text-xs font-bold text-[#141416] uppercase mt-1 block">
-                    {s.label}
-                  </span>
-                  <span className="font-sans text-[11px] text-[#141416]/80 block mt-0.5">
-                    {s.sub}
-                  </span>
-                </div>
+                  {tag}
+                </span>
               ))}
+            </div>
+          </div>
+
+          {/* Right: Experience Timeline (Exact Behance Screen 2 Right) */}
+          <div className="lg:col-span-4 space-y-4">
+            <h3 className="font-extended font-black text-lg sm:text-xl text-[#111111] tracking-wide uppercase">
+              EXPERIENCE
+            </h3>
+
+            <div className="space-y-4">
+              {/* ONI Cares */}
+              <div className="border-l-2 border-[#FF1E27] pl-3 py-0.5">
+                <span className="font-mono text-xs font-bold text-[#FF1E27] block">
+                  2026 – Present
+                </span>
+                <span className="font-sans text-xs sm:text-sm font-bold text-[#111111] block mt-0.5">
+                  UI/UX & Product Designer
+                </span>
+                <span className="font-mono text-[11px] text-[#666666] block">
+                  ONI Cares (HealthTech)
+                </span>
+              </div>
+
+              {/* Technovation */}
+              <div className="border-l-2 border-[#111111] pl-3 py-0.5">
+                <span className="font-mono text-xs font-bold text-[#111111] block">
+                  Jun 2025 – Present
+                </span>
+                <span className="font-sans text-xs sm:text-sm font-bold text-[#111111] block mt-0.5">
+                  Graphic Designer
+                </span>
+                <span className="font-mono text-[11px] text-[#666666] block">
+                  Technovation – The Networking Club, ABESEC
+                </span>
+              </div>
+
+              {/* Ignite Room IIIT Delhi */}
+              <div className="border-l-2 border-[#111111] pl-3 py-0.5">
+                <span className="font-mono text-xs font-bold text-[#666666] block">
+                  Jul 2025 – Jun 2026
+                </span>
+                <span className="font-sans text-xs sm:text-sm font-bold text-[#111111] block mt-0.5">
+                  Lead Graphic Designer
+                </span>
+                <span className="font-mono text-[11px] text-[#666666] block">
+                  Ignite Room IIIT DELHI
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      {/* 2. THE SIGNATURE TORN PAPER COLLAGE (EXACT BEHANCE CENTERPIECE) */}
+      <div className="relative w-full my-8">
+        
+        {/* Dark Crumpled Paper Container with Jagged Torn Top & Bottom */}
+        <div className="dark-crumpled-bg torn-top torn-bottom py-20 sm:py-32 relative overflow-hidden text-center flex flex-col items-center justify-center min-h-[380px] sm:min-h-[460px]">
+          
+          {/* Subtle Grid overlay inside dark section */}
+          <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
+
+          {/* Giant Arching Background Typography: "AYUSH SHUKLA" / "CREATIVE DIRECTION" */}
+          <div className="absolute inset-0 flex items-center justify-center select-none pointer-events-none overflow-hidden opacity-90">
+            <span className="font-extended font-black text-[15vw] sm:text-[14vw] md:text-[12vw] text-white tracking-widest whitespace-nowrap leading-none">
+              AYUSH SHUKLA
+            </span>
+          </div>
+
+          {/* Cutout Portrait Photo with Bold Red Outline Sticker Effect */}
+          <div className="relative z-20 group">
+            <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full overflow-hidden portrait-red-outline transition-transform duration-500 group-hover:scale-105">
+              <img
+                src="/assets/ayush_profile.png"
+                alt="Ayush Shukla Cutout Portrait"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Sticker Pill Below Portrait */}
+            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-[#111111] border-2 border-[#FF1E27] text-white font-mono text-[11px] sm:text-xs font-bold tracking-wider whitespace-nowrap shadow-brutal flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-[#FF1E27] animate-pulse" />
+              <span>CREATIVE DIRECTION & UI/UX</span>
             </div>
           </div>
 
         </div>
 
       </div>
+
     </section>
   );
 }

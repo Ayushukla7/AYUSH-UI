@@ -6,7 +6,6 @@ export default function CustomCursor() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Only run on non-touch devices
     const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     if (isTouch) return;
 
@@ -14,7 +13,6 @@ export default function CustomCursor() {
       setPos({ x: e.clientX, y: e.clientY });
       if (!isVisible) setIsVisible(true);
 
-      // Check if target is clickable
       const target = e.target;
       const isClickable = target.closest('a, button, [role="button"], input, textarea, select, .clickable');
       setIsHovered(!!isClickable);
@@ -36,25 +34,27 @@ export default function CustomCursor() {
   if (!isVisible) return null;
 
   return (
-    <div className="hidden md:block pointer-events-none fixed inset-0 z-50 transition-opacity duration-300">
-      {/* Center Black Ink Dot */}
+    <div className="hidden md:block pointer-events-none fixed inset-0 z-50">
+      {/* Center Black / Red Dot */}
       <div
-        className="fixed w-3 h-3 bg-[#141416] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none z-50 transition-transform duration-75"
+        className="fixed w-3.5 h-3.5 rounded-full pointer-events-none z-50 transition-transform duration-75"
         style={{
           left: `${pos.x}px`,
           top: `${pos.y}px`,
-          transform: `translate(-50%, -50%) scale(${isHovered ? 1.6 : 1})`,
+          backgroundColor: isHovered ? '#FF1E27' : '#111111',
+          transform: `translate(-50%, -50%) scale(${isHovered ? 1.5 : 1})`,
         }}
       />
-      {/* Outer Paper Ring */}
+      {/* Outer Precise Ring */}
       <div
-        className="fixed rounded-full pointer-events-none border-2 border-[#141416] -translate-x-1/2 -translate-y-1/2 transition-all duration-150 ease-out z-40"
+        className="fixed rounded-full pointer-events-none border-2 -translate-x-1/2 -translate-y-1/2 transition-all duration-150 ease-out z-40"
         style={{
           left: `${pos.x}px`,
           top: `${pos.y}px`,
-          width: isHovered ? '48px' : '32px',
-          height: isHovered ? '48px' : '32px',
-          backgroundColor: isHovered ? 'rgba(254, 240, 138, 0.4)' : 'transparent',
+          width: isHovered ? '42px' : '28px',
+          height: isHovered ? '42px' : '28px',
+          borderColor: isHovered ? '#FF1E27' : 'rgba(0, 0, 0, 0.4)',
+          backgroundColor: isHovered ? 'rgba(255, 30, 39, 0.15)' : 'transparent',
           transform: 'translate(-50%, -50%)',
         }}
       />

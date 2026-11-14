@@ -6,10 +6,10 @@ export default function ProjectsSection({ onOpenImage }) {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const categories = [
-    { id: 'all', label: 'All Projects' },
-    { id: 'uiux', label: 'UI/UX & SaaS' },
-    { id: 'carousels', label: 'Social Carousels' },
-    { id: 'brand', label: 'Brand & Apparel' },
+    { id: 'all', label: 'ALL WORKS' },
+    { id: 'uiux', label: 'UI/UX & SAAS' },
+    { id: 'carousels', label: 'SOCIAL FEEDS' },
+    { id: 'brand', label: 'BRAND & APPAREL' },
   ];
 
   const filteredProjects = portfolioSections.filter((project) => {
@@ -23,156 +23,111 @@ export default function ProjectsSection({ onOpenImage }) {
   const aiProject = portfolioSections.find((p) => p.id === 'ai-dark-side');
 
   return (
-    <section id="projects" className="py-20 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+    <section id="projects" className="py-20 relative overflow-hidden graph-paper-bg">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8">
         
-        {/* GIANT PIXEL SECTION TITLE (MATCHING SCREEN 5) */}
-        <div className="text-center mb-8">
-          <span className="font-handwriting text-2xl sm:text-3xl text-[#52525B] -rotate-1 inline-block">
-            selected case studies & deliverables
-          </span>
-          <h2 className="font-pixel text-7xl sm:text-9xl text-[#141416] tracking-tight -mt-1 leading-none select-none">
-            FEATURED WORKS
-          </h2>
-        </div>
+        {/* Section Heading */}
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between pb-6 border-b-2 border-[#111111] mb-10 gap-4">
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="w-2.5 h-2.5 bg-[#FF1E27]" />
+              <span className="font-mono text-xs font-bold text-[#666666] tracking-widest uppercase">
+                PORTFOLIO CASE STUDIES
+              </span>
+            </div>
+            <h2 className="font-extended font-black text-4xl sm:text-6xl md:text-7xl text-[#111111] tracking-tight leading-none uppercase">
+              SELECTED WORKS
+            </h2>
+          </div>
 
-        {/* Filter Pills (Stationery Tape Style) */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => setActiveFilter(cat.id)}
-              className={`px-4 py-1.5 rounded-full text-xs font-mono font-bold tracking-tight border-2 border-[#141416] transition-all ${
-                activeFilter === cat.id
-                  ? 'bg-[#FEF08A] text-[#141416] shadow-brutal scale-105 -rotate-1'
-                  : 'bg-white text-[#52525B] hover:text-[#141416] hover:bg-[#FAF7F0] shadow-sm'
-              }`}
-            >
-              {cat.label}
-            </button>
-          ))}
+          {/* Filter Tabs */}
+          <div className="flex flex-wrap items-center gap-2">
+            {categories.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => setActiveFilter(cat.id)}
+                className={`px-4 py-1.5 rounded font-mono text-xs font-bold transition-all border-2 border-[#111111] ${
+                  activeFilter === cat.id
+                    ? 'bg-[#111111] text-white shadow-brutal-red'
+                    : 'bg-white text-[#111111] hover:bg-[#FF1E27] hover:text-white hover:border-[#FF1E27]'
+                }`}
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* ============================================================ */}
-        {/* 1. HERO CASE STUDY: STUDENT ERP (MATCHING SCREEN 7 LAYOUT) */}
+        {/* 1. HERO CASE STUDY: STUDENT ERP (SAAS & SIH PODIUM) */}
         {/* ============================================================ */}
         {(activeFilter === 'all' || activeFilter === 'uiux') && (
-          <div className="bg-[#FFFFFF] border-2 border-[#141416] rounded-3xl p-6 sm:p-10 shadow-brutal-lg mb-14 relative">
+          <div className="bg-white border-2 border-[#111111] shadow-brutal-lg p-6 sm:p-10 mb-14 relative group">
             
-            {/* Top Bar with Date & Status Badge */}
-            <div className="flex flex-wrap items-center justify-between gap-3 pb-6 border-b-2 border-[#141416]/10 mb-8">
+            {/* Header Meta */}
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b-2 border-[#111111]/10 mb-6">
               <div className="flex items-center gap-2">
-                <span className="bg-[#FEF08A] border-2 border-[#141416] px-3 py-1 rounded font-mono text-xs font-bold shadow-[2px_2px_0px_#141416]">
-                  ★ SIH 2024 PODIUM
+                <span className="px-2.5 py-1 bg-[#FF1E27] text-white font-mono text-[11px] font-bold">
+                  ★ SIH PODIUM WINNER
                 </span>
-                <span className="font-mono text-xs font-bold text-[#141416] uppercase">
-                  PROJECT 01 // ACADEMIC SAAS
+                <span className="font-mono text-xs font-bold text-[#111111] uppercase">
+                  PROJECT 01 // SAAS ACADEMIC INTELLIGENCE
                 </span>
               </div>
-
-              <div className="font-handwriting text-xl text-[#52525B] -rotate-1">
-                "Smart India Hackathon Deliverable"
-              </div>
-            </div>
-
-            {/* Giant Pixel Project Name */}
-            <div className="flex flex-col md:flex-row items-start md:items-baseline justify-between gap-2 mb-6">
-              <h3 className="font-pixel text-5xl sm:text-7xl text-[#141416] tracking-tight leading-none">
-                STUDENTERP.IO
-              </h3>
-              <span className="font-mono text-xs font-bold text-[#52525B] uppercase">
-                COMPREHENSIVE ACADEMIC MANAGEMENT PLATFORM
+              <span className="font-mono text-xs font-bold text-[#666666]">
+                2024–2026 PRODUCTION
               </span>
             </div>
 
-            {/* Sticky Notes Metadata Grid (Screen 7 Recreation) */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-              <div className="bg-[#DDD6FE] border-2 border-[#141416] p-3 rounded-lg shadow-[2px_2px_0px_#141416] -rotate-1">
-                <span className="text-[10px] font-mono font-bold uppercase text-[#141416]/70 block">ROLE</span>
-                <span className="font-mono text-xs font-bold text-[#141416]">Lead UI/UX Designer</span>
-              </div>
-              <div className="bg-[#FEF08A] border-2 border-[#141416] p-3 rounded-lg shadow-[2px_2px_0px_#141416] rotate-1">
-                <span className="text-[10px] font-mono font-bold uppercase text-[#141416]/70 block">TIMELINE</span>
-                <span className="font-mono text-xs font-bold text-[#141416]">4 Months Build</span>
-              </div>
-              <div className="bg-[#BBF7D0] border-2 border-[#141416] p-3 rounded-lg shadow-[2px_2px_0px_#141416] -rotate-2">
-                <span className="text-[10px] font-mono font-bold uppercase text-[#141416]/70 block">IMPACT</span>
-                <span className="font-mono text-xs font-bold text-[#141416]">47% Faster Workflow</span>
-              </div>
-              <div className="bg-[#FBCFE8] border-2 border-[#141416] p-3 rounded-lg shadow-[2px_2px_0px_#141416] rotate-2">
-                <span className="text-[10px] font-mono font-bold uppercase text-[#141416]/70 block">TEAM</span>
-                <span className="font-mono text-xs font-bold text-[#141416]">4 Engineers & Designers</span>
-              </div>
-            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              {/* Text & Stats */}
+              <div className="lg:col-span-5 space-y-5">
+                <h3 className="font-extended font-black text-3xl sm:text-4xl text-[#111111] leading-tight uppercase">
+                  StudentERP.io
+                </h3>
 
-            {/* Project Screenshot with Washi Tape Corners */}
-            <div 
-              onClick={() => onOpenImage('/assets/student_erp_dashboard.png', 'StudentERP.io SaaS Dashboard')}
-              className="relative cursor-pointer group bg-[#FAF7F0] border-2 border-[#141416] rounded-2xl p-3 sm:p-4 shadow-brutal overflow-hidden"
-            >
-              {/* Scotch tape on top corners */}
-              <div className="absolute top-2 left-6 w-16 h-5 bg-white/80 border-l border-r border-dashed border-[#141416]/30 -rotate-6 z-20 shadow-sm" />
-              <div className="absolute top-2 right-6 w-16 h-5 bg-white/80 border-l border-r border-dashed border-[#141416]/30 rotate-6 z-20 shadow-sm" />
+                <p className="font-sans text-xs sm:text-sm text-[#444444] leading-relaxed">
+                  Designed for Smart India Hackathon. A comprehensive SaaS academic management portal featuring attendance analytics, batch performance charts, project pipelines, and examination timelines.
+                </p>
 
-              <div className="aspect-[16/9] sm:aspect-[21/9] w-full rounded-xl overflow-hidden bg-[#0c1626] border border-[#141416]/20 flex items-center justify-center">
-                <img
-                  src="/assets/student_erp_dashboard.png"
-                  alt="StudentERP Dashboard"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-
-              <div className="mt-3 flex items-center justify-between text-xs font-mono text-[#52525B]">
-                <span>CLICK TO ENLARGE PREVIEW ↗</span>
-                <span className="font-bold text-[#141416]">STUDENTERP_DASHBOARD_V2.PNG</span>
-              </div>
-            </div>
-
-            {/* Results Section with Sticky Metric Notes (Matching Screen 7) */}
-            <div className="mt-8 pt-6 border-t-2 border-[#141416]/10">
-              <span className="font-handwriting text-2xl text-[#141416] -rotate-1 inline-block mb-3">
-                the results ✦
-              </span>
-
-              <p className="font-sans text-sm text-[#52525B] mb-5 max-w-2xl leading-relaxed">
-                The platform streamlined faculty attendance input, reduced manual verification overhead by 55%, and introduced an intuitive student dashboard featuring real-time attendance analytics and examination timelines.
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="bg-[#BAE6FD] border-2 border-[#141416] p-4 rounded-xl shadow-brutal -rotate-1">
-                  <span className="font-pixel text-4xl sm:text-5xl text-[#141416] block leading-none">
-                    47%
-                  </span>
-                  <span className="font-mono text-xs font-bold text-[#141416] uppercase mt-1 block">
-                    TASK EFFICIENCY BOOST
-                  </span>
-                  <span className="font-sans text-[11px] text-[#141416]/80 block">
-                    Over legacy paper logbooks
-                  </span>
+                {/* Metrics Grid */}
+                <div className="grid grid-cols-2 gap-3 pt-2">
+                  <div className="p-3 bg-[#ECECEC] border-2 border-[#111111] shadow-[2px_2px_0px_#111111]">
+                    <span className="font-extended font-black text-2xl text-[#FF1E27] block">47%</span>
+                    <span className="font-mono text-[10px] font-bold text-[#111111] uppercase">Faster Task Completion</span>
+                  </div>
+                  <div className="p-3 bg-[#ECECEC] border-2 border-[#111111] shadow-[2px_2px_0px_#111111]">
+                    <span className="font-extended font-black text-2xl text-[#111111] block">-55%</span>
+                    <span className="font-mono text-[10px] font-bold text-[#111111] uppercase">Manual Admin Overhead</span>
+                  </div>
                 </div>
 
-                <div className="bg-[#FEF08A] border-2 border-[#141416] p-4 rounded-xl shadow-brutal rotate-1">
-                  <span className="font-pixel text-4xl sm:text-5xl text-[#141416] block leading-none">
-                    -55%
-                  </span>
-                  <span className="font-mono text-xs font-bold text-[#141416] uppercase mt-1 block">
-                    ADMIN OVERHEAD
-                  </span>
-                  <span className="font-sans text-[11px] text-[#141416]/80 block">
-                    Automated batch reports
-                  </span>
+                <div className="pt-2">
+                  <button
+                    onClick={() => onOpenImage('/assets/student_erp_dashboard.png', 'StudentERP.io Dashboard')}
+                    className="px-5 py-2.5 rounded bg-[#111111] text-white font-mono text-xs font-bold border-2 border-[#111111] shadow-brutal hover:bg-[#FF1E27] hover:border-[#FF1E27] transition-all flex items-center gap-2"
+                  >
+                    <span>ENLARGE DASHBOARD SPECS</span>
+                    <span>↗</span>
+                  </button>
                 </div>
+              </div>
 
-                <div className="bg-[#BBF7D0] border-2 border-[#141416] p-4 rounded-xl shadow-brutal -rotate-1">
-                  <span className="font-pixel text-4xl sm:text-5xl text-[#141416] block leading-none">
-                    TOP 3
-                  </span>
-                  <span className="font-mono text-xs font-bold text-[#141416] uppercase mt-1 block">
-                    NATIONAL PODIUM
-                  </span>
-                  <span className="font-sans text-[11px] text-[#141416]/80 block">
-                    Smart India Hackathon track
-                  </span>
+              {/* Screenshot with Bounding Box Effect */}
+              <div
+                onClick={() => onOpenImage('/assets/student_erp_dashboard.png', 'StudentERP.io Dashboard')}
+                className="lg:col-span-7 ps-bounding-box p-1.5 bg-[#0e1626] cursor-pointer group/img overflow-hidden"
+              >
+                <div className="aspect-[16/10] overflow-hidden">
+                  <img
+                    src="/assets/student_erp_dashboard.png"
+                    alt="StudentERP Dashboard"
+                    className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="mt-2 flex items-center justify-between font-mono text-[10px] text-white/80 px-2 py-1">
+                  <span>STUDENTERP_V2_FIGMA_SPEC</span>
+                  <span className="text-[#FF1E27]">CLICK TO EXPAND ↗</span>
                 </div>
               </div>
             </div>
@@ -181,83 +136,63 @@ export default function ProjectsSection({ onOpenImage }) {
         )}
 
         {/* ============================================================ */}
-        {/* 2. FOLDER CUTOUT CAROUSEL: AI'S DARK SIDE (SCREEN 6 RECREATION) */}
+        {/* 2. SOCIAL CAROUSEL: AI'S DARK SIDE (HACKING 2.0) */}
         {/* ============================================================ */}
         {(activeFilter === 'all' || activeFilter === 'carousels') && aiProject && (
-          <div className="mb-14">
-            {/* Folder Header Tabs */}
-            <div className="flex items-end gap-2 px-4 -mb-0.5 relative z-20">
-              <div className="bg-[#141416] text-white px-5 py-2.5 rounded-t-xl font-mono text-xs font-bold border-2 border-b-0 border-[#141416] flex items-center gap-2">
-                <span>✦ PROJECT 02</span>
-                <span className="text-[#FEF08A]">AI'S DARK SIDE</span>
+          <div className="bg-[#111111] text-white border-2 border-[#111111] shadow-brutal-lg p-6 sm:p-10 mb-14 relative">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between pb-4 border-b border-white/20 mb-6 gap-3">
+              <div>
+                <span className="font-mono text-[10px] font-bold text-[#FF1E27] uppercase tracking-wider block">
+                  6-SLIDE CONTINUOUS FEED STORYTELLING
+                </span>
+                <h3 className="font-extended font-black text-2xl sm:text-4xl text-white tracking-tight uppercase">
+                  AI'S DARK SIDE (HACKING 2.0)
+                </h3>
               </div>
-              <div className="bg-[#FEF08A] text-[#141416] px-4 py-2 rounded-t-xl font-mono text-xs font-bold border-2 border-b-0 border-[#141416]">
-                6-SLIDE CAROUSEL
-              </div>
+
+              <button
+                onClick={() => onOpenImage(aiProject.fullImage, aiProject.title)}
+                className="px-4 py-2 rounded bg-[#FF1E27] text-white font-mono text-xs font-bold border-2 border-white shadow-[2px_2px_0px_white] hover:bg-white hover:text-black hover:border-black transition-all flex items-center gap-1.5"
+              >
+                <span>EXPAND FULL STRIP</span>
+                <span>↗</span>
+              </button>
             </div>
 
-            {/* Folder Body Container */}
-            <div className="bg-[#141416] text-[#F8F6F0] border-2 border-[#141416] rounded-2xl rounded-tl-none p-6 sm:p-10 shadow-brutal-lg">
-              
-              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-6 border-b border-white/10 mb-8">
-                <div>
-                  <span className="font-handwriting text-2xl text-[#FEF08A] -rotate-1 inline-block">
-                    cybersecurity visual storytelling
-                  </span>
-                  <h3 className="font-pixel text-4xl sm:text-6xl text-white tracking-tight -mt-1">
-                    AI'S DARK SIDE (HACKING 2.0)
-                  </h3>
-                </div>
-
-                <button
-                  onClick={() => onOpenImage(aiProject.fullImage, aiProject.title)}
-                  className="px-4 py-2 rounded-xl bg-[#FEF08A] text-[#141416] font-mono text-xs font-bold border-2 border-[#FEF08A] shadow-[2px_2px_0px_white] hover:bg-white transition-all flex items-center gap-1.5"
+            {/* Slide previews */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+              {aiProject.slides?.map((slide, idx) => (
+                <div
+                  key={idx}
+                  onClick={() => {
+                    setActiveSlide(idx);
+                    onOpenImage(slide.img, `Slide ${slide.num}: ${slide.title}`);
+                  }}
+                  className={`bg-black p-2 border-2 cursor-pointer transition-all ${
+                    activeSlide === idx
+                      ? 'border-[#FF1E27] shadow-[3px_3px_0px_#FF1E27] -translate-y-1'
+                      : 'border-white/20 hover:border-white shadow-sm'
+                  }`}
                 >
-                  <span>FULL CAROUSEL STRIP</span>
-                  <span>↗</span>
-                </button>
-              </div>
-
-              {/* Interactive Carousel Slides Strip */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-                {aiProject.slides?.map((slide, idx) => (
-                  <div
-                    key={idx}
-                    onClick={() => {
-                      setActiveSlide(idx);
-                      onOpenImage(slide.img, `Slide ${slide.num}: ${slide.title}`);
-                    }}
-                    className={`bg-white p-2 rounded-xl border-2 cursor-pointer transition-all ${
-                      activeSlide === idx
-                        ? 'border-[#FEF08A] shadow-[3px_3px_0px_#FEF08A] -translate-y-1'
-                        : 'border-[#141416] hover:border-white shadow-sm'
-                    }`}
-                  >
-                    <div className="aspect-[4/5] rounded-lg overflow-hidden bg-black mb-2 border border-black/20">
-                      <img
-                        src={slide.img}
-                        alt={slide.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="flex items-center justify-between font-mono text-[10px] text-[#141416] font-bold">
-                      <span>SLIDE {slide.num}</span>
-                      <span className="text-[#52525B] truncate max-w-[70px]">{slide.title}</span>
-                    </div>
+                  <div className="aspect-[4/5] overflow-hidden mb-2">
+                    <img
+                      src={slide.img}
+                      alt={slide.title}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                ))}
-              </div>
-
-              <div className="mt-6 flex items-center justify-between text-xs font-mono text-zinc-400">
-                <span>✦ Click any slide to expand full-resolution view</span>
-                <span className="text-[#FEF08A]">Viral LinkedIn Feed Asset • 1.5K+ Impressions</span>
-              </div>
+                  <div className="font-mono text-[10px] text-white flex justify-between font-bold">
+                    <span>SLIDE {slide.num}</span>
+                    <span className="text-[#FF1E27]">→</span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         )}
 
         {/* ============================================================ */}
-        {/* 3. SCRAPBOOK POLAROID & CARD GRID FOR ALL OTHER WORKS */}
+        {/* 3. GRID OF ALL OTHER DELIVERABLES & BRAND MARKS */}
         {/* ============================================================ */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects
@@ -265,54 +200,47 @@ export default function ProjectsSection({ onOpenImage }) {
             .map((project, idx) => (
               <div
                 key={project.id || idx}
-                className="bg-[#FFFFFF] border-2 border-[#141416] rounded-2xl p-5 shadow-brutal flex flex-col justify-between group hover:shadow-brutal-lg transition-all"
+                className="bg-white border-2 border-[#111111] p-5 shadow-brutal flex flex-col justify-between group hover:shadow-brutal-lg hover:border-[#FF1E27] transition-all"
               >
                 <div>
-                  {/* Top Bar with Category Badge */}
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="font-mono text-[10px] font-bold uppercase tracking-wider bg-[#FAF7F0] border border-[#141416] px-2.5 py-0.5 rounded text-[#141416]">
+                  <div className="flex items-center justify-between pb-2 mb-3 border-b border-[#111111]/10">
+                    <span className="font-mono text-[10px] font-bold text-[#FF1E27] uppercase tracking-wider">
                       {project.category}
                     </span>
-                    <span className="font-mono text-xs font-bold text-[#52525B]">
-                      #{idx + 3}
+                    <span className="font-mono text-xs font-bold text-[#111111]">
+                      0{idx + 3}
                     </span>
                   </div>
 
-                  {/* Project Title */}
-                  <h4 className="font-pixel text-2xl sm:text-3xl text-[#141416] leading-none mb-2 group-hover:text-amber-600 transition-colors">
+                  <h4 className="font-extended font-black text-xl sm:text-2xl text-[#111111] leading-tight mb-2 group-hover:text-[#FF1E27] transition-colors uppercase">
                     {project.title}
                   </h4>
 
-                  {/* Description */}
-                  <p className="font-sans text-xs text-[#52525B] line-clamp-2 leading-relaxed mb-4">
+                  <p className="font-sans text-xs text-[#555555] line-clamp-2 leading-relaxed mb-4">
                     {project.description}
                   </p>
 
-                  {/* Preview Image with Scotch Tape */}
+                  {/* Visual Preview */}
                   <div
                     onClick={() => onOpenImage(project.fullImage, project.title)}
-                    className="relative aspect-[4/3] rounded-xl overflow-hidden bg-[#FAF7F0] border-2 border-[#141416] p-1.5 cursor-pointer group/img flex items-center justify-center mb-4"
+                    className="aspect-[4/3] bg-[#0c121e] border-2 border-[#111111] cursor-pointer overflow-hidden relative group/img mb-4"
                   >
-                    {/* Scotch tape on top */}
-                    <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-14 h-4 bg-white/80 border-l border-r border-dashed border-[#141416]/30 rotate-1 z-20 shadow-sm" />
-
                     <img
                       src={project.coverImage || project.fullImage}
                       alt={project.title}
-                      className="w-full h-full object-contain rounded-lg group-hover/img:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-contain group-hover/img:scale-105 transition-transform duration-500"
                       loading="lazy"
                     />
                   </div>
                 </div>
 
-                {/* Footer Action */}
-                <div className="pt-2 border-t-2 border-[#141416]/10 flex items-center justify-between">
-                  <span className="font-handwriting text-lg text-[#141416]">
-                    "handcrafted visual"
+                <div className="pt-2 border-t border-[#111111]/10 flex items-center justify-between">
+                  <span className="font-mono text-[11px] font-bold text-[#666666]">
+                    DELIVERABLE #{idx + 3}
                   </span>
                   <button
                     onClick={() => onOpenImage(project.fullImage, project.title)}
-                    className="px-3 py-1 rounded bg-[#FEF08A] border-2 border-[#141416] text-[#141416] font-mono text-[11px] font-bold shadow-[2px_2px_0px_#141416] hover:translate-x-[-1px] hover:translate-y-[-1px] transition-transform"
+                    className="px-3 py-1 bg-[#111111] text-white font-mono text-[11px] font-bold hover:bg-[#FF1E27] transition-colors"
                   >
                     PREVIEW ↗
                   </button>
