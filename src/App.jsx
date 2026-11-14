@@ -23,26 +23,20 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#030307] text-[#e2e8f0] relative selection:bg-[#a855f7] selection:text-white">
+    <div className="min-h-screen bg-[#F8F6F0] text-[#141416] relative selection:bg-[#FEF08A] selection:text-[#141416] font-sans">
       {/* Interactive Custom Cursor */}
       <CustomCursor />
 
-      {/* Top Fixed Navbar */}
+      {/* Top Floating Paper Navbar */}
       <PandaNavbar />
 
       {/* Main Content Sections */}
-      <main className="relative z-10">
+      <main className="relative z-10 pt-20">
         {/* HERO SECTION */}
         <HeroSection />
 
         {/* ABOUT ME */}
         <AboutSection />
-
-        {/* WORK EXPERIENCE */}
-        <ExperienceSection />
-
-        {/* ACHIEVEMENTS & PODIUM */}
-        <AchievementsSection />
 
         {/* PORTFOLIO PROJECTS */}
         <ProjectsSection onOpenImage={handleOpenImage} />
@@ -50,11 +44,17 @@ export default function App() {
         {/* CORE SKILLS & TOOLS */}
         <SkillsSection />
 
+        {/* WORK EXPERIENCE */}
+        <ExperienceSection />
+
+        {/* ACHIEVEMENTS & PODIUM */}
+        <AchievementsSection />
+
         {/* CONTACT & CONNECT */}
         <ContactSection />
       </main>
 
-      {/* Minimal Footer */}
+      {/* Notebook Paper Footer */}
       <FooterSection />
 
       {/* Lightweight Image Lightbox */}

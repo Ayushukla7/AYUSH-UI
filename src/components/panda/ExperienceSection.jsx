@@ -3,75 +3,77 @@ import { resumeData } from '../../data/projectsData';
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="py-24 relative overflow-hidden bg-[#05050c]/60">
-      {/* Glow Blob */}
-      <div className="blob-animate top-1/3 right-10 opacity-30" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="experience" className="py-20 relative overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         
-        {/* Section Heading with Editorial Technical Label */}
-        <div className="text-center mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/20 text-xs font-mono text-purple-300">
-            <span>[ 02 // CAREER JOURNEY ]</span>
-          </div>
-
-          <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-[-0.035em] leading-tight">
-            Work <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-300 to-indigo-200">Experience</span> & Leadership
+        {/* Section Heading */}
+        <div className="text-center mb-10">
+          <span className="font-handwriting text-2xl sm:text-3xl text-[#52525B] -rotate-1 inline-block">
+            leadership & roles
+          </span>
+          <h2 className="font-pixel text-7xl sm:text-9xl text-[#141416] tracking-tight -mt-1 leading-none select-none">
+            EXPERIENCE
           </h2>
-          <p className="text-xs sm:text-sm text-slate-400 max-w-lg mx-auto font-sans">
-            Leading visual identities, community design initiatives, and production interfaces across 4 organizations.
-          </p>
         </div>
 
-        {/* Experience Timeline Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {/* Experience Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {resumeData.experiences.map((exp, idx) => (
             <div
               key={idx}
-              className="purple-glass-card p-6 sm:p-7 rounded-3xl space-y-4 relative flex flex-col justify-between group"
+              className="bg-[#FFFFFF] border-2 border-[#141416] rounded-2xl p-6 sm:p-7 shadow-brutal flex flex-col justify-between group hover:shadow-brutal-lg transition-all relative overflow-hidden"
             >
-              <div className="space-y-3">
-                {/* Role Header */}
-                <div className="flex items-start justify-between gap-3">
+              {/* Corner Washi Tape */}
+              <div className="absolute -top-1 right-8 w-16 h-4 bg-[#FEF08A]/80 border-l border-r border-dashed border-[#141416]/30 rotate-2 z-20 shadow-sm" />
+
+              <div>
+                {/* Header Strip with Role & Period */}
+                <div className="flex items-start justify-between gap-3 pb-3 border-b-2 border-[#141416]/10 mb-4">
                   <div>
-                    <div className="flex items-center gap-2">
-                      <h3 className="font-display font-bold text-base sm:text-lg text-white group-hover:text-purple-300 transition-colors">
-                        {exp.role}
-                      </h3>
-                      {exp.isCurrent && (
-                        <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-[10px] font-mono font-bold text-emerald-400 animate-pulse">
-                          PRESENT
-                        </span>
-                      )}
-                    </div>
-                    <span className="text-xs font-mono text-purple-400 block mt-1 font-semibold">
+                    <span className="font-mono text-[10px] text-[#52525B] font-bold uppercase tracking-wider block">
+                      ROLE 0{idx + 1}
+                    </span>
+                    <h3 className="font-pixel text-2xl sm:text-3xl text-[#141416] leading-tight">
+                      {exp.role}
+                    </h3>
+                    <span className="font-mono text-xs font-bold text-amber-700 block mt-0.5">
                       {exp.company}
                     </span>
                   </div>
-                  <span className="text-[11px] font-mono text-slate-300 bg-white/5 px-2.5 py-1 rounded-full border border-white/10 whitespace-nowrap">
-                    {exp.period}
-                  </span>
+
+                  <div className="flex flex-col items-end gap-1 flex-shrink-0">
+                    <span className="px-2.5 py-1 rounded bg-[#FAF7F0] border-2 border-[#141416] text-[11px] font-mono font-bold text-[#141416] shadow-[2px_2px_0px_#141416]">
+                      {exp.period}
+                    </span>
+                    {exp.isCurrent && (
+                      <span className="px-2 py-0.5 rounded bg-[#BBF7D0] border border-[#141416] text-[10px] font-mono font-bold text-[#141416] flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
+                        <span>ACTIVE</span>
+                      </span>
+                    )}
+                  </div>
                 </div>
 
-                <div className="flex items-center gap-1.5 text-xs text-slate-400 font-mono pb-2 border-b border-white/5">
+                <div className="flex items-center gap-1.5 text-xs text-[#52525B] font-mono mb-4">
                   <span>📍</span>
                   <span>{exp.location}</span>
                 </div>
 
                 {/* Highlights List */}
-                <ul className="space-y-2.5 pt-1 font-sans">
+                <ul className="space-y-2.5 font-sans">
                   {exp.highlights.map((point, pIdx) => (
-                    <li key={pIdx} className="text-xs sm:text-[13px] text-slate-300 leading-relaxed flex items-start gap-2.5">
-                      <span className="text-purple-400 font-bold mt-0.5">›</span>
+                    <li key={pIdx} className="text-xs sm:text-[13px] text-[#3F3F46] leading-relaxed flex items-start gap-2">
+                      <span className="text-[#141416] font-bold mt-0.5">›</span>
                       <span>{point}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-slate-400">
-                <span>Verified Experience</span>
-                <span className="text-purple-400 font-bold">0{idx + 1}</span>
+              {/* Verified Card Footer */}
+              <div className="mt-6 pt-3 border-t-2 border-[#141416]/10 flex items-center justify-between text-[11px] font-mono text-[#52525B]">
+                <span>VERIFIED COMMUNITY RECORD</span>
+                <span className="font-bold text-[#141416]">✦ AYUSH SHUKLA</span>
               </div>
             </div>
           ))}

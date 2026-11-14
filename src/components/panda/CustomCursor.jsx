@@ -36,21 +36,26 @@ export default function CustomCursor() {
   if (!isVisible) return null;
 
   return (
-    <div className={`hidden md:block pointer-events-none ${isHovered ? 'cursor-hovered' : ''}`}>
-      {/* Small Center Dot */}
+    <div className="hidden md:block pointer-events-none fixed inset-0 z-50 transition-opacity duration-300">
+      {/* Center Black Ink Dot */}
       <div
-        className="custom-cursor-dot"
+        className="fixed w-3 h-3 bg-[#141416] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none z-50 transition-transform duration-75"
         style={{
           left: `${pos.x}px`,
           top: `${pos.y}px`,
+          transform: `translate(-50%, -50%) scale(${isHovered ? 1.6 : 1})`,
         }}
       />
-      {/* Outer Glowing Purple Ring */}
+      {/* Outer Paper Ring */}
       <div
-        className="custom-cursor-ring"
+        className="fixed rounded-full pointer-events-none border-2 border-[#141416] -translate-x-1/2 -translate-y-1/2 transition-all duration-150 ease-out z-40"
         style={{
           left: `${pos.x}px`,
           top: `${pos.y}px`,
+          width: isHovered ? '48px' : '32px',
+          height: isHovered ? '48px' : '32px',
+          backgroundColor: isHovered ? 'rgba(254, 240, 138, 0.4)' : 'transparent',
+          transform: 'translate(-50%, -50%)',
         }}
       />
     </div>

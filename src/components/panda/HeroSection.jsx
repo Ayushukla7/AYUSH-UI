@@ -1,181 +1,301 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { personalInfo } from '../../data/projectsData';
 
 export default function HeroSection() {
+  const [zoomLevel, setZoomLevel] = useState(1);
+
+  const handleZoom = (delta) => {
+    setZoomLevel((prev) => Math.min(Math.max(0.9, prev + delta), 1.15));
+  };
+
   return (
-    <section className="relative min-h-screen pt-28 pb-16 flex flex-col justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen pt-12 pb-24 overflow-hidden">
       
-      {/* 1. Iconic Background Editorial Display Word "PORTFOLIO" matching Reference Image */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0 overflow-hidden">
-        <span className="font-editorial font-black text-[18vw] sm:text-[20vw] tracking-wider uppercase text-transparent bg-clip-text bg-gradient-to-b from-purple-300 via-purple-500/40 to-purple-900/5 opacity-60 leading-none filter drop-shadow-[0_10px_40px_rgba(168,85,247,0.25)]">
-          PORTFOLIO
-        </span>
-      </div>
-
-      {/* 2. Ambient Purple Aura Glow behind Portrait */}
-      <div className="blob-animate top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] h-[360px] sm:w-[500px] sm:h-[500px] opacity-50 pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+      {/* ============================================================ */}
+      {/* 1. HERO MAIN CANVAS (SCREEN 1 RECREATION) */}
+      {/* ============================================================ */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center justify-center text-center pt-8 sm:pt-14">
         
-        {/* Main 3-Column Hero Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center min-h-[580px]">
-          
-          {/* Left Column: Greeting, Massive Name & Core Value Proposition */}
-          <div className="lg:col-span-4 space-y-4 text-center lg:text-left order-1">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-950/60 border border-purple-500/20 text-xs font-mono text-purple-300">
-              <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" />
-              <span>UI/UX & PRODUCT DESIGNER</span>
-            </div>
-
-            <h1 className="font-display font-extrabold text-5xl sm:text-7xl md:text-8xl text-white tracking-[-0.04em] leading-[0.92]">
-              Ayush <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-300 to-indigo-200">
-                Shukla
-              </span>
-            </h1>
-
-            <p className="text-sm sm:text-[15px] text-slate-300 max-w-sm mx-auto lg:mx-0 leading-relaxed font-sans">
-              Crafting high-converting digital platforms, scalable SaaS design systems, and visual brand storytelling that connects with users.
-            </p>
-
-            <div className="pt-1 flex flex-wrap justify-center lg:justify-start gap-2 text-xs font-mono">
-              <span className="px-3 py-1 rounded-full bg-purple-950/40 border border-purple-800/30 text-purple-300">
-                ✦ 10+ Shipped Interfaces
-              </span>
-              <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Available for Roles</span>
-              </span>
-            </div>
-          </div>
-
-          {/* Center Column: Cutout Portrait with Ambient Purple Backlight Aura */}
-          <div className="lg:col-span-4 flex items-center justify-center relative order-2 py-6 lg:py-0">
-            {/* Glowing Backlight Disc */}
-            <div className="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gradient-to-tr from-purple-700 via-purple-600/50 to-indigo-600/30 blur-[55px] opacity-75 pointer-events-none" />
-
-            {/* Ayush's Profile Image */}
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 z-10 group">
-              <div className="w-full h-full rounded-full p-2 bg-gradient-to-b from-purple-400/40 via-purple-600/20 to-transparent backdrop-blur-sm shadow-2xl shadow-purple-950/80">
-                <img
-                  src="/assets/ayush_profile.png"
-                  alt="Ayush Shukla"
-                  className="w-full h-full object-cover rounded-full filter drop-shadow-[0_15px_35px_rgba(168,85,247,0.4)] transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-
-              {/* Status Pill Badge */}
-              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-[#0a0a14]/90 border border-purple-500/40 backdrop-blur-md shadow-xl flex items-center gap-2 text-xs font-display font-semibold text-white whitespace-nowrap">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>UI/UX & Graphic Designer</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column: Roles, Focus Areas & Engineering Background */}
-          <div className="lg:col-span-4 space-y-3 text-center lg:text-left order-3 lg:pl-6">
-            <span className="text-purple-400 font-mono text-xs uppercase tracking-widest font-semibold block">
-              DISCIPLINE & CRAFT
-            </span>
-            <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-white tracking-[-0.03em] leading-tight">
-              Interface Systems
-            </h2>
-            <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-purple-400 tracking-[-0.03em] leading-tight">
-              & Visual Media
-            </h2>
-
-            <p className="text-xs sm:text-sm text-slate-400 max-w-sm mx-auto lg:mx-0 leading-relaxed font-sans pt-1">
-              Combining user empathy and atomic design tokens in Figma with clean implementation in React, Tailwind CSS, and Framer Motion.
-            </p>
-
-            {/* Quick Specialization Tags */}
-            <div className="pt-3 flex flex-wrap justify-center lg:justify-start gap-2">
-              {["SaaS Dashboards", "Figma Design Tokens", "Apparel & Brand Identity", "Social Storytelling"].map((tag, idx) => (
-                <span
-                  key={idx}
-                  className="px-3 py-1.5 rounded-full bg-purple-950/40 border border-purple-800/40 text-xs font-mono text-purple-200"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-
+        {/* Handwriting script greeting */}
+        <div className="relative mb-2">
+          <span className="font-handwriting text-2xl sm:text-4xl text-[#52525B] tracking-wide inline-block -rotate-2">
+            my name is
+          </span>
+          <span className="font-handwriting text-base sm:text-xl text-[#F59E0B] ml-2 font-bold inline-block rotate-6">
+            (hey there! 👋)
+          </span>
         </div>
 
-        {/* Bottom Bar: Social Icons & Direct Resume Button */}
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
+        {/* GIANT PIXEL NAME WITH TAPED PASTEL STICKY NOTES */}
+        <div className="relative my-4 select-none w-full max-w-4xl flex items-center justify-center">
           
-          {/* Social Profiles with Official Brand Vector Marks */}
-          <div className="flex items-center gap-3">
-            {/* LinkedIn */}
-            <a
-              href={personalInfo.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-11 h-11 rounded-full bg-[#0d0d18] border border-white/10 hover:border-[#0A66C2] text-slate-300 hover:text-[#0A66C2] hover:bg-[#001D3D]/60 flex items-center justify-center transition-all shadow-lg hover:scale-110 hover:shadow-[#0A66C2]/30"
-              title="LinkedIn"
-            >
-              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.94 0-1.7.76-1.7 1.7 0 .93.76 1.7 1.7 1.7.94 0 1.7-.77 1.7-1.7 0-.94-.76-1.7-1.7-1.7z"/>
-              </svg>
-            </a>
-
-            {/* GitHub */}
-            <a
-              href={personalInfo.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-11 h-11 rounded-full bg-[#0d0d18] border border-white/10 hover:border-purple-400 text-slate-300 hover:text-white hover:bg-purple-600/20 flex items-center justify-center transition-all shadow-lg hover:scale-110 hover:shadow-purple-950/50"
-              title="GitHub"
-            >
-              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
-              </svg>
-            </a>
-
-            {/* Instagram */}
-            <a
-              href={personalInfo.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-11 h-11 rounded-full bg-[#0d0d18] border border-white/10 hover:border-[#E1306C] text-slate-300 hover:text-[#E1306C] hover:bg-[#2E0818]/60 flex items-center justify-center transition-all shadow-lg hover:scale-110 hover:shadow-[#E1306C]/30"
-              title="Instagram"
-            >
-              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-              </svg>
-            </a>
-
-            {/* Email */}
-            <a
-              href={`mailto:${personalInfo.email}`}
-              className="w-11 h-11 rounded-full bg-[#0d0d18] border border-white/10 hover:border-[#EA4335] text-slate-300 hover:text-[#EA4335] hover:bg-[#EA4335]/10 flex items-center justify-center transition-all shadow-lg hover:scale-110 hover:shadow-[#EA4335]/30"
-              title="Send Direct Email"
-            >
-              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-              </svg>
-            </a>
+          {/* Taped Sticky Note: Top Left (Mint) */}
+          <div className="absolute -top-7 left-2 sm:left-12 z-20 transform -rotate-3 hover:rotate-0 transition-transform hidden xs:block">
+            <div className="relative bg-[#BBF7D0] text-[#141416] border-2 border-[#141416] px-3 py-1.5 rounded shadow-[2px_2px_0px_#141416] font-mono text-[11px] sm:text-xs font-bold uppercase tracking-wider">
+              {/* Scotch tape on top */}
+              <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 w-12 h-4 bg-white/75 border-l border-r border-dashed border-[#141416]/30 shadow-sm rotate-2" />
+              ✦ UI/UX DESIGN
+            </div>
           </div>
 
-          {/* Right Direct Resume Link Button */}
-          <div className="flex items-center gap-3">
-            <a
-              href="/resume.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 via-purple-500 to-indigo-600 text-white font-display font-bold text-xs sm:text-sm shadow-xl shadow-purple-900/50 hover:shadow-purple-600/70 hover:scale-105 active:scale-95 transition-all flex items-center gap-2 group"
-            >
-              <svg className="w-4 h-4 text-purple-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                <polyline points="14 2 14 8 20 8" />
-                <line x1="16" y1="13" x2="8" y2="13" />
-                <line x1="16" y1="17" x2="8" y2="17" />
-              </svg>
-              <span>View Official Resume</span>
-              <span className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
-            </a>
+          {/* Taped Sticky Note: Top Right (Peach) */}
+          <div className="absolute -top-8 right-2 sm:right-12 z-20 transform rotate-3 hover:rotate-0 transition-transform hidden xs:block">
+            <div className="relative bg-[#FED7AA] text-[#141416] border-2 border-[#141416] px-3.5 py-1.5 rounded shadow-[2px_2px_0px_#141416] font-mono text-[11px] sm:text-xs font-bold tracking-wider">
+              {/* Scotch tape on top */}
+              <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 w-12 h-4 bg-white/75 border-l border-r border-dashed border-[#141416]/30 shadow-sm -rotate-2" />
+              ABOUT THE DETAILS ✎
+            </div>
+          </div>
+
+          {/* THE GIANT PIXELATED "AYUSH" TITLE */}
+          <h1 className="font-pixel text-[20vw] sm:text-[14vw] md:text-[10.5rem] lg:text-[12.5rem] leading-[0.88] tracking-normal text-[#141416] text-center drop-shadow-[2px_2px_0px_rgba(0,0,0,0.12)]">
+            AYUSH
+          </h1>
+
+          {/* Taped Sticky Note: Bottom Left (Yellow) */}
+          <div className="absolute -bottom-6 left-4 sm:left-16 z-20 transform -rotate-2 hover:rotate-0 transition-transform">
+            <div className="relative bg-[#FEF08A] text-[#141416] border-2 border-[#141416] px-3.5 py-1 rounded shadow-[2px_2px_0px_#141416] font-mono text-[10px] sm:text-xs font-bold uppercase">
+              🎓 CSE @ ABESEC
+            </div>
+          </div>
+
+          {/* Taped Sticky Note: Bottom Right (Baby Blue) */}
+          <div className="absolute -bottom-6 right-4 sm:right-16 z-20 transform rotate-2 hover:rotate-0 transition-transform">
+            <div className="relative bg-[#BAE6FD] text-[#141416] border-2 border-[#141416] px-3 py-1 rounded shadow-[2px_2px_0px_#141416] font-mono text-[10px] sm:text-xs font-bold uppercase flex items-center gap-1">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span>OPEN FOR WORK</span>
+            </div>
+          </div>
+        </div>
+
+        {/* SUBTITLE & AVATAR BADGE ROW (EXACT SCREEN 1 COMPOSITION) */}
+        <div className="mt-10 sm:mt-12 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-base sm:text-xl md:text-2xl font-sans font-semibold text-[#141416] max-w-2xl">
+          {/* Mini Left Avatar */}
+          <div className="w-8 h-8 rounded-full border-2 border-[#141416] overflow-hidden bg-amber-100 shadow-[1px_1px_0px_#141416] flex-shrink-0">
+            <img
+              src="/assets/ayush_profile.png"
+              alt="Ayush Shukla"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <span>I design software that</span>
+
+          {/* Badge with smiley / target */}
+          <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#BBF7D0] border-2 border-[#141416] shadow-[2px_2px_0px_#141416] text-xs sm:text-sm font-mono font-bold text-[#141416]">
+            <span>◎</span>
+            <span>INTUITIVE</span>
+          </span>
+
+          <span>gets out of your way.</span>
+
+          {/* Flower sticker */}
+          <span className="inline-block text-2xl sm:text-3xl animate-bounce duration-1000 -mt-1">
+            🌸
+          </span>
+
+          {/* Mini Right Circular Sticker */}
+          <div className="w-8 h-8 rounded-full border-2 border-[#141416] bg-[#FEF08A] shadow-[1px_1px_0px_#141416] flex items-center justify-center text-xs font-mono font-bold">
+            ☻
+          </div>
+        </div>
+
+        {/* BRUTALIST BUTTONS ROW */}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          <a
+            href="#contact"
+            className="flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#141416] text-[#F8F6F0] font-mono text-xs sm:text-sm font-bold border-2 border-[#141416] shadow-brutal hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-brutal-lg transition-all"
+          >
+            <span>CONTACT ME</span>
+            <span className="text-amber-300">↗</span>
+          </a>
+
+          <a
+            href="#projects"
+            className="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white text-[#141416] font-mono text-xs sm:text-sm font-bold border-2 border-[#141416] shadow-brutal hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-brutal-lg transition-all"
+          >
+            <span>VIEW WORK</span>
+            <span>↓</span>
+          </a>
+
+          <a
+            href="/resume.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-5 py-3.5 rounded-xl bg-[#FEF08A] text-[#141416] font-mono text-xs sm:text-sm font-bold border-2 border-[#141416] shadow-brutal hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-brutal-lg transition-all"
+          >
+            <span>RESUME</span>
+            <span>📄</span>
+          </a>
+        </div>
+      </div>
+
+      {/* ============================================================ */}
+      {/* 2. "JUST FOR FUN" PLAYGROUND SCRAPBOOK COLLAGE (SCREEN 2) */}
+      {/* ============================================================ */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 mt-20 relative z-10">
+        
+        {/* Scrapbook Container Box */}
+        <div 
+          className="bg-[#FFFFFF] border-2 border-[#141416] rounded-3xl p-6 sm:p-10 shadow-brutal-lg relative overflow-hidden transition-transform duration-300"
+          style={{ transform: `scale(${zoomLevel})` }}
+        >
+          {/* Top Paper Ruled Header */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b-2 border-[#141416]/10 gap-4">
+            <div>
+              <span className="font-handwriting text-2xl sm:text-3xl text-[#52525B] -rotate-1 inline-block">
+                playground & visual lab
+              </span>
+              <h2 className="font-pixel text-4xl sm:text-6xl text-[#141416] tracking-tight -mt-1">
+                JUST FOR FUN
+              </h2>
+            </div>
+
+            {/* Corner Zoom Controls */}
+            <div className="flex items-center gap-2 self-end sm:self-auto">
+              <span className="text-xs font-mono text-[#52525B] uppercase font-bold mr-1">
+                ZOOM
+              </span>
+              <button
+                onClick={() => handleZoom(-0.05)}
+                className="w-8 h-8 rounded-lg bg-[#FAF7F0] border-2 border-[#141416] font-mono font-bold text-xs shadow-[2px_2px_0px_#141416] hover:bg-[#FEF08A] transition-colors"
+                title="Zoom Out"
+              >
+                −
+              </button>
+              <button
+                onClick={() => handleZoom(0.05)}
+                className="w-8 h-8 rounded-lg bg-[#FAF7F0] border-2 border-[#141416] font-mono font-bold text-xs shadow-[2px_2px_0px_#141416] hover:bg-[#FEF08A] transition-colors"
+                title="Zoom In"
+              >
+                +
+              </button>
+            </div>
+          </div>
+
+          {/* Collage Grid of Scrapbook Elements */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 pt-8 items-center">
+            
+            {/* Scrapbook Card 1: Polaroid with Scotch Tape (Left 4 cols) */}
+            <div className="md:col-span-4 flex flex-col items-center">
+              <div className="polaroid-card relative rotate-[-2.5deg] hover:rotate-0 transition-transform duration-300 w-full max-w-[280px]">
+                {/* Scotch tape on top */}
+                <div className="scotch-tape-center" />
+
+                {/* Photo */}
+                <div className="w-full aspect-square bg-[#0e1626] rounded overflow-hidden border border-[#E2DED5]">
+                  <img
+                    src="/assets/borcelle_coffee_promo.png"
+                    alt="Borcelle Cafe Visual"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Caption */}
+                <div className="mt-3 text-center">
+                  <span className="font-handwriting text-lg text-[#141416] block">
+                    borcelle iced coffee ☕
+                  </span>
+                  <span className="font-mono text-[10px] text-[#52525B] uppercase font-bold">
+                    COMMERCIAL AD DESIGN
+                  </span>
+                </div>
+              </div>
+
+              {/* Sticky Note Below Polaroid */}
+              <div className="mt-4 bg-[#FEF08A] border-2 border-[#141416] px-4 py-2 rounded-lg shadow-[2px_2px_0px_#141416] rotate-2 text-center">
+                <span className="font-handwriting text-lg text-[#141416] font-bold">
+                  "lighting & shadow study"
+                </span>
+              </div>
+            </div>
+
+            {/* Scrapbook Card 2: Retro Macintosh "Hello" Screen (Center 4 cols) */}
+            <div className="md:col-span-4 flex flex-col items-center">
+              {/* Retro Macintosh Monitor Box */}
+              <div className="w-full max-w-[260px] bg-[#E8E4DA] border-2 border-[#141416] rounded-2xl p-4 shadow-brutal relative">
+                {/* Disk drive slot & badge */}
+                <div className="flex items-center justify-between pb-2 mb-2 border-b border-[#141416]/20">
+                  <div className="w-2 h-2 rounded-full bg-[#141416]" />
+                  <span className="font-mono text-[9px] font-bold tracking-widest text-[#141416]">
+                    MACINTOSH 1984
+                  </span>
+                </div>
+
+                {/* CRT Screen */}
+                <div className="bg-[#141416] rounded-xl p-4 text-center border-2 border-[#141416] relative overflow-hidden">
+                  <div className="absolute inset-0 bg-green-500/5 pointer-events-none" />
+                  <span className="font-handwriting text-3xl sm:text-4xl text-[#BBF7D0] block py-4 animate-pulse">
+                    hello.
+                  </span>
+                  <span className="font-mono text-[9px] text-[#BBF7D0]/70 uppercase tracking-widest block">
+                    READY FOR CODE & DESIGN
+                  </span>
+                </div>
+
+                {/* Bottom ventilation grill */}
+                <div className="mt-3 flex justify-between items-center px-2">
+                  <div className="h-1.5 w-16 bg-[#141416]/20 rounded" />
+                  <span className="font-mono text-[10px] font-bold text-[#141416]">AYUSH</span>
+                </div>
+
+                {/* Taped sticky note hanging on monitor */}
+                <div className="absolute -top-3 -right-3 bg-[#BBF7D0] border-2 border-[#141416] px-2 py-0.5 rounded shadow-[2px_2px_0px_#141416] rotate-6 text-[10px] font-mono font-bold">
+                  hello world! ✦
+                </div>
+              </div>
+
+              {/* Pastel Washi Tape Pill Tag */}
+              <div className="mt-4 bg-[#DDD6FE] border-2 border-[#141416] px-4 py-1.5 rounded-full shadow-[2px_2px_0px_#141416] -rotate-1 font-mono text-xs font-bold text-[#141416]">
+                ✦ PRACTICES & MOTION
+              </div>
+            </div>
+
+            {/* Scrapbook Card 3: Streetwear Apparel & 3D Poster (Right 4 cols) */}
+            <div className="md:col-span-4 flex flex-col items-center">
+              <div className="polaroid-card relative rotate-[3deg] hover:rotate-0 transition-transform duration-300 w-full max-w-[280px]">
+                {/* Corner Washi Tape */}
+                <div className="absolute -top-2.5 -right-2.5 w-14 h-4 bg-amber-200/80 border-l border-r border-dashed border-[#141416]/40 rotate-12 z-20" />
+
+                {/* Photo */}
+                <div className="w-full aspect-square bg-[#0e1626] rounded overflow-hidden border border-[#E2DED5]">
+                  <img
+                    src="/assets/team_techno_merchandise.png"
+                    alt="Team Techno Merchandise"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Caption */}
+                <div className="mt-3 text-center">
+                  <span className="font-handwriting text-lg text-[#141416] block">
+                    techno core merchandise ⚡
+                  </span>
+                  <span className="font-mono text-[10px] text-[#52525B] uppercase font-bold">
+                    STREETWEAR APPAREL PRINT
+                  </span>
+                </div>
+              </div>
+
+              {/* Sticky Note Below */}
+              <div className="mt-4 bg-[#FED7AA] border-2 border-[#141416] px-4 py-2 rounded-lg shadow-[2px_2px_0px_#141416] -rotate-2 text-center">
+                <span className="font-handwriting text-lg text-[#141416] font-bold">
+                  "typography & barcodes"
+                </span>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Bottom Stamp & Signature Line */}
+          <div className="mt-10 pt-4 border-t-2 border-[#141416]/10 flex flex-wrap items-center justify-between text-xs font-mono text-[#52525B]">
+            <div className="flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#141416]" />
+              <span>HAND-CRAFTED SCRAPBOOK ARCHIVE</span>
+            </div>
+            <div className="font-handwriting text-xl text-[#141416]">
+              Ayush Shukla — UI/UX & Visual Design ✦
+            </div>
           </div>
         </div>
 

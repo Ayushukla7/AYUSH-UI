@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/*=============== GOOGLE FONTS & BASE TYPOGRAPHY ===============*/
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -12,101 +11,88 @@
   }
 
   body {
-    background-color: #030307;
-    color: #cbd5e1;
-    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #F8F6F0;
+    color: #141416;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     overflow-x: hidden;
     line-height: 1.6;
+    /* Notebook Ruled Paper Lines */
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+      repeating-linear-gradient(to bottom, transparent, transparent 27px, rgba(0, 0, 0, 0.045) 28px);
+    background-size: 24px 28px;
   }
 
-  h1, h2, h3, h4, h5, h6, .font-heading {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    letter-spacing: -0.035em;
-    color: #ffffff;
-    font-weight: 800;
-  }
-
-  p {
-    color: #94a3b8;
-    line-height: 1.65;
+  h1, h2, h3, h4, h5, h6 {
+    color: #141416;
   }
 }
 
-/* Editorial Display Typeface matching reference cover */
-.font-editorial {
-  font-family: 'Bodoni Moda', serif;
-  letter-spacing: 0.05em;
-}
-
-.font-syne {
-  font-family: 'Syne', sans-serif;
-  letter-spacing: -0.02em;
-}
-
-/*=============== AMBIENT PURPLE BACKLIGHT BLOBS ===============*/
-.blob-animate {
-  width: 340px;
-  height: 340px;
-  background: radial-gradient(circle, rgba(147, 51, 234, 0.4) 0%, rgba(124, 58, 237, 0.22) 45%, rgba(168, 85, 247, 0) 70%);
-  border-radius: 50%;
+/* Washi Tape / Scotch Tape Sticker Effect */
+.washi-tape {
   position: absolute;
-  filter: blur(75px);
-  z-index: 0;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(2px);
+  border-left: 2px dashed rgba(0, 0, 0, 0.2);
+  border-right: 2px dashed rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   pointer-events: none;
-  animation: animateBlob 9s ease-in-out infinite alternate;
+  z-index: 20;
 }
 
-@keyframes animateBlob {
-  0% {
-    transform: rotate(0deg) scale(0.92) translate(-10px, -10px);
-  }
-  50% {
-    transform: rotate(180deg) scale(1.08) translate(15px, 15px);
-  }
-  100% {
-    transform: rotate(360deg) scale(0.95) translate(-10px, 10px);
-  }
+/* Scotch Tape for Polaroids */
+.scotch-tape-center {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1deg);
+  width: 70px;
+  height: 18px;
+  background: rgba(245, 245, 240, 0.75);
+  border-left: 2px dashed rgba(0, 0, 0, 0.15);
+  border-right: 2px dashed rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  z-index: 20;
 }
 
-/*=============== CLEAN LUXURY GLASS CARDS ===============*/
-.purple-glass-card {
-  background: rgba(11, 11, 20, 0.75);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+/* Polaroid Photo Styling */
+.polaroid-card {
+  background: #FFFFFF;
+  padding: 10px 10px 28px 10px;
+  border: 1px solid #E2DED5;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.purple-glass-card:hover {
-  border-color: rgba(168, 85, 247, 0.35);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85), 0 0 25px -8px rgba(168, 85, 247, 0.22);
-  transform: translateY(-2px);
+.polaroid-card:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.15);
 }
 
-/* Custom Scrollbar */
+/* Folder Cutout Tabs */
+.folder-card {
+  background: #FFFFFF;
+  border: 2px solid #141416;
+  box-shadow: 4px 4px 0px #141416;
+}
+
+/* Custom Scrollbar in Notebook Style */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #030307;
+  background: #F8F6F0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1f1d2e;
+  background: #D4CEBF;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a855f7;
-}
-
-/* Print Optimization */
-@media print {
-  body {
-    background: #ffffff !important;
-    color: #000000 !important;
-  }
+  background: #A8A190;
 }

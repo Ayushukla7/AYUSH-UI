@@ -17,30 +17,37 @@ export default function SimpleLightbox({ imageSrc, title, onClose }) {
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/85 backdrop-blur-sm animate-fadeIn"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-sm animate-fadeIn"
       onClick={onClose}
     >
       <div 
-        className="relative max-w-5xl max-h-[90vh] bg-[#0c1f28] border border-white/20 rounded-xl overflow-hidden shadow-2xl flex flex-col"
+        className="relative max-w-5xl w-full bg-[#FFFFFF] border-2 border-[#141416] rounded-2xl overflow-hidden shadow-[8px_8px_0px_#141416] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Top bar */}
-        <div className="flex items-center justify-between px-4 py-3 bg-[#08151c] border-b border-white/10 text-xs font-mono text-[#f3f6ec]">
-          <span className="truncate pr-4">{title || "Design Preview"}</span>
+        {/* Retro Window Top bar */}
+        <div className="flex items-center justify-between px-5 py-3.5 bg-[#FAF7F0] border-b-2 border-[#141416]">
+          <div className="flex items-center gap-2">
+            <span className="w-3.5 h-3.5 rounded-full bg-[#EF4444] border border-[#141416]" />
+            <span className="w-3.5 h-3.5 rounded-full bg-[#F59E0B] border border-[#141416]" />
+            <span className="w-3.5 h-3.5 rounded-full bg-[#10B981] border border-[#141416]" />
+            <span className="ml-3 font-mono text-xs font-bold text-[#141416] truncate">
+              {title || "preview.png"}
+            </span>
+          </div>
           <button 
             onClick={onClose}
-            className="px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-[#f3f6ec] transition-colors"
+            className="px-3 py-1 rounded-md bg-[#FEF08A] border-2 border-[#141416] text-[#141416] text-xs font-mono font-bold shadow-[2px_2px_0px_#141416] hover:translate-x-[-1px] hover:translate-y-[-1px] transition-all"
           >
-            Close ✕
+            CLOSE ✕
           </button>
         </div>
 
-        {/* Image */}
-        <div className="overflow-auto p-4 flex items-center justify-center bg-black/40">
+        {/* Image Display */}
+        <div className="overflow-auto p-4 sm:p-6 flex items-center justify-center bg-[#F8F6F0]">
           <img 
             src={imageSrc} 
             alt={title || "Preview"} 
-            className="max-h-[75vh] w-auto object-contain rounded"
+            className="max-h-[75vh] w-auto object-contain rounded-lg border border-[#E4DEC9] shadow-md"
           />
         </div>
       </div>

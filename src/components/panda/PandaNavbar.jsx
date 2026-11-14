@@ -5,95 +5,91 @@ export default function PandaNavbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: "About", href: "#about" },
-    { label: "Experience", href: "#experience" },
-    { label: "Projects", href: "#projects" },
-    { label: "Skills", href: "#skills" },
-    { label: "Contact", href: "#contact" }
+    { label: "★ HOME", href: "#hero", active: true },
+    { label: "ABOUT", href: "#about" },
+    { label: "WORKS", href: "#projects" },
+    { label: "TOOLBOX", href: "#skills" },
+    { label: "EXPERIENCE", href: "#experience" },
+    { label: "LET'S TALK", href: "#contact" }
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#030307]/85 backdrop-blur-xl border-b border-white/5 transition-all">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between relative z-10">
+    <header className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 pointer-events-none">
+      <div className="max-w-6xl mx-auto bg-[#FFFFFF] border-2 border-[#141416] shadow-brutal rounded-2xl px-4 sm:px-6 py-2.5 flex items-center justify-between pointer-events-auto transition-all">
         
-        {/* Left: Brand Logo in Plus Jakarta Sans */}
-        <a href="#" className="flex items-center gap-3 group">
-          <div className="relative">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-700 via-purple-500 to-indigo-500 p-0.5 shadow-lg shadow-purple-900/40 group-hover:scale-105 transition-transform">
+        {/* Left: Traffic Dots & Brand */}
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5 pr-2 border-r border-[#141416]/20">
+            <span className="w-3 h-3 rounded-full bg-[#EF4444] border border-[#141416]" />
+            <span className="w-3 h-3 rounded-full bg-[#F59E0B] border border-[#141416]" />
+            <span className="w-3 h-3 rounded-full bg-[#10B981] border border-[#141416]" />
+          </div>
+
+          <a href="#hero" className="flex items-center gap-2 group">
+            <div className="w-7 h-7 rounded-full overflow-hidden border border-[#141416] bg-[#FEF08A] flex-shrink-0">
               <img
                 src="/assets/ayush_profile.png"
                 alt="Ayush Shukla"
-                className="w-full h-full object-cover rounded-[10px]"
+                className="w-full h-full object-cover"
               />
             </div>
-            <span className="absolute -bottom-1 -right-1 w-3 h-3 bg-emerald-400 rounded-full border-2 border-[#030307] animate-pulse" />
-          </div>
-
-          <div>
-            <span className="font-display font-bold text-lg text-white group-hover:text-purple-300 transition-colors tracking-tight flex items-center gap-1.5">
-              <span>Ayush Shukla</span>
-              <span className="text-purple-400 text-xs">✦</span>
+            <span className="font-pixel text-xl sm:text-2xl text-[#141416] tracking-wide uppercase group-hover:text-amber-600 transition-colors">
+              AYUSH.FOLIO
             </span>
-            <span className="text-[11px] text-purple-300/80 font-medium block -mt-1 font-mono">
-              UI/UX & Graphic Designer
-            </span>
-          </div>
-        </a>
+          </a>
+        </div>
 
-        {/* Center: Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-1 bg-[#0c0c16]/80 border border-white/10 px-4 py-1.5 rounded-full shadow-inner">
+        {/* Center: Desktop Folder-Pill Nav Items */}
+        <nav className="hidden md:flex items-center gap-1.5">
           {navLinks.map((item, idx) => (
             <a
               key={idx}
               href={item.href}
-              className="px-4 py-1.5 rounded-full text-xs font-semibold text-slate-300 hover:text-white hover:bg-purple-600/20 transition-all font-display"
+              className={`px-3.5 py-1 rounded-full text-xs font-mono font-bold tracking-tight transition-all ${
+                item.active
+                  ? 'bg-[#FEF08A] text-[#141416] border-2 border-[#141416] shadow-[2px_2px_0px_#141416] -rotate-1'
+                  : 'text-[#141416]/80 hover:text-[#141416] hover:bg-[#F3EFE6] border-2 border-transparent'
+              }`}
             >
               {item.label}
             </a>
           ))}
         </nav>
 
-        {/* Right: Direct Resume Button & Quick Email */}
-        <div className="hidden sm:flex items-center gap-2.5">
+        {/* Right: Direct Resume & Contact CTA */}
+        <div className="hidden sm:flex items-center gap-2">
           <a
             href="/resume.html"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-xs font-bold font-display hover:from-purple-500 hover:to-indigo-500 transition-all shadow-lg shadow-purple-900/50 hover:shadow-purple-700/60 hover:scale-105"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white border-2 border-[#141416] text-[#141416] text-xs font-mono font-bold shadow-[2px_2px_0px_#141416] hover:translate-x-[-1px] hover:translate-y-[-1px] transition-all"
           >
-            <svg className="w-3.5 h-3.5 text-purple-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-              <polyline points="14 2 14 8 20 8" />
-              <line x1="16" y1="13" x2="8" y2="13" />
-              <line x1="16" y1="17" x2="8" y2="17" />
-            </svg>
-            <span>Resume</span>
+            <span>RESUME</span>
+            <span className="text-[10px]">📄</span>
           </a>
 
           <a
-            href={`mailto:${personalInfo.email}`}
-            className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-medium text-slate-200 hover:text-white transition-all hover:scale-105"
+            href="#contact"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#141416] text-white text-xs font-mono font-bold border-2 border-[#141416] shadow-[2px_2px_0px_#FEF08A] hover:bg-[#252528] transition-all"
           >
-            <svg className="w-3.5 h-3.5 text-[#EA4335]" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-            </svg>
-            <span>Email</span>
+            <span>CONTACT</span>
+            <span className="text-[10px]">↗</span>
           </a>
         </div>
 
         {/* Mobile Hamburger Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 rounded-xl bg-white/5 border border-white/10 text-white"
-          aria-label="Toggle Menu"
+          className="md:hidden p-1.5 rounded-lg border-2 border-[#141416] bg-[#FEF08A] text-[#141416] shadow-[2px_2px_0px_#141416]"
+          aria-label="Toggle Navigation Menu"
         >
           {mobileMenuOpen ? (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
             </svg>
           ) : (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           )}
         </button>
@@ -101,43 +97,35 @@ export default function PandaNavbar() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#0a0a14]/95 border-b border-white/10 px-6 py-5 space-y-3">
-          <div className="flex flex-col space-y-2">
+        <div className="max-w-6xl mx-auto mt-2 bg-[#FFFFFF] border-2 border-[#141416] shadow-brutal rounded-2xl p-4 md:hidden pointer-events-auto space-y-2 animate-fadeIn">
+          <div className="grid grid-cols-2 gap-2">
             {navLinks.map((item, idx) => (
               <a
                 key={idx}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-3 py-2 rounded-lg text-sm font-display text-slate-200 hover:text-purple-300 hover:bg-purple-950/40 transition-colors"
+                className="px-3 py-2 rounded-lg text-xs font-mono font-bold text-center border-2 border-[#141416] bg-[#FAF7F0] hover:bg-[#FEF08A] text-[#141416] shadow-[2px_2px_0px_#141416]"
               >
                 {item.label}
               </a>
             ))}
           </div>
 
-          <div className="pt-3 border-t border-white/10 flex flex-col gap-2">
+          <div className="pt-2 flex items-center justify-between gap-2 border-t border-[#141416]/10">
             <a
               href="/resume.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-display font-bold text-xs shadow-lg text-center"
+              className="flex-1 text-center py-2 rounded-lg bg-white border-2 border-[#141416] text-[#141416] text-xs font-mono font-bold shadow-[2px_2px_0px_#141416]"
             >
-              <svg className="w-3.5 h-3.5 text-purple-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                <polyline points="14 2 14 8 20 8" />
-                <line x1="16" y1="13" x2="8" y2="13" />
-                <line x1="16" y1="17" x2="8" y2="17" />
-              </svg>
-              <span>View Official Resume</span>
+              📄 RESUME
             </a>
             <a
-              href={`mailto:${personalInfo.email}`}
-              className="flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-center text-xs font-mono text-slate-300"
+              href="#contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex-1 text-center py-2 rounded-lg bg-[#141416] text-white text-xs font-mono font-bold border-2 border-[#141416]"
             >
-              <svg className="w-3.5 h-3.5 text-[#EA4335]" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-              </svg>
-              <span>{personalInfo.email}</span>
+              LET'S TALK ↗
             </a>
           </div>
         </div>
