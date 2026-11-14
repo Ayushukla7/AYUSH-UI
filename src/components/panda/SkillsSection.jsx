@@ -101,7 +101,7 @@ export default function SkillsSection() {
           C
         </div>
       ),
-      description: "Fast-turnaround event banners, social story cards, speaker posters, and community engagement graphics for Open Source Connect.",
+      description: "Fast-turnaround event banners, social story cards, speaker posters, and technical community visual communication assets.",
       tags: ["Social Creatives", "Event Banners", "Rapid Turnaround", "Community Assets"]
     }
   ];

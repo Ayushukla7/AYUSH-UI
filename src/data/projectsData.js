@@ -3,12 +3,12 @@ export const personalInfo = {
   role: "UI/UX & Graphic Designer",
   phone: "+91 9369657005",
   email: "ayush.apply41@gmail.com",
-  linkedin: "https://www.linkedin.com/in/ayushshukla41/",
+  linkedin: "https://www.linkedin.com/in/ayushstech/",
   portfolio: "https://ayush-ui.vercel.app",
   github: "https://github.com/Ayushukla7",
   instagram: "https://www.instagram.com/ayushs_4141/",
   location: "Noida / Delhi NCR, India",
-  bio: "UI/UX and Graphic Designer with experience across 3+ design-focused roles and 10+ high-fidelity interface projects. Created 40+ visual assets reaching 1,500+ attendees. Strong in UI design, visual systems, branding, and responsive web experiences.",
+  bio: "UI/UX and Graphic Designer with experience across 4+ design-focused roles and 10+ high-fidelity interface projects. Currently designing at ONI Cares and ABESEC. Strong in UI design, visual systems, branding, and responsive web experiences.",
   skills: [
     "UI/UX Design & Architecture",
     "SaaS & Dashboard UI",
@@ -24,6 +24,14 @@ export const personalInfo = {
   ],
   experience: [
     {
+      role: "UI/UX & Product Designer",
+      organization: "ONI Cares",
+      location: "Remote / Hybrid",
+      period: "2026 – Present",
+      isCurrent: true,
+      description: "Design end-to-end user interfaces, maternal health tracking workflows, and mobile application experiences in Figma. Architect scalable design system tokens and clinical dashboard layouts to streamline patient-doctor interactions."
+    },
+    {
       role: "Graphic Designer",
       organization: "Technovation – The Networking Club, ABESEC",
       location: "Noida, India",
@@ -38,14 +46,6 @@ export const personalInfo = {
       period: "Jul 2025 – Jun 2026",
       isCurrent: false,
       description: "Led graphic design initiatives and created visual assets for events, campaigns, and organizational communication. Translated ideas into engaging designs while maintaining consistency across typography, composition, branding, and visual language."
-    },
-    {
-      role: "Core Team Designer",
-      organization: "Open Source Connect",
-      location: "Remote",
-      period: "Jan 2026 – Feb 2026",
-      isCurrent: false,
-      description: "Contributed to UI/UX and visual design for community initiatives using Figma and Canva. Created interface and visual assets with a focus on usability, consistency, and clear visual communication."
     },
     {
       role: "Graphic Design Specialist",
@@ -86,11 +86,11 @@ export const resumeData = {
     title: "UI/UX & Graphic Designer",
     phone: "+91 9369657005",
     email: "ayush.apply41@gmail.com",
-    linkedin: "https://www.linkedin.com/in/ayushshukla41",
-    linkedinText: "linkedin.com/in/ayushshukla41",
+    linkedin: "https://www.linkedin.com/in/ayushstech/",
+    linkedinText: "linkedin.com/in/ayushstech",
     portfolio: "https://ayush-ui.vercel.app",
     portfolioText: "ayush-ui.vercel.app",
-    summary: "UI/UX and Graphic Designer with experience across 3 design-focused roles and 10+ high-fidelity interface projects. Created 40+ visual assets for technical events and campaigns reaching 1,500+ attendees, with hands-on experience in Figma, Canva, and Adobe tools. Strong in UI design, visual systems, branding, and responsive web experiences, with the ability to take designs from concept to implementation."
+    summary: "UI/UX and Graphic Designer with experience across design-focused roles and 10+ high-fidelity interface projects. Hands-on experience in Figma, Canva, and Adobe tools. Strong in UI design, visual systems, branding, and responsive web experiences, with the ability to take designs from concept to implementation."
   },
   skills: {
     uiUx: [
@@ -136,6 +136,18 @@ export const resumeData = {
   },
   experiences: [
     {
+      role: "UI/UX & Product Designer",
+      company: "ONI Cares",
+      location: "Remote / Hybrid",
+      period: "2026 – Present",
+      isCurrent: true,
+      highlights: [
+        "Design end-to-end user flows, mobile healthcare interfaces, and clinical management dashboards in Figma.",
+        "Architect scalable design system components and responsive UI tokens to streamline patient-doctor consultations.",
+        "Collaborate with cross-functional product and healthcare teams to translate complex medical workflows into intuitive user experiences."
+      ]
+    },
+    {
       role: "Graphic Designer",
       company: "Technovation – The Networking Club, ABESEC",
       location: "Noida, India",
@@ -155,17 +167,6 @@ export const resumeData = {
       highlights: [
         "Led graphic design initiatives and created visual assets for events, campaigns, and organizational communication.",
         "Translated ideas into engaging designs while maintaining consistency across typography, composition, branding, and visual language."
-      ]
-    },
-    {
-      role: "Core Team Designer",
-      company: "Open Source Connect",
-      location: "Remote",
-      period: "Jan 2026 – Feb 2026",
-      isCurrent: false,
-      highlights: [
-        "Contributed to UI/UX and visual design for community initiatives using Figma and Canva.",
-        "Created interface and visual assets with a focus on usability, consistency, and clear visual communication."
       ]
     },
     {

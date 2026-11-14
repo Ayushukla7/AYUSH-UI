@@ -11,7 +11,7 @@ export default function AboutSection() {
   ];
 
   const stats = [
-    { number: "3+", label: "Design Roles", sub: "Technovation, IIITD, OSC", color: "bg-[#FEF08A]", rotate: "-rotate-2" },
+    { number: "4+", label: "Design Roles", sub: "ONI Cares, Technovation, IIITD", color: "bg-[#FEF08A]", rotate: "-rotate-2" },
     { number: "10+", label: "Shipped UIs", sub: "Dashboards, Web & Apps", color: "bg-[#BBF7D0]", rotate: "rotate-1" },
     { number: "40+", label: "Visual Assets", sub: "Event Creatives & Merch", color: "bg-[#FED7AA]", rotate: "-rotate-1" },
     { number: "1.5K+", label: "Reach", sub: "Attendees & Users", color: "bg-[#BAE6FD]", rotate: "rotate-2" },
