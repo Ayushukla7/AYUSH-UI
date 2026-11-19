@@ -135,8 +135,8 @@ export default function AboutSection() {
               </div>
 
               {/* Technovation */}
-              <div className="border-l-2 border-[#111111] pl-3.5 py-0.5">
-                <span className="font-mono text-xs font-bold text-[#111111] block">
+              <div className="border-l-2 border-[#FF1E27] pl-3.5 py-0.5">
+                <span className="font-mono text-xs font-bold text-[#FF1E27] block">
                   Jun 2025 – Present
                 </span>
                 <span className="font-sans text-xs sm:text-sm font-bold text-[#111111] block mt-0.5">
