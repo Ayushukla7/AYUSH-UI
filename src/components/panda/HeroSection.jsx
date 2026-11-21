@@ -78,9 +78,9 @@ export default function HeroSection() {
             {/* Illustrated Cutout Avatar with Hand-Drawn / Graphic Frame */}
             <div className="w-[14vw] h-[14vw] min-w-[70px] min-h-[70px] max-w-[175px] max-h-[175px] rounded-full overflow-hidden border-4 border-[#111111] bg-white shadow-brutal group-hover:scale-105 group-hover:border-[#FF1E27] transition-all">
               <img
-                src="/assets/ayush_halftone_poster.jpg"
+                src="/assets/ayush_profile_new.jpg"
                 alt="Ayush Shukla"
-                className="w-full h-full object-cover object-[center_24%] filter contrast-110"
+                className="w-full h-full object-cover object-[center_18%] filter contrast-110"
               />
             </div>
 

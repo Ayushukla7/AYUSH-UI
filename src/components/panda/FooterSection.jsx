@@ -122,9 +122,9 @@ export default function FooterSection() {
               <div className="flex items-center gap-3.5 mb-4">
                 <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-[#FF1E27] shadow-[3px_3px_0px_#FF1E27] bg-[#1A1A1E] flex-shrink-0">
                   <img
-                    src="/assets/ayush_halftone_poster.jpg"
+                    src="/assets/ayush_profile_new.jpg"
                     alt="Ayush Shukla"
-                    className="w-full h-full object-cover object-[center_24%]"
+                    className="w-full h-full object-cover object-[center_18%]"
                   />
                   <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-full" />
                 </div>
