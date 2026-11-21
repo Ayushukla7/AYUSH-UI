@@ -222,6 +222,15 @@ export const resumeData = {
 
 export const portfolioSections = [
   {
+    id: "ayush-halftone-poster",
+    category: "PRINT & EDITORIAL POSTER",
+    title: "Halftone Serigraphy — Graphic Portrait",
+    type: "Distressed Screenprint & Risograph Poster",
+    fullImage: "/assets/ayush_halftone_poster.jpg",
+    coverImage: "/assets/ayush_halftone_poster.jpg",
+    description: "Self-referential neo-brutalist risograph poster design featuring custom halftone rasterization, acid green duotone focal element, and distressed photocopy border textures."
+  },
+  {
     id: "ai-dark-side",
     category: "FEED DESIGN",
     title: "AI's Dark Side (Hacking 2.0)",

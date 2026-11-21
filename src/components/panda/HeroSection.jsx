@@ -24,8 +24,49 @@ export default function HeroSection() {
       </div>
 
       {/* Main Centerpiece: "PORT [AVATAR] LIO" (Exact Behance Recreation) */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 w-full my-auto py-10 sm:py-20 flex flex-col items-center justify-center text-center select-none">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 w-full my-auto py-8 sm:py-16 flex flex-col items-center justify-center text-center select-none">
         
+        {/* Well-Organized Editorial Hindi + English Identity Seal */}
+        <div className="mb-7 sm:mb-12 flex flex-col items-center">
+          <div className="relative inline-flex items-center gap-3 sm:gap-5 px-5 py-2.5 sm:px-7 sm:py-3 bg-white border-2 border-[#111111] shadow-brutal hover:border-[#FF1E27] hover:shadow-brutal-red transition-all group">
+            
+            {/* 4 Brutalist Corner Registration Marks */}
+            <span className="absolute -top-1 -left-1 w-2.5 h-2.5 border-t-2 border-l-2 border-[#FF1E27]" />
+            <span className="absolute -top-1 -right-1 w-2.5 h-2.5 border-t-2 border-r-2 border-[#FF1E27]" />
+            <span className="absolute -bottom-1 -left-1 w-2.5 h-2.5 border-b-2 border-l-2 border-[#FF1E27]" />
+            <span className="absolute -bottom-1 -right-1 w-2.5 h-2.5 border-b-2 border-r-2 border-[#FF1E27]" />
+
+            {/* Live Indicator */}
+            <div className="flex items-center gap-1.5 flex-shrink-0">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#FF1E27] animate-pulse" />
+              <span className="font-mono text-[10px] text-[#888888] font-bold tracking-widest uppercase hidden sm:inline">
+                ID //
+              </span>
+            </div>
+
+            {/* Prominent Hindi Name in Editorial Devanagari */}
+            <span className="font-hindi text-2xl sm:text-3xl md:text-4xl text-[#111111] font-normal leading-none tracking-wide pt-1">
+              आयुष शुक्ला
+            </span>
+
+            {/* Vertical Brutalist Divider */}
+            <span className="h-6 sm:h-7 w-[2px] bg-[#111111]/25 flex-shrink-0" />
+
+            {/* English Title & Role */}
+            <div className="text-left flex flex-col justify-center">
+              <span className="font-extended font-black text-xs sm:text-sm tracking-wider uppercase text-[#111111] group-hover:text-[#FF1E27] transition-colors leading-tight">
+                AYUSH SHUKLA
+              </span>
+              <span className="font-mono text-[9px] sm:text-[10px] text-[#666666] font-bold tracking-wider uppercase">
+                UI/UX & GRAPHIC DESIGNER
+              </span>
+            </div>
+
+            {/* Accent Sparkle Glyph */}
+            <span className="text-[#FF1E27] text-xs sm:text-sm font-bold ml-0.5">✦</span>
+          </div>
+        </div>
+
         <div className="flex items-center justify-center flex-wrap gap-1 sm:gap-3 leading-none">
           {/* "PORT" */}
           <span className="font-extended font-black text-[15vw] sm:text-[14vw] md:text-[13vw] lg:text-[11.5rem] tracking-tighter text-[#111111]">
@@ -37,9 +78,9 @@ export default function HeroSection() {
             {/* Illustrated Cutout Avatar with Hand-Drawn / Graphic Frame */}
             <div className="w-[14vw] h-[14vw] min-w-[70px] min-h-[70px] max-w-[175px] max-h-[175px] rounded-full overflow-hidden border-4 border-[#111111] bg-white shadow-brutal group-hover:scale-105 group-hover:border-[#FF1E27] transition-all">
               <img
-                src="/assets/ayush_profile_new.jpg"
+                src="/assets/ayush_halftone_poster.jpg"
                 alt="Ayush Shukla"
-                className="w-full h-full object-cover object-[center_18%] filter contrast-110"
+                className="w-full h-full object-cover object-[center_24%] filter contrast-110"
               />
             </div>
 
@@ -49,8 +90,8 @@ export default function HeroSection() {
                 <path d="M12 32 C10 22, 14 14, 12 6" strokeLinecap="round" />
                 <path d="M7 11 L12 4 L17 11" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <span className="font-handwriting text-lg text-[#111111] -mt-1 font-bold whitespace-nowrap">
-                (ayush)
+              <span className="font-handwriting text-base sm:text-lg text-[#111111] -mt-1 font-bold whitespace-nowrap">
+                (ayush / आयुष)
               </span>
             </div>
           </div>

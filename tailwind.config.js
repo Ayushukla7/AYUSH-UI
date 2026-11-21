@@ -22,6 +22,8 @@ export default {
         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
         mono: ['"Space Mono"', 'monospace'],
         display: ['"Unbounded"', 'sans-serif'],
+        hindi: ['"Rozha One"', '"Yatra One"', 'serif'],
+        yatra: ['"Yatra One"', 'cursive'],
       },
       boxShadow: {
         'brutal': '4px 4px 0px #000000',

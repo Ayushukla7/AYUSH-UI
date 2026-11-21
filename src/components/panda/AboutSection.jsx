@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { personalInfo, resumeData } from '../../data/projectsData';
 
 export default function AboutSection() {
-  const [activeVisual, setActiveVisual] = useState('fashion'); // 'fashion' or 'coffee'
+  const [activeVisual, setActiveVisual] = useState('poster'); // 'poster', 'fashion', or 'coffee'
 
   return (
     <section id="about" className="relative py-20 sm:py-28 overflow-hidden graph-paper-bg">
@@ -11,30 +11,40 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 mb-16 sm:mb-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           
-          {/* Left: Photoshop Bounding Box Visual (Replaced T-shirt with Editorial Fashion / Ad) */}
+          {/* Left: Photoshop Bounding Box Visual (Features Graphic Screenprint Poster / Editorial / Ad) */}
           <div className="lg:col-span-4 flex flex-col items-center">
             
             {/* Visual Switcher Tabs */}
-            <div className="flex items-center gap-1.5 mb-3 self-center sm:self-start">
+            <div className="flex flex-wrap items-center gap-1.5 mb-3 self-center sm:self-start">
               <button
-                onClick={() => setActiveVisual('fashion')}
-                className={`px-2.5 py-1 font-mono text-[10px] font-bold border border-[#111111] transition-all ${
-                  activeVisual === 'fashion'
-                    ? 'bg-[#111111] text-white'
+                onClick={() => setActiveVisual('poster')}
+                className={`px-2 py-1 font-mono text-[9px] sm:text-[10px] font-bold border border-[#111111] transition-all ${
+                  activeVisual === 'poster'
+                    ? 'bg-[#111111] text-white shadow-[2px_2px_0px_#FF1E27]'
                     : 'bg-white text-[#111111] hover:bg-[#FF1E27] hover:text-white hover:border-[#FF1E27]'
                 }`}
               >
-                ✦ EDITORIAL CAMPAIGN
+                ✦ GRAPHIC POSTER
+              </button>
+              <button
+                onClick={() => setActiveVisual('fashion')}
+                className={`px-2 py-1 font-mono text-[9px] sm:text-[10px] font-bold border border-[#111111] transition-all ${
+                  activeVisual === 'fashion'
+                    ? 'bg-[#111111] text-white shadow-[2px_2px_0px_#FF1E27]'
+                    : 'bg-white text-[#111111] hover:bg-[#FF1E27] hover:text-white hover:border-[#FF1E27]'
+                }`}
+              >
+                EDITORIAL
               </button>
               <button
                 onClick={() => setActiveVisual('coffee')}
-                className={`px-2.5 py-1 font-mono text-[10px] font-bold border border-[#111111] transition-all ${
+                className={`px-2 py-1 font-mono text-[9px] sm:text-[10px] font-bold border border-[#111111] transition-all ${
                   activeVisual === 'coffee'
-                    ? 'bg-[#111111] text-white'
+                    ? 'bg-[#111111] text-white shadow-[2px_2px_0px_#FF1E27]'
                     : 'bg-white text-[#111111] hover:bg-[#FF1E27] hover:text-white hover:border-[#FF1E27]'
                 }`}
               >
-                ☕ COMMERCIAL AD
+                COMMERCIAL
               </button>
             </div>
 
@@ -54,17 +64,25 @@ export default function AboutSection() {
               <div className="aspect-[3/4] bg-[#141416] overflow-hidden">
                 <img
                   src={
-                    activeVisual === 'fashion'
+                    activeVisual === 'poster'
+                      ? '/assets/ayush_halftone_poster.jpg'
+                      : activeVisual === 'fashion'
                       ? '/assets/outfit_of_the_day_fashion.jpg'
                       : '/assets/borcelle_coffee_promo.png'
                   }
-                  alt="Editorial Design Showcase"
+                  alt="Design Showcase Artwork"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
               <div className="mt-2.5 flex items-center justify-between font-mono text-[10px] text-[#111111] px-1 font-bold">
-                <span>{activeVisual === 'fashion' ? 'EDITORIAL_MOODBOARD.PSD' : 'COMMERCIAL_AD.PSD'}</span>
+                <span>
+                  {activeVisual === 'poster'
+                    ? 'HALFTONE_POSTER.PSD'
+                    : activeVisual === 'fashion'
+                    ? 'EDITORIAL_MOODBOARD.PSD'
+                    : 'COMMERCIAL_AD.PSD'}
+                </span>
                 <span className="text-[#FF1E27]">1080×1350 // 300DPI</span>
               </div>
             </div>
@@ -220,9 +238,9 @@ export default function AboutSection() {
             <div className="relative z-20 my-[-25px] sm:my-[-40px] md:my-[-55px] group">
               <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full overflow-hidden portrait-red-outline border-4 border-[#111111] bg-[#111111] transition-transform duration-500 group-hover:scale-105">
                 <img
-                  src="/assets/ayush_profile_new.jpg"
+                  src="/assets/ayush_halftone_poster.jpg"
                   alt="Ayush Shukla Cutout Portrait"
-                  className="w-full h-full object-cover object-[center_20%] filter contrast-110"
+                  className="w-full h-full object-cover object-[center_24%] filter contrast-110"
                 />
               </div>
 
